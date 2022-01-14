@@ -14,4 +14,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `props: Title as a string and an array of object w/ page and path`
+### `props are as follows. No typying so be careful :)`
+NavBar.propTypes = {
+  name: PropTypes.string,
+  links: PropTypes.arrayOf(Object),
+  backgroundColor: PropTypes.string,
+  fontColor: PropTypes.string
+}
