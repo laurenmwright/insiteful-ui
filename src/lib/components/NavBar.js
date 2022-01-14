@@ -69,7 +69,6 @@ NavBar.propTypes = {
   links: PropTypes.arrayOf(Object),
   backgroundColor: PropTypes.string,
   fontColor: PropTypes.string
-
 }
 
 NavBar.defaultProps = {

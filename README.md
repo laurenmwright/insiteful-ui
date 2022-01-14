@@ -15,9 +15,9 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 ### `props are as follows. No typying so be careful :)`
-NavBar.propTypes = {
-  name: PropTypes.string,
-  links: PropTypes.arrayOf(Object),
-  backgroundColor: PropTypes.string,
-  fontColor: PropTypes.string
+NavBar.propTypes = {\
+  name: PropTypes.string,\
+  links: PropTypes.arrayOf(Object),\
+  backgroundColor: PropTypes.string,\
+  fontColor: PropTypes.string\
 }
