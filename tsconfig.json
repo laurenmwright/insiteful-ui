@@ -1,7 +1,7 @@
 {
-  "include": ["src/lib/"],
+  "include": ["src/lib"],
+  "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    
     "jsx": "react",
     "outDir": "dist",
     "emitDeclarationOnly": true,
