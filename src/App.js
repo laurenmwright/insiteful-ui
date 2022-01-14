@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,7 +24,7 @@ function App() {
   ]
   return (
     <Router>
-      <NavBar name="Lauren Wright" links={routeData}/>
+      <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
