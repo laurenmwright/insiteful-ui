@@ -1,11 +1,11 @@
-import './lib/App.css';
-import React, { useState, useEffect, useContext } from "react";import {
+import './lib/components/App.css';
+import React, { useState, useEffect, useContext } from "react";
+import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import NavBar  from './lib/NavBar';
-import { useTheme } from "./lib/Theme/useTheme";
+import { useTheme, Button } from "./lib";
 
 
 
@@ -44,7 +44,7 @@ function App() {
 
   return (
     <Router>
-       <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/> 
+       {/* <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/>  */}
         <Routes>
         <Route path="/"  element={<Home />}>
           </Route>
@@ -59,7 +59,9 @@ function App() {
 
 function Home() {
   return (
-    <div className="text-primary">Home</div>
+    <div className="text-primary">
+      <Button primary > HI</Button>
+    </div>
   )
 }
 function About() {
