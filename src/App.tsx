@@ -1,21 +1,39 @@
-// import './App.css';
-import React from "react";
-import {
+import './lib/App.css';
+import React, { useState, useEffect, useContext } from "react";import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 import NavBar  from './lib/NavBar';
+import { useTheme } from "./lib/Theme/useTheme";
+
 
 
 function App() {
+  const { applyColors } = useTheme();
+
+
+  const colorPaletteTest = {
+    "primary": "#46A689",
+    "dark_gray": "#333333",
+    "secondary": "#E0C591",
+    "light_gray": "#797B7A",
+    "primary_shade_1": "#46575E",
+    "primary_shade_2": "#748186",
+    "primary_shade_3": "#A3ABAF",
+    "secondary_shade_1": "#ECDCBD",
+    "secondary_shade_2": "#F6EEDE",
+    "secondary_shade_3": "#F9F3E9"
+  }; 
+ applyColors(colorPaletteTest);
+
   const routeData = [
     {
       title: "Home",
       path: "/"
     },
     {
-      title: "About",
+      title: "About ",
       path: "/about"
     },
     {
@@ -23,27 +41,25 @@ function App() {
       path: "/blogs"
     }
   ]
+
   return (
     <Router>
-      <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-        <Route path="/" exact component={Home}>
+       <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/> 
+        <Routes>
+        <Route path="/"  element={<Home />}>
           </Route>
-          <Route path="/about" component={About}>
+          <Route path="/about" element={<About />}>
           </Route>
-          <Route path="/blogs" component={Blogs}>
+          <Route path="/blogs" element={<Blogs />}>
           </Route>
-        </Switch>
+        </Routes>
     </Router>
   );
 }
 
 function Home() {
   return (
-    <div>Home</div>
+    <div className="text-primary">Home</div>
   )
 }
 function About() {

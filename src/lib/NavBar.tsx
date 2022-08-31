@@ -42,8 +42,7 @@ function NavBar({ name, links, backgroundColor, fontColor }: NavBarProps) {
   return (
 
     <header className="navigation" style={{ backgroundColor: backgroundColor }}>
-      <div className="left">
-        <a style={{ color: fontColor }}>{name}</a>
+      <div style={{ color: fontColor }} className="left">{name}
       </div>
       <div className="right">
         <div>
