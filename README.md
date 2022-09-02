@@ -6,7 +6,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` --> start project
+
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -14,10 +15,26 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `props are as follows. No typing so be careful :)`
-NavBar.propTypes = {\
-  name: PropTypes.string,\
-  links: PropTypes.arrayOf(Object),\
-  backgroundColor: PropTypes.string,\
-  fontColor: PropTypes.string\
-}
+
+### PUBLICATION STEPS
+
+### `npm tsc` --> generates type files
+do priort to publication
+
+### `npm build` --> builds project for npm publish
+
+runs build process for publication
+
+### update package.json version w/ incremented value
+
+### `npm publish` --> publishes to npm
+
+runs publish process for npm
+
+### `npm run storybook` --> publishes to npm
+
+
+Runs the storybook in the development mode.\
+Open [http://localhost:6006]
+
+
