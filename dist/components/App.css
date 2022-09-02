@@ -506,9 +506,6 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.contents {
-  display: contents;
-}
 .bg-primary {
   background-color: var(--color-primary);
 }
