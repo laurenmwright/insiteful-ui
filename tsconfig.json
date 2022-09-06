@@ -1,5 +1,5 @@
 {
-  "include": ["src/lib", "declaration.d.ts"],
+  "include": ["src/lib", "declaration.d.ts", "src/__test__/Button.spec.tsx"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "allowJs": true,
