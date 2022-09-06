@@ -20,16 +20,16 @@ You may also see any lint errors in the console.
 
 ### PUBLICATION STEPS
 
-### `npm tsc` --> generates type files
+### first run `npm tsc` --> generates type files
 do priort to publication
 
-### `npm build` --> builds project for npm publish
+### then run `npm build` --> builds project for npm publish
 
 runs build process for publication
 
 ### update package.json version w/ incremented value
 
-### `npm publish` --> publishes to npm
+### then run `npm publish` --> publishes to npm
 
 runs publish process for npm
 

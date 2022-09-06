@@ -5,42 +5,32 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { useTheme, Button } from "./lib";
+import { Button, ThemeContext } from "./lib";
+import Theme from './lib/components/Theme';
 
+
+
+const colorPaletteTest = {
+  "primary": "#FF0000",
+  "dark_gray": "#333333",
+  "secondary": "#E0C591",
+  "light_gray": "#797B7A",
+  "primary_shade_1": "#46575E",
+  "primary_shade_2": "#748186",
+  "primary_shade_3": "#A3ABAF",
+  "secondary_shade_1": "#ECDCBD",
+  "secondary_shade_2": "#F6EEDE",
+  "secondary_shade_3": "#F9F3E9"
+}; 
 
 
 function App() {
-  const { applyColors } = useTheme();
 
+  const { colorPalette, changeColorPalette } = useContext(ThemeContext);
 
-  const colorPaletteTest = {
-    "primary": "#46A689",
-    "dark_gray": "#333333",
-    "secondary": "#E0C591",
-    "light_gray": "#797B7A",
-    "primary_shade_1": "#46575E",
-    "primary_shade_2": "#748186",
-    "primary_shade_3": "#A3ABAF",
-    "secondary_shade_1": "#ECDCBD",
-    "secondary_shade_2": "#F6EEDE",
-    "secondary_shade_3": "#F9F3E9"
-  }; 
- applyColors(colorPaletteTest);
-
-  const routeData = [
-    {
-      title: "Home",
-      path: "/"
-    },
-    {
-      title: "About ",
-      path: "/about"
-    },
-    {
-      title: "Blogs",
-      path: "/blogs"
-    }
-  ]
+  useEffect(() => {
+    changeColorPalette(colorPaletteTest);
+  }, []);
 
   return (
     <Router>
