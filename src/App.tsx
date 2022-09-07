@@ -7,6 +7,8 @@ import {
 } from "react-router-dom";
 import { Button, ThemeContext, Heading1 } from "./lib";
 import Theme from './lib/components/Theme';
+import { Subheading } from './lib/components/Typography';
+import { Link } from 'react-router-dom';
 
 
 const colorPaletteTest = {
@@ -51,6 +53,9 @@ function Home() {
     <div >
       <Button primary overrideColor="#ff0000"> HI</Button>
       <Heading1>HelloWorld</Heading1>
+      <Subheading>Subheading</Subheading>
+      <Button>Button</Button>
+      <Link to="EnterURL">This Is Not A Link</Link>
     </div>
   )
 }
