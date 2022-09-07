@@ -5,9 +5,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext } from "./lib";
+import { Button, ThemeContext, Heading1 } from "./lib";
 import Theme from './lib/components/Theme';
-
 
 
 const colorPaletteTest = {
@@ -49,8 +48,9 @@ function App() {
 
 function Home() {
   return (
-    <div className="text-primary">
-      <Button primary > HI</Button>
+    <div >
+      <Button primary overrideColor="#ff0000"> HI</Button>
+      <Heading1>HelloWorld</Heading1>
     </div>
   )
 }
