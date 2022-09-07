@@ -15,14 +15,6 @@ test('renders button with correct color', () => {
   expect(buttonElement).toHaveStyle({backgroundColor:"#ff0000"});
 });
 
-// add test for click function
-// test('renders button with correct onclick function', () => {
-//   const hello = () => {console.log("hello")}
-//   render(<Button onClick={hello}>My Button</Button>);
-//   const buttonElement = screen.getByText(/My Button/i);
-//   fireEvent.click(buttonElement);
-//   expect({hello}).toHaveBeenCalled();
-// });
 
 test('renders button with correct onclick function', () => {
   const hello = jest.fn();
