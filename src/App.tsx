@@ -50,7 +50,7 @@ function App() {
 function Home() {
   return (
     <div className="text-primary">
-      <Button primary overrideColor="#ff0000"> HI</Button>
+      <Button primary>HI</Button>
     </div>
   )
 }
