@@ -26,3 +26,9 @@ export const Title = ({children, overrideColor, overrideFont}: TypographyProps )
     )
 }
 
+export const Placeholder = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+    return (
+        <h1 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.placeholder)}>{children}</h1>
+    )
+}
+
