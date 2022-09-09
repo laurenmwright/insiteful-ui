@@ -21,11 +21,24 @@ export interface ITheme {
     return newObj;
   };
 
-  export const applyTheme = (theme: any): void => {
-    const themeObject: IMappedTheme = mapTheme(theme);
+  export const mapTypographyTheme = (variables: any): any => {
+    let newObj = {};
+    Object.keys(variables).forEach((key) => {
+      newObj[`--${key.toString()}`] = variables[key];
+    })
+    
+    return newObj;
+  };
+
+  export const applyTheme = (theme: any, isColor: boolean): void => {
+    let themeObject: IMappedTheme;
+
+    if (!isColor) themeObject = mapTypographyTheme(theme);
+    else themeObject =  mapTheme(theme);
+    
 
     if (!themeObject) return;
-  
+    
     const root = document.documentElement;
   
     Object.keys(themeObject).forEach((property) => {
