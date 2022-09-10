@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "include": ["src/lib", "declaration.d.ts", "src/__test__/Button.spec.tsx", "src/stories/Button.stories.tsx", "src/stories/Heading1.stories.tsx"],
+=======
+  "include": ["src/lib", "declaration.d.ts"],
+>>>>>>> main
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
     "allowJs": true,
