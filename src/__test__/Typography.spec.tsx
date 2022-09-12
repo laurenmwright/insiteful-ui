@@ -88,7 +88,7 @@ test('renders button with correct font', () => {
   render(<Placeholder overrideFont = 'Arial' >Placeholder</Placeholder>);
   const placeholderElement = screen.getByText(/Placeholder/i);
   expect(placeholderElement).toHaveStyle({fontFamily: 'Arial'});
-
+});
 //Subheading
 //Test for children text
 test('renders subheading with correct text', () => {
