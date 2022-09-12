@@ -41,8 +41,6 @@ function Home() {
     <div>
       <Button primary overrideColor="#ff0000">HI</Button>
       <Heading1>HelloWorld</Heading1>
-      <Caption1 overrideColor = "red" overrideFont = "Times New Roman">Caption1</Caption1>
-      <Caption2 overrideColor = "blue" overrideFont = "Calabri">Caption2</Caption2>
     </div>
   );
 }
