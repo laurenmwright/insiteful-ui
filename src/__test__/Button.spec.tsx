@@ -10,7 +10,7 @@ test('renders button with correct text', () => {
   expect(buttonElement).toBeInTheDocument();
 });
 
-test('renders button with correct color', () => {
+test('renders button with override color', () => {
   render(<Button overrideColor = "#ff0000" >My Button</Button>);
   const buttonElement = screen.getByText(/My Button/i);
   expect(buttonElement).toHaveStyle({backgroundColor:"#ff0000"});

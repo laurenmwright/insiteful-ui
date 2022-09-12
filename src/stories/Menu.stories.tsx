@@ -1,9 +1,9 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Menu } from "../lib/components/Typography/Typography";
+import { Menu } from "../lib";
 
 export default {
-  title: "Example/Caption1",
+  title: "Example/Menu",
   component: Menu,
   argTypes: {},
 } as ComponentMeta<typeof Menu>;
