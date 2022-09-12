@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import {Heading1, Heading2, Title, Subheading, Link, Button } from '../lib/components/Typography/Typography';
+import {Heading1, Heading2, Title, Subheading, Link, Button, Placeholder } from '../lib/components/Typography/Typography';
 
 //Heading1
 // test for children(text)
@@ -68,6 +68,26 @@ test('renders button with correct font', () => {
   expect(titleElement).toHaveStyle({fontFamily: 'Arial'});
 });
 
+// Placeholder
+// test for children(text)
+test('renders title with correct text', () => {
+  render(<Placeholder>Placeholder</Placeholder>);
+  const placeholderElement = screen.getByText(/Placeholder/i);
+  expect(placeholderElement).toBeInTheDocument();
+});
+// Placeholder
+// test for override-color 
+test('renders button with correct color', () => {
+  render(<Placeholder overrideColor = "blue" >Placeholder</Placeholder>);
+  const placeholderElement = screen.getByText(/Placeholder/i);
+  expect(placeholderElement).toHaveStyle({color:"blue"});
+});
+// Placeholder
+// test for override-font
+test('renders button with correct font', () => {
+  render(<Placeholder overrideFont = 'Arial' >Placeholder</Placeholder>);
+  const placeholderElement = screen.getByText(/Placeholder/i);
+  expect(placeholderElement).toHaveStyle({fontFamily: 'Arial'});
 
 //Subheading
 //Test for children text
@@ -114,7 +134,7 @@ test('renders link with correct font', () => {
   expect(linkElement).toHaveStyle({fontFamily: 'Arial'});
 });
 
-//button Unit Tests
+//button Typography Unit Tests
 //Test for children text
 test('renders button with correct text', () => {
   render(<Button>My button</Button>);

@@ -10,20 +10,19 @@ In the project directory, you can run:
 
 ### `npm start` --> start project
 
-
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-
 ### PUBLICATION STEPS
 
-### first run `npm tsc` --> generates type files
+### first run `npm run tsc` --> generates type files
+
 do priort to publication
 
-### then run `npm build` --> builds project for npm publish
+### then run `npm run build` --> builds project for npm publish
 
 runs build process for publication
 
@@ -35,8 +34,5 @@ runs publish process for npm
 
 ### `npm run storybook` --> publishes to npm
 
-
 Runs the storybook in the development mode.\
 Open [http://localhost:6006]
-
-

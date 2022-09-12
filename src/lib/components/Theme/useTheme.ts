@@ -1,3 +1,4 @@
+import { bool } from "prop-types";
 import { useEffect, useState, useContext } from "react";
 import { applyTheme } from "./utils";
 
@@ -12,7 +13,7 @@ export default function useTheme() {
 
   const applyColors = (data) => {
     // setColorPalette(data);
-    applyTheme(data);
+    applyTheme(data, true);
   }
 
   return {

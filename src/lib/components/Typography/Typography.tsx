@@ -26,6 +26,12 @@ export const Title = ({children, overrideColor, overrideFont}: TypographyProps )
     )
 }
 
+export const Placeholder = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+    return (
+        <h1 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.placeholder)}>{children}</h1>
+    )
+}
+
 export const Subheading = ({children, overrideColor, overrideFont}: TypographyProps ) => {
     return (
         <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.subheading)}>{children}</h3>
@@ -43,4 +49,3 @@ export const Button = ({children, overrideColor, overrideFont}: TypographyProps 
         <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.button)}>{children}</h3>
     )
 }
-
