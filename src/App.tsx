@@ -2,8 +2,7 @@ import "./lib/components/App.css";
 import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Button, ThemeContext, Heading1 } from "./lib";
-import { Caption1, Caption2 } from "./lib/components/Typography";
-import Theme from "./lib/components/Theme";
+import Theme from './lib/components/Theme';
 
 const colorPaletteTest = {
   primary: "#FF0000",
