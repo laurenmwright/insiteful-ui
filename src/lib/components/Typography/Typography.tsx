@@ -32,3 +32,20 @@ export const Placeholder = ({children, overrideColor, overrideFont}: TypographyP
     )
 }
 
+export const Subheading = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+    return (
+        <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.subheading)}>{children}</h3>
+    )
+}
+
+export const Link = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+    return (
+        <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.link)}>{children}</h3>
+    )
+}
+
+export const Button = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+    return (
+        <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.button)}>{children}</h3>
+    )
+}
