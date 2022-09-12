@@ -3,3 +3,28 @@
   font-size: 32px;
   color: var(--color-dark_gray);
 }
+
+.heading2 {
+    font-family: 'Roboto';
+    font-size: 18px;
+    line-height: 21.1px;
+    letter-spacing: 0pt;
+    color: var(--color-dark_gray);
+}
+
+.title {
+    font-family: 'Roboto';
+    font-size: 24px;
+    font-weight: bolder;
+    line-height: 28.1px;
+    letter-spacing: 0pt;
+    color: #666666;
+}
+
+.placeholder {
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 16.4px;
+    letter-spacing: 0pt;
+    color: #959595;
+}

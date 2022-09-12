@@ -1,7 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { action } from '@storybook/addon-actions'
 
-import  Button from './Button';
+import  Button from '../lib/components/Button/Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -10,6 +11,7 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
 //    backgroundColor: { control: 'color' },
+    onClick: { action: 'clicked' }
   },
 } as ComponentMeta<typeof Button>;
 
@@ -21,6 +23,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   children: "text",
-  onClick: () => console.log("Hello World")
+  onClick: action("Button is clicked!")
 };
 

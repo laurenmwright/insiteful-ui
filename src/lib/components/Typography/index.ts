@@ -1,1 +1,1 @@
-export { Heading1 } from "./Typography";
+export { Heading1, Heading2, Title } from "./Typography";
