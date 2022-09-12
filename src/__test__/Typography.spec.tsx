@@ -6,6 +6,7 @@ import {
   Caption1,
   Caption2,
   Title,
+  Menu,
 } from "../lib/components/Typography/Typography";
 
 // Heading1
@@ -14,54 +15,6 @@ test("renders heading with correct text", () => {
   render(<Heading1>Heading1</Heading1>);
   const heading1Element = screen.getByText(/Heading1/i);
   expect(heading1Element).toBeInTheDocument();
-});
-
-//Caption1
-//test for children(text)
-test("renders caption with correct text", () => {
-  render(<Caption1>Caption1</Caption1>);
-  const captionElement = screen.getByText(/Caption1/i);
-  expect(captionElement).toBeInTheDocument();
-});
-
-//Caption1
-// test for override-color
-test("renders caption with correct color", () => {
-  render(<Caption1 overrideColor="red">Caption1</Caption1>);
-  const captionElement = screen.getByText(/Caption1/i);
-  expect(captionElement).toHaveStyle({ color: "red" });
-});
-
-//Caption1
-// test for override-font
-test("renders caption with correct color", () => {
-  render(<Caption1 overrideFont="Arial">Caption1</Caption1>);
-  const captionElement = screen.getByText(/Caption1/i);
-  expect(captionElement).toHaveStyle({ fontFamily: "Arial" });
-});
-
-//Caption2
-//test for children(text)
-test("renders caption with correct text", () => {
-  render(<Caption2>Caption2</Caption2>);
-  const caption2Element = screen.getByText(/Caption2/i);
-  expect(caption2Element).toBeInTheDocument();
-});
-
-//Caption2
-// test for override-color
-test("renders caption with correct color", () => {
-  render(<Caption2 overrideColor="red">Caption2</Caption2>);
-  const caption2Element = screen.getByText(/Caption2/i);
-  expect(caption2Element).toHaveStyle({ color: "red" });
-});
-
-//Caption2
-// test for override-font
-test("renders caption with correct color", () => {
-  render(<Caption2 overrideFont="Arial">Caption2</Caption2>);
-  const caption2Element = screen.getByText(/Caption2/i);
-  expect(caption2Element).toHaveStyle({ fontFamily: "Arial" });
 });
 
 // Heading1
@@ -121,4 +74,76 @@ test("renders button with correct font", () => {
   render(<Title overrideFont="Arial">Title</Title>);
   const titleElement = screen.getByText(/Title/i);
   expect(titleElement).toHaveStyle({ fontFamily: "Arial" });
+});
+
+//Caption1
+//test for children(text)
+test("renders caption with correct text", () => {
+  render(<Caption1>Caption1</Caption1>);
+  const captionElement = screen.getByText(/Caption1/i);
+  expect(captionElement).toBeInTheDocument();
+});
+
+//Caption1
+// test for override-color
+test("renders caption with correct color", () => {
+  render(<Caption1 overrideColor="red">Caption1</Caption1>);
+  const captionElement = screen.getByText(/Caption1/i);
+  expect(captionElement).toHaveStyle({ color: "red" });
+});
+
+//Caption1
+// test for override-font
+test("renders caption with correct color", () => {
+  render(<Caption1 overrideFont="Arial">Caption1</Caption1>);
+  const captionElement = screen.getByText(/Caption1/i);
+  expect(captionElement).toHaveStyle({ fontFamily: "Arial" });
+});
+
+//Caption2
+//test for children(text)
+test("renders caption with correct text", () => {
+  render(<Caption2>Caption2</Caption2>);
+  const caption2Element = screen.getByText(/Caption2/i);
+  expect(caption2Element).toBeInTheDocument();
+});
+
+//Caption2
+// test for override-color
+test("renders caption with correct color", () => {
+  render(<Caption2 overrideColor="red">Caption2</Caption2>);
+  const caption2Element = screen.getByText(/Caption2/i);
+  expect(caption2Element).toHaveStyle({ color: "red" });
+});
+
+//Caption2
+// test for override-font
+test("renders caption with correct color", () => {
+  render(<Caption2 overrideFont="Arial">Caption2</Caption2>);
+  const caption2Element = screen.getByText(/Caption2/i);
+  expect(caption2Element).toHaveStyle({ fontFamily: "Arial" });
+});
+
+//Menu
+//test for children(text)
+test("renders caption with correct text", () => {
+  render(<Menu>Menu</Menu>);
+  const menuElement = screen.getByText(/Menu/i);
+  expect(menuElement).toBeInTheDocument();
+});
+
+//Menu
+// test for override-color
+test("renders caption with correct color", () => {
+  render(<Menu overrideColor="red">Menu</Menu>);
+  const menuElement = screen.getByText(/Menu/i);
+  expect(menuElement).toHaveStyle({ color: "red" });
+});
+
+//Menu
+// test for override-font
+test("renders caption with correct color", () => {
+  render(<Menu overrideFont="Arial">Menu</Menu>);
+  const menuElement = screen.getByText(/Menu/i);
+  expect(menuElement).toHaveStyle({ fontFamily: "Arial" });
 });

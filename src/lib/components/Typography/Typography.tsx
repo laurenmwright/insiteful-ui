@@ -35,5 +35,10 @@ export const Caption2 = ({ children, overrideColor, overrideFont}: TypographyPro
         <h1 style = {{color : overrideColor, fontFamily : overrideFont}} className={classNames(styles.caption2)}>{children}</h1>
     )
 }
+export const Menu = ({ children, overrideColor, overrideFont}: TypographyProps) => {
+  return (
+        <h1 style = {{color : overrideColor, fontFamily : overrideFont}} className={classNames(styles.caption2)}>{children}</h1>
+    )
+}
 
 
