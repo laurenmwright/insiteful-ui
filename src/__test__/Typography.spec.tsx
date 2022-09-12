@@ -139,9 +139,6 @@ test("renders caption with correct color", () => {
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toHaveStyle({ fontFamily: "Arial" });
 });
-=======
-  expect(titleElement).toHaveStyle({fontFamily: 'Arial'});
-});
 
 // Placeholder
 // test for children(text)
