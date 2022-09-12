@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Button from '../lib/components/Button/Button';
+//import { Subheading, Link } from "../lib/components/Typography/Typography";
 
 test('renders button with correct text', () => {
   render(<Button>My Button</Button>);

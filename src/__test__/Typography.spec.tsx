@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import {Heading1, Heading2, Title} from '../lib/components/Typography/Typography';
+import {Heading1, Heading2, Title, Subheading, Link, Button } from '../lib/components/Typography/Typography';
 
 //Heading1
 // test for children(text)
@@ -66,4 +66,72 @@ test('renders button with correct font', () => {
   render(<Title overrideFont = 'Arial' >Title</Title>);
   const titleElement = screen.getByText(/Title/i);
   expect(titleElement).toHaveStyle({fontFamily: 'Arial'});
+});
+
+
+//Subheading
+//Test for children text
+test('renders subheading with correct text', () => {
+  render(<Subheading>My subheading</Subheading>);
+  const subheadingElement = screen.getByText(/My subheading/i);
+  expect(subheadingElement).toBeInTheDocument();
+});
+
+//Test for override-color
+test('renders subheading with correct color', () => {
+  render(<Subheading overrideColor = "purple" >My subheading</Subheading>);
+  const subheadingElement = screen.getByText(/My subheading/i);
+  expect(subheadingElement).toHaveStyle({color:"purple"});
+});
+
+//Test for override-font
+test('renders subheading with correct font', () => {
+  render(<Subheading overrideFont = "Arial" >My subheading</Subheading>);
+  const subheadingElement = screen.getByText(/My subheading/i);
+  expect(subheadingElement).toHaveStyle({fontFamily: 'Arial'});
+});
+
+
+//Link Unit Tests
+//Test for children text
+test('renders link with correct text', () => {
+  render(<Link>My link</Link>);
+  const linkElement = screen.getByText(/My link/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+//Test for override-color
+test('renders link with correct color', () => {
+  render(<Link overrideColor = "purple" >My link</Link>);
+  const linkElement = screen.getByText(/My link/i);
+  expect(linkElement).toHaveStyle({color:"purple"});
+});
+
+//Test for override-font
+test('renders link with correct font', () => {
+  render(<Link overrideFont = "Arial" >My link</Link>);
+  const linkElement = screen.getByText(/My link/i);
+  expect(linkElement).toHaveStyle({fontFamily: 'Arial'});
+});
+
+//button Unit Tests
+//Test for children text
+test('renders button with correct text', () => {
+  render(<Button>My button</Button>);
+  const buttonElement = screen.getByText(/My button/i);
+  expect(buttonElement).toBeInTheDocument();
+});
+
+//Test for override-color
+test('renders button with correct color', () => {
+  render(<Button overrideColor = "purple" >My button</Button>);
+  const buttonElement = screen.getByText(/My button/i);
+  expect(buttonElement).toHaveStyle({color:"purple"});
+});
+
+//Test for override-font
+test('renders button with correct font', () => {
+  render(<Button overrideFont = "Arial" >My button</Button>);
+  const buttonElement = screen.getByText(/My button/i);
+  expect(buttonElement).toHaveStyle({fontFamily: 'Arial'});
 });

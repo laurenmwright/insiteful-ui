@@ -26,21 +26,21 @@ export const Title = ({children, overrideColor, overrideFont}: TypographyProps )
     )
 }
 
-export const Subheading = ({children}: TypographyProps ) => {
+export const Subheading = ({children, overrideColor, overrideFont}: TypographyProps ) => {
     return (
-        <h3 className={classNames(styles.subheading)}>{children}</h3>
+        <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.subheading)}>{children}</h3>
     )
 }
 
-export const Link = ({children}: TypographyProps ) => {
+export const Link = ({children, overrideColor, overrideFont}: TypographyProps ) => {
     return (
-        <h3 className={classNames(styles.link)}>{children}</h3>
+        <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.link)}>{children}</h3>
     )
 }
 
-export const Button = ({children}: TypographyProps ) => {
+export const Button = ({children, overrideColor, overrideFont}: TypographyProps ) => {
     return (
-        <h3 className={classNames(styles.button)}>{children}</h3>
+        <h3 style = {{color: overrideColor,fontFamily: overrideFont}} className={classNames(styles.button)}>{children}</h3>
     )
 }
 
