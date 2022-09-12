@@ -8,6 +8,7 @@ export type ButtonProps = {
   disabled?: boolean;
   primary?: boolean;
   secondary?: boolean;
+  overrideColor?: string;
   editor?: boolean;
   outline?: boolean;
   twClasses?: string;
@@ -20,6 +21,7 @@ const Button = ({
   disabled,
   primary,
   secondary,
+  overrideColor,
   editor,
   outline,
   twClasses,
@@ -31,6 +33,7 @@ const Button = ({
       type={type ? type : "button"}
       onClick={onClick!}
       disabled={disabled}
+      style={{backgroundColor: overrideColor}}
       className={
         classNames(
           styles.button,
