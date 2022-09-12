@@ -1,9 +1,7 @@
 .heading1 {
-    font-family: "Roboto";
-    font-size: 32px;
-    line-height: 37.5px;
-    letter-spacing: 0pt;
-    color: var(--color-dark_gray);
+  font-family: var(--common-font);
+  font-size: 32px;
+  color: var(--color-dark_gray);
 }
 
 .heading2 {
