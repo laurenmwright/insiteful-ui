@@ -1,0 +1,5 @@
+.heading1 {
+  font-family: var(--common-font);
+  font-size: 32px;
+  color: var(--color-dark_gray);
+}
