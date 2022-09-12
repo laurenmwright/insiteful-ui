@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Placeholder } from '../lib/components/Typography/Typography';
+import { Placeholder } from "../lib"
 
 export default {
   title: 'Example/Placeholder',

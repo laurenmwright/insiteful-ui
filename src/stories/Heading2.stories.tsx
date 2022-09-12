@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Heading2 } from '../lib/components/Typography/Typography';
+import { Heading2 } from "../lib";
 
 export default {
   title: 'Example/Heading2',

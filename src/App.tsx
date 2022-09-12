@@ -1,8 +1,7 @@
 import "./lib/components/App.css";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Button, ThemeContext, Heading1 } from "./lib";
-import Theme from './lib/components/Theme';
 
 const colorPaletteTest = {
   primary: "#FF0000",
@@ -18,7 +17,7 @@ const colorPaletteTest = {
 };
 
 function App() {
-  const { colorPalette, changeColorPalette } = useContext(ThemeContext);
+  const { changeColorPalette } = useContext(ThemeContext);
 
   useEffect(() => {
     changeColorPalette(colorPaletteTest);

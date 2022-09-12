@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Subheading } from '../lib/components/Typography/Typography';
+import { Subheading } from "../lib";
 
 export default {
   subheading: 'Example/Subheading',
