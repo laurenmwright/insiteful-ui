@@ -23,6 +23,11 @@ const colorPaletteTest = {
   "secondary_shade_2": "#F6EEDE",
   "secondary_shade_3": "#F9F3E9"
 }; 
+const radioData = [
+  {id: "Test 1", value: "Test 1"},
+  {id: "Test 2", value: "Test 2"},
+  {id: "Test 3", value: "Test 3"}
+]; 
 
 
 function App() {
@@ -49,10 +54,16 @@ function App() {
 }
 
 function Home() {
+  const [selectedValue, setSelectedValue] = useState(radioData[1].value);
+
+  const myTest = () => {
+    console.log("my test value");
+  }
+
   return (
-    <div className="text-primary">
-      <Button primary > HI</Button>
-      <Radio label={'LABEL'} defaultColor={''} overrideColor={''}></Radio>
+    <div className="text-red-800">
+      <Button onClick={myTest} primary > HI</Button>
+      <Radio onChange={setSelectedValue} isSelected={selectedValue} data={radioData} label={'LABEL'} defaultColor={''} overrideColor={''}></Radio>
     </div>
   )
 }
