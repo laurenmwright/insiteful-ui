@@ -6,6 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
+import {Radio} from "../src/lib/components/RadioButton/RadioButton"
 import Theme from './lib/components/Theme';
 
 
@@ -51,6 +52,7 @@ function Home() {
   return (
     <div className="text-primary">
       <Button primary > HI</Button>
+      <Radio label={'LABEL'} defaultColor={''} overrideColor={''}></Radio>
     </div>
   )
 }
