@@ -20,6 +20,7 @@ var Button = function Button(_ref) {
       disabled = _ref.disabled,
       primary = _ref.primary,
       secondary = _ref.secondary,
+      overrideColor = _ref.overrideColor,
       editor = _ref.editor,
       outline = _ref.outline,
       twClasses = _ref.twClasses,
@@ -29,6 +30,9 @@ var Button = function Button(_ref) {
     type: type ? type : "button",
     onClick: onClick,
     disabled: disabled,
+    style: {
+      backgroundColor: overrideColor
+    },
     className: (0, _classnames.default)(_ButtonModule.default.button, _defineProperty({}, _ButtonModule.default.primary, primary), _defineProperty({}, _ButtonModule.default.editor, editor), _defineProperty({}, _ButtonModule.default.secondary, secondary), _defineProperty({}, _ButtonModule.default.outline, outline)) + " ".concat(twClasses ? twClasses : "")
   }, children);
 };

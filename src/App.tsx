@@ -29,10 +29,8 @@ const radioData = [
   {id: "Test 3", value: "Test 3"}
 ]; 
 
-
 function App() {
-
-  const { colorPalette, changeColorPalette } = useContext(ThemeContext);
+  const { changeColorPalette } = useContext(ThemeContext);
 
   useEffect(() => {
     changeColorPalette(colorPaletteTest);
@@ -40,15 +38,12 @@ function App() {
 
   return (
     <Router>
-       {/* <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/>  */}
-        <Routes>
-        <Route path="/"  element={<Home />}>
-          </Route>
-          <Route path="/about" element={<About />}>
-          </Route>
-          <Route path="/blogs" element={<Blogs />}>
-          </Route>
-        </Routes>
+      {/* <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/>  */}
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
+      </Routes>
     </Router>
   );
 }
@@ -65,17 +60,13 @@ function Home() {
       <Button onClick={myTest} primary > HI</Button>
       <Radio onChange={setSelectedValue} isSelected={selectedValue} data={radioData} label={'LABEL'} defaultColor={''} overrideColor={''}></Radio>
     </div>
-  )
+  );
 }
 function About() {
-  return (
-    <div>About</div>
-  )
+  return <div>About</div>;
 }
 function Blogs() {
-  return (
-    <div>Its different</div>
-  )
+  return <div>Its different</div>;
 }
 
 export default App;

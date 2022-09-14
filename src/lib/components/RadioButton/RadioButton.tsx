@@ -23,7 +23,7 @@ export type RadioProps = {
 
 
 
-export const Radio = ({
+export const RadioButtonGroup = ({
   data,
   label,
   isSelected,
@@ -35,7 +35,7 @@ export const Radio = ({
   return (
     <RadioGroup value={isSelected} onChange={onChange}>
       <>
-      <RadioGroup.Label className="text-3xl radio-group-label">{label}</RadioGroup.Label>
+      <RadioGroup.Label className="text-3xl">{label}</RadioGroup.Label>
       {data.map((element) => (
         /* Use the `active` state to conditionally style the active option. */
         /* Use the `checked` state to conditionally style the checked option. */
@@ -58,4 +58,4 @@ export const Radio = ({
      </RadioGroup>
   );
 };
-export default Radio;
+export default RadioButtonGroup;
