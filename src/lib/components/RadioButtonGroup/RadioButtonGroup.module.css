@@ -1,0 +1,19 @@
+.label {
+    font-size: 20px;    
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    margin: 20px;
+    color: gray
+}
+
+.icon {
+    color: blue;
+}
+
+.option {
+    color: black;
+}

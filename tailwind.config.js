@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}", "./src/**/../*.{js,jsx,ts,tsx}"],
   safelist: [
     "bg-primary",
     "bg-primary_shade_1",

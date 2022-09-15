@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
-import Theme from './lib/components/Theme';
+import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
 
 
 
@@ -23,10 +23,14 @@ const colorPaletteTest = {
   "secondary_shade_3": "#F9F3E9"
 }; 
 
+// const radioData = [
+//   {id: "Test 1", value: "Test 1"},
+//   {id: "Test 2", value: "Test 2"},
+//   {id: "Test 3", value: "Test 3"}
+// ]; 
 
 function App() {
-
-  const { colorPalette, changeColorPalette } = useContext(ThemeContext);
+  const { changeColorPalette } = useContext(ThemeContext);
 
   useEffect(() => {
     changeColorPalette(colorPaletteTest);
@@ -34,35 +38,34 @@ function App() {
 
   return (
     <Router>
-       {/* <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/>  */}
-        <Routes>
-        <Route path="/"  element={<Home />}>
-          </Route>
-          <Route path="/about" element={<About />}>
-          </Route>
-          <Route path="/blogs" element={<Blogs />}>
-          </Route>
-        </Routes>
+      {/* <NavBar name="Lauren Wright" fontColor="#2E2E2E" backgroundColor="#CCCCFF"  links={routeData}/>  */}
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
+      </Routes>
     </Router>
   );
 }
 
 function Home() {
+  // const [selectedValue, setSelectedValue] = useState(radioData[1].value);
+
+  const myTest = () => {
+    console.log("my test value");
+  }
+  
   return (
-    <div className="text-primary">
-      <Button primary > HI</Button>
+    <div>
+      <Button onClick={myTest} primary > HI</Button>
     </div>
-  )
+  );
 }
 function About() {
-  return (
-    <div>About</div>
-  )
+  return <div>About</div>;
 }
 function Blogs() {
-  return (
-    <div>Its different</div>
-  )
+  return <div>Its different</div>;
 }
 
 export default App;
