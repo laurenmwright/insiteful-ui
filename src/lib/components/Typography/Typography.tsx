@@ -65,6 +65,6 @@ export const Link = ({children, overrideColor, overrideFont}: TypographyProps ) 
 
 export const ButtonTypography = ({children, overrideColor, overrideFont}: TypographyProps ) => {
     return (
-        <h3 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.button) }>{children}</h3>
+        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.button) }>{children}</p>
     )
 }
