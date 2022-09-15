@@ -24,4 +24,3 @@ Primary.args = {
   data: [{id: "Test 1", value: "Test 1"}, {id: "Test 2", value: "Test 2"}, {id: "Test 3", value: "Test 3"}],
   onChange: action("RadioButtonGroup is changed!")
 };
-
