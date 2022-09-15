@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Link } from '../lib/components/Typography/Typography';
 
 export default {
-  link: 'Example/Link',
+  title: 'Stories/Link',
   component: Link,
   argTypes: {}
 } as ComponentMeta<typeof Link>;

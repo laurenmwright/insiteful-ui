@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ButtonTypography } from '../lib/components/Typography/Typography';
 
 export default {
-  button: 'Example/Button',
+  title: 'Stories/ButtonTypography',
   component: ButtonTypography,
   argTypes: {}
 } as ComponentMeta<typeof ButtonTypography>;

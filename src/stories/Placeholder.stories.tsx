@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Placeholder } from "../lib"
 
 export default {
-  title: 'Example/Placeholder',
+  title: 'Stories/Placeholder',
   component: Placeholder,
   argTypes: {}
 } as ComponentMeta<typeof Placeholder>;

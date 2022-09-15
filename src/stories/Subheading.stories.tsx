@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Subheading } from "../lib";
 
 export default {
-  subheading: 'Example/Subheading',
+  title: 'Stories/Subheading',
   component: Subheading,
   argTypes: {}
 } as ComponentMeta<typeof Subheading>;
