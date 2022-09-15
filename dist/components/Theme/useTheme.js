@@ -49,7 +49,7 @@ function useTheme() {
 
   var applyColors = function applyColors(data) {
     // setColorPalette(data);
-    (0, _utils.applyTheme)(data);
+    (0, _utils.applyTheme)(data, true);
   };
 
   return {
