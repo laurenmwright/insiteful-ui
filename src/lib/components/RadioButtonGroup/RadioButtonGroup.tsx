@@ -34,7 +34,6 @@ export const RadioButtonGroup = ({
   let ref = React.createRef();
   console.log({isSelected})
   return (
-    
     <RadioGroup value={isSelected} onChange={onChange}>
       <>
       <RadioGroup.Label className="radio-group-label">{label}</RadioGroup.Label>
