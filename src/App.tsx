@@ -7,8 +7,6 @@ import {
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
 import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
-import Theme from './lib/components/Theme';
-import {RadioButtonItem} from "./lib/components/RadioButtonGroup/RadioButtonItem"
 
 
 
@@ -24,11 +22,12 @@ const colorPaletteTest = {
   "secondary_shade_2": "#F6EEDE",
   "secondary_shade_3": "#F9F3E9"
 }; 
-const radioData = [
-  {id: "Test 1", value: "Test 1"},
-  {id: "Test 2", value: "Test 2"},
-  {id: "Test 3", value: "Test 3"}
-]; 
+
+// const radioData = [
+//   {id: "Test 1", value: "Test 1"},
+//   {id: "Test 2", value: "Test 2"},
+//   {id: "Test 3", value: "Test 3"}
+// ]; 
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -50,18 +49,15 @@ function App() {
 }
 
 function Home() {
-  const [selectedValue, setSelectedValue] = useState(radioData[1].value);
+  // const [selectedValue, setSelectedValue] = useState(radioData[1].value);
 
   const myTest = () => {
     console.log("my test value");
   }
-
-
+  
   return (
     <div>
       <Button onClick={myTest} primary > HI</Button>
-      
-      <RadioButtonGroup onChange={setSelectedValue} isSelected={selectedValue} data={radioData} label={'This is a radio group'} defaultColor={''} overrideColor={''}></RadioButtonGroup>
     </div>
   );
 }
