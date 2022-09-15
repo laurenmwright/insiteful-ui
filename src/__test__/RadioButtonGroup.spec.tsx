@@ -40,7 +40,7 @@ test('renders radio button group with working onchange function', () => {
     ];
 
     const { getByText } = render(
-      <RadioButtonGroup onChange={hello} isSelected={radioData[2].value} data={radioData} label={'Label'} defaultColor={''} overrideColor={''}></RadioButtonGroup>
+      <RadioButtonGroup onChange={hello} isSelected={''} data={radioData} label={'Label'} defaultColor={''} overrideColor={''}></RadioButtonGroup>
     );
 
     fireEvent.click(getByText(/Test 3/i));
