@@ -6,8 +6,9 @@ import {
   Route,
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
-import {Radio} from "../src/lib/components/RadioButton/RadioButton"
+import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
 import Theme from './lib/components/Theme';
+import {RadioButtonItem} from "./lib/components/RadioButtonGroup/RadioButtonItem"
 
 
 
@@ -55,10 +56,12 @@ function Home() {
     console.log("my test value");
   }
 
+
   return (
-    <div className="text-red-800">
+    <div>
       <Button onClick={myTest} primary > HI</Button>
-      <Radio onChange={setSelectedValue} isSelected={selectedValue} data={radioData} label={'LABEL'} defaultColor={''} overrideColor={''}></Radio>
+      
+      <RadioButtonGroup onChange={setSelectedValue} isSelected={selectedValue} data={radioData} label={'This is a radio group'} defaultColor={''} overrideColor={''}></RadioButtonGroup>
     </div>
   );
 }

@@ -28,8 +28,8 @@ export const RadioButtonGroup = ({
   label,
   isSelected,
   onChange,
-  defaultColor,
-  overrideColor
+  defaultColor, //what should these change?
+  overrideColor // this too
 }: RadioProps) => {
   let ref = React.createRef();
   console.log({isSelected})
