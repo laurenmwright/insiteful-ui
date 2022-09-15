@@ -1,9 +1,9 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import "./RadioButton.css";
 import { useState, Fragment } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import RadioButtonItem  from "./RadioButtonItem";
-import { CheckCircle, Circle } from "react-feather";
+import { CheckCircle, Circle, Disc } from "react-feather";
 
 import classNames from "classnames";
 
@@ -31,25 +31,25 @@ export const RadioButtonGroup = ({
   defaultColor,
   overrideColor
 }: RadioProps) => {
-  console.log("data", data)
+  let ref = React.createRef();
+  console.log({isSelected})
   return (
+    
     <RadioGroup value={isSelected} onChange={onChange}>
       <>
-      <RadioGroup.Label className="text-3xl">{label}</RadioGroup.Label>
+      <RadioGroup.Label className="radio-group-label">{label}</RadioGroup.Label>
       {data.map((element) => (
         /* Use the `active` state to conditionally style the active option. */
         /* Use the `checked` state to conditionally style the checked option. */
         <RadioGroup.Option key={element.id} value={element.id} as={Fragment}>
+          
           {({ active, checked }) => (
-            <li
-              className={`${
-                active ? 'bg-blue-500 text-white' : 'bg-white text-black'
-              }`}
-            >
-              <>
-              {checked && <CheckCircle />}
-              {element.value}
-              </>
+            //<RadioButtonItem ref = {ref} label={element.id} value={element.id} checked={checked}></RadioButtonItem>
+            <li>
+              <div className="radio-button-item">
+                <span className = {checked? "icon-style": ""}>{checked ? <Disc /> : <Circle />}</span>
+                <span className = "label-style">{element.value}</span>
+              </div>
             </li>
           )}
         </RadioGroup.Option>
