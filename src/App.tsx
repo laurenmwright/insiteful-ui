@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
 import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
+import { Switch } from '@headlessui/react';
+import ToggleSwitch from "./lib/components/ToggleSwitch/ToggleSwitch";
+
 
 
 
@@ -57,7 +60,7 @@ function Home() {
   
   return (
     <div>
-      <Button onClick={myTest} primary > HI</Button>
+       <ToggleSwitch label=" " />
     </div>
   );
 }
@@ -67,5 +70,7 @@ function About() {
 function Blogs() {
   return <div>Its different</div>;
 }
+
+
 
 export default App;
