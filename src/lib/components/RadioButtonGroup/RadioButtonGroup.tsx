@@ -29,7 +29,7 @@ export const RadioButtonGroup = ({
   return (
     <RadioGroup value={isSelected} onChange={onChange}>
       <>
-      <RadioGroup.Label className={ classNames(styles.label) }>{label}</RadioGroup.Label>
+      <RadioGroup.Label className={ classNames(styles.label) }>{label ? label : ""}</RadioGroup.Label>
       {data.map((element) => (
         /* Use the `active` state to conditionally style the active option. */
         /* Use the `checked` state to conditionally style the checked option. */
