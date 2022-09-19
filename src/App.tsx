@@ -9,6 +9,7 @@ import { Button, ThemeContext } from "./lib";
 import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
 import { Switch } from '@headlessui/react';
 import ToggleSwitch from "./lib/components/ToggleSwitch/ToggleSwitch";
+import { FormElement } from "./lib/components/FormElement/FormElement";
 
 
 
@@ -26,11 +27,12 @@ const colorPaletteTest = {
   "secondary_shade_3": "#F9F3E9"
 }; 
 
-// const radioData = [
-//   {id: "Test 1", value: "Test 1"},
-//   {id: "Test 2", value: "Test 2"},
-//   {id: "Test 3", value: "Test 3"}
-// ]; 
+  const radioData = [
+   {id: "Test 1", value: "Test 1"},   
+   {id: "Test 2", value: "Test 2"},
+   {id: "Test 3", value: "Test 3"}
+  ]; 
+
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -60,7 +62,9 @@ function Home() {
   
   return (
     <div>
-       <ToggleSwitch label=" " />
+      <FormElement label = "Input Data Here">  
+      <Button children = "Click to Submit"/> 
+      </FormElement>
     </div>
   );
 }
