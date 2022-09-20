@@ -17,3 +17,11 @@ test ('render lable with correct Text', () => {
 });
 
   //Child Component
+  test('renders button with working onclick function', () => {
+    const hello = jest.fn();
+    const { getByText } = render(
+      <Button onClick={hello}>My Form</Button>
+    );
+    fireEvent.click(getByText(/My Form/i));
+    expect(hello).toHaveBeenCalled();
+  });
