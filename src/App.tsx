@@ -6,7 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
-import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
+import {Toggle} from "./lib"
+
 
 
 
@@ -57,6 +58,7 @@ function Home() {
   
   return (
     <div>
+      <Toggle />
       <Button onClick={myTest} primary > HI</Button>
     </div>
   );
