@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Placeholder } from "../lib"
+import { Placeholder } from "../components"
 
 export default {
   title: 'Stories/Placeholder',

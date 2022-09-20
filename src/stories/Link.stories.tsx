@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Link } from '../lib/components/Typography/Typography';
+import { Link } from '../components/components/Typography/Typography';
 
 export default {
   title: 'Stories/Link',

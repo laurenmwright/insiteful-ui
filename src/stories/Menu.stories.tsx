@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Menu } from "../lib";
+import { Menu } from "../components";
 
 export default {
   title: "Stories/Menu",

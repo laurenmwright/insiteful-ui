@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Caption1 } from "../lib";
+import { Caption1 } from "../components";
 
 export default {
   title: "Stories/Caption1",

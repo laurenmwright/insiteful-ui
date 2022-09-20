@@ -1,11 +1,11 @@
 {
-  "include": ["src/lib", "declaration.d.ts"],
-  "exclude": ["node_modules", "dist", "src/stories"],
+  "include": ["src", "declaration.d.ts"],
+  "exclude": ["node_modules", "dist", "src/stories", "src/__test__"],
   "compilerOptions": {
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "sourceMap": true,
+    // "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
     "strict": false,
