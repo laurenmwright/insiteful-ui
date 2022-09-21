@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
-import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
+import {Input} from "./lib/components/Input/Input";
 
 
 
@@ -48,6 +48,10 @@ function App() {
   );
 }
 
+function test(x:string) {
+  console.log(x);
+}
+
 function Home() {
   // const [selectedValue, setSelectedValue] = useState(radioData[1].value);
 
@@ -58,6 +62,7 @@ function Home() {
   return (
     <div>
       <Button onClick={myTest} primary > HI</Button>
+      <Input type="number" onChange={test} label = "label" />
     </div>
   );
 }
