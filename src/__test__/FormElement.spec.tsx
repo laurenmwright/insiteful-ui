@@ -3,28 +3,27 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Button } from "../lib";
 import { FormElement } from '../lib/components/FormElement/FormElement';
 
-test('renders button with correct text', () => {
-    render(<FormElement><Button>My Button</Button></FormElement>);
-    render(<FormElement>My Form</FormElement>);
-    const buttonElement = screen.getByText(/My Button/i);
-    const formElement = screen.getByText(/My Form/i)
-    expect(buttonElement).toBeInTheDocument();
-    expect(formElement).toBeInTheDocument();
-  });
+test('renders button inside of a form element', () => {
+  const {getByTestId} = render(<FormElement><Button>My Button</Button></FormElement>);
+  const formElement = getByTestId("form");
+  const labelElement = getByTestId("label");
+  const buttonElement = screen.getByText(/My Button/i);
+  expect(formElement).toBeInTheDocument();
+  expect(labelElement).toBeInTheDocument();
+  expect(buttonElement).toBeInTheDocument();
+});
 
-//   //Renders Lable with Correct Text
-// test ('render lable with correct Text', () => {
-//     render(<FormElement>My Form</FormElement>);
-//     const formElement = screen.getByText(/My Form/i)
-//     expect(formElement).toBeInTheDocument();
-// });
+test('renders button inside form element with override color', () => {
+  render(<FormElement><Button overrideColor = "#ff0000" >My Button</Button></FormElement>);
+  const buttonElement = screen.getByText(/My Button/i);
+  expect(buttonElement).toHaveStyle({backgroundColor:"#ff0000"});
+});
 
-  //Child Component
-  test('renders button with working onclick function', () => {
-    const hello = jest.fn();
-    const { getByText } = render(
-      <FormElement> <Button onClick={hello}>My Form</Button> </FormElement>
-    );
-    fireEvent.click(getByText(/My Form/i));
-    expect(hello).toHaveBeenCalled();
-  });
+test('renders button inside form element with working onclick function', () => {
+  const hello = jest.fn();
+  const { getByText } = render(
+    <FormElement><Button onClick={hello}>My Form</Button> </FormElement>
+  );
+  fireEvent.click(getByText(/My Form/i));
+  expect(hello).toHaveBeenCalled();
+});
