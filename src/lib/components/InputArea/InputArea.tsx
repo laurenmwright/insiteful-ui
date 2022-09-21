@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import React from "react";
 
-export type InputProps = {
+export type InputAreaProps = {
   placeholder?: string;
   label?: string;
   value?: string;
@@ -10,14 +10,14 @@ export type InputProps = {
   type: "text" | "number";
 };
 
-export const Input = ({
+export const InputArea = ({
   placeholder,
   className,
   label,
   type,
   onChange,
   value,
-}: InputProps) => {
+}: InputAreaProps) => {
   return (
     <div className={`${className}`}>
       {label && (
@@ -39,4 +39,4 @@ export const Input = ({
     </div>
   );
 };
-export default Input;
+export default InputArea;

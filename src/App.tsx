@@ -5,8 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext } from "./lib";
-import {Input} from "./lib/components/Input/Input";
+import { Button, ThemeContext, InputArea } from "./lib";
 
 
 
@@ -62,7 +61,7 @@ function Home() {
   return (
     <div>
       <Button onClick={myTest} primary > HI</Button>
-      <Input type="number" onChange={test} label = "label" />
+      <InputArea type="number" onChange={test} label = "label" />
     </div>
   );
 }
