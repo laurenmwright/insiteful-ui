@@ -63,7 +63,7 @@ function Home() {
   return (
     <div>
       <FormElement label = "Input Data Here">  
-      <Button children = "Click to Submit"/> 
+      <Button children = "Click to Submit"/>
       <Button children = "Click to Submit"/>
       </FormElement>
     </div>

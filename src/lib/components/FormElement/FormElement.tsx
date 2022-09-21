@@ -14,7 +14,7 @@ export function FormElement({
   children,
 }: FormElementProps) {
   return (
-    <div data-testid="form" className={ classNames(styles.formGroup) + (twClasses ?  " " + twClasses: "" )}>
+    <div data-testid="form" className={ "mb-6 w-40" + (twClasses ?  " " + twClasses: "" )}>
       <label data-testid="label" >{label}</label>
       {children}
     </div>

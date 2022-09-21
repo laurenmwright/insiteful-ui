@@ -487,6 +487,12 @@ video {
     max-width: 1536px;
   }
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.w-40 {
+  width: 10rem;
+}
 .bg-primary {
   background-color: var(--color-primary);
 }
