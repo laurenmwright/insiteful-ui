@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Form,
 } from "react-router-dom";
 import { Button, ThemeContext } from "./lib";
 import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
@@ -65,6 +66,10 @@ function Home() {
       <FormElement label = "Input Data Here">  
       <Button children = "Click to Submit"/>
       <Button children = "Click to Submit"/>
+      </FormElement>
+
+      <FormElement label='Radio Label'>
+        <RadioButtonGroup data={radioData}></RadioButtonGroup>
       </FormElement>
     </div>
   );
