@@ -17,7 +17,7 @@
   
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "npm run clean && rollup -c",
+    "build": "rollup -c",
     "tsc": "tsc",
     "start": "react-scripts start",
     "test": "react-scripts test",
