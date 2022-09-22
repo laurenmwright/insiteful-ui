@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ButtonTypography } from '../components/components/Typography/Typography';
+import { ButtonTypography } from '../components';
 
 export default {
   title: 'Stories/ButtonTypography',
