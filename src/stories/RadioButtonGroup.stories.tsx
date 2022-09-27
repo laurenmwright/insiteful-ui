@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions'
 import { RadioButtonGroup } from "../components";
 
 export default {
-  title: 'Stories/RadioButtonGroup',
+  title: 'Stories/Components/RadioButtonGroup',
   component: RadioButtonGroup,
   argTypes: {
     onChanged: { action: 'changed' }

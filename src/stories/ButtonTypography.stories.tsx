@@ -1,19 +1,18 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ButtonTypography } from '../components/components/Typography/Typography';
+import { ButtonTypography } from '../components';
 
 export default {
-  title: 'Stories/ButtonTypography',
+  title: 'Stories/Typography/ButtonTypography',
   component: ButtonTypography,
   argTypes: {}
 } as ComponentMeta<typeof ButtonTypography>;
 
 const Template: ComponentStory<typeof ButtonTypography> = (args) => <ButtonTypography {...args} />;
 
-export const Primary = Template.bind({});
+export const ButtonTypoTemplate = Template.bind({});
 
-Primary.args = {
-  primary: true,
-  children: "ButtonTypography",
+ButtonTypoTemplate.args = {
+  children: "Button Label Typography",
 };
 

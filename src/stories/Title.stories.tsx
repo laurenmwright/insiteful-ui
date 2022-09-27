@@ -3,17 +3,14 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Title } from "../components";
 
 export default {
-  title: 'Stories/Title',
+  title: 'Stories/Typography/Title',
   component: Title,
-  argTypes: {}
 } as ComponentMeta<typeof Title>;
 
 const Template: ComponentStory<typeof Title> = (args) => <Title {...args} />;
 
-export const Primary = Template.bind({});
+export const TitleTemplate = Template.bind({});
 
-Primary.args = {
-  primary: true,
-  children: "Title",
+TitleTemplate.args = {
+  children: "Title Typography",
 };
-

@@ -3,17 +3,15 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Placeholder } from "../components"
 
 export default {
-  title: 'Stories/Placeholder',
+  title: 'Stories/Typography/Placeholder',
   component: Placeholder,
-  argTypes: {}
 } as ComponentMeta<typeof Placeholder>;
 
 const Template: ComponentStory<typeof Placeholder> = (args) => <Placeholder {...args} />;
 
-export const Primary = Template.bind({});
+export const PlaceholderTemplate = Template.bind({});
 
-Primary.args = {
-  primary: true,
-  children: "Placeholder",
+PlaceholderTemplate.args = {
+  children: "Placeholder Text",
 };
 

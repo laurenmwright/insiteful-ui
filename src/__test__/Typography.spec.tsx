@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import {Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Placeholder, Caption1, Caption2, Menu } from "../components";
+import {Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Placeholder, Caption1, Caption2, Menu } from "../";
 
 //Heading1
 //-------------------------------------------------------------

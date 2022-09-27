@@ -3,17 +3,15 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Subheading } from "../components";
 
 export default {
-  title: 'Stories/Subheading',
+  title: 'Stories/Typography/Subheading',
   component: Subheading,
-  argTypes: {}
 } as ComponentMeta<typeof Subheading>;
 
 const Template: ComponentStory<typeof Subheading> = (args) => <Subheading {...args} />;
 
-export const Primary = Template.bind({});
+export const SubheadingTypography = Template.bind({});
 
-Primary.args = {
-  primary: true,
+SubheadingTypography.args = {
   children: "Subheading",
 };
 
