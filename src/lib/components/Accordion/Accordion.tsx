@@ -6,7 +6,7 @@ import { ChevronUpIcon } from "@heroicons/react/20/solid";
 export type AccordionProps = {
   data: {
     id: string,
-    value: string
+    value: any
   }[]
 };
 

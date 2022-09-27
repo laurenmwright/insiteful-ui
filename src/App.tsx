@@ -5,9 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext } from "./lib";
-import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGroup"
-
+import { Button, ThemeContext, Accordion} from "./lib";
 
 
 const colorPaletteTest = {
@@ -54,10 +52,17 @@ function Home() {
   const myTest = () => {
     console.log("my test value");
   }
+
+  const accordionData = [
+    { id: "Test 1", value: "Value 1" },
+    { id: "Test 2", value: "Value 2" },
+    { id: "Test 3", value: "Value 3" },
+  ]; 
   
   return (
     <div>
       <Button onClick={myTest} primary > HI</Button>
+      <Accordion data={accordionData}></Accordion>
     </div>
   );
 }
@@ -69,3 +74,4 @@ function Blogs() {
 }
 
 export default App;
+
