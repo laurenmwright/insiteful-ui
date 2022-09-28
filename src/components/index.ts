@@ -7,5 +7,6 @@ export { Dropdown } from "./Dropdown";
 export { Input } from "./Input";
 export { FormElement } from "./FormElement";
 export { Accordion } from "./Accordion";
+export { Modal } from "./Modal";
 export { default as ThemeProvider } from "./Theme";
 export { ThemeContext } from "./Theme";
