@@ -1,9 +1,9 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Menu } from "../lib";
+import { Menu } from "../components";
 
 export default {
-  title: "Stories/Menu",
+  title: "Stories/Typography/Menu",
   component: Menu,
   argTypes: {},
 } as ComponentMeta<typeof Menu>;
@@ -12,9 +12,8 @@ const Template: ComponentStory<typeof Menu> = (args) => (
   <Menu {...args} />
 );
 
-export const Primary = Template.bind({});
+export const MenuTemplate = Template.bind({});
 
-Primary.args = {
-  primary: true,
-  children: "Menu",
+MenuTemplate.args = {
+  children: "Menu Typography",
 };
