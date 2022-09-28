@@ -6,5 +6,6 @@ export { Toggle } from "./Toggle";
 export { Dropdown } from "./Dropdown";
 export { Input } from "./Input";
 export { FormElement } from "./FormElement";
+export { Accordion } from "./Accordion";
 export { default as ThemeProvider } from "./Theme";
 export { ThemeContext } from "./Theme";
