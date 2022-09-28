@@ -10,6 +10,7 @@ import {RadioButtonGroup} from "./lib/components/RadioButtonGroup/RadioButtonGro
 
 
 
+
 const colorPaletteTest = {
   "primary": "#FF0000",
   "dark_gray": "#333333",
@@ -47,17 +48,20 @@ function App() {
     </Router>
   );
 }
+function onclose(){
+  console.log("hello");
+}
 
 function Home() {
-  // const [selectedValue, setSelectedValue] = useState(radioData[1].value);
+  const [selectedValue, setSelectedValue] = useState(true);
 
   const myTest = () => {
-    console.log("my test value");
+    console.log("test");
   }
   
   return (
     <div>
-      <Button onClick={myTest} primary > HI</Button>
+
     </div>
   );
 }
