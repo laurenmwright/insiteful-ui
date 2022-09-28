@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen} from '@testing-library/react';
-import { Dropdown } from '../lib/';
+import { Dropdown } from '../components';
 
 const dropdownOpts = ["opt1", "opt2", "opt3"];
 

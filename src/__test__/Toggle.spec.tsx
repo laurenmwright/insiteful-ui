@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render} from '@testing-library/react';
-import {Toggle} from '../lib';
+import {Toggle} from '../components';
 
 //Toggle Component Tests
 //-------------------------------------------------------------

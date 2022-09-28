@@ -1,21 +1,21 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { InputArea } from "../lib"
+import { Input } from "../components"
 
 export default {
-  title: "Stories/InputArea",
-  component: InputArea,
+  title: "Stories/Input",
+  component: Input,
   argTypes: {
     onChanged: { action: "changed" },
   },
-} as ComponentMeta<typeof InputArea>;
+} as ComponentMeta<typeof Input>;
 
-const Template: ComponentStory<typeof InputArea> = (args) => <InputArea {...args} />;
+const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const Primary = Template.bind({});
 
 Primary.args = {
   primary: true,
-  onChange: action("InputArea is changed!"),
+  onChange: action("Input is changed!"),
 };
