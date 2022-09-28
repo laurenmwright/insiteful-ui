@@ -1,5 +1,4 @@
 import './App.css';
-export { default as Toggle } from "./Toggle";
 export { default as Button } from "./Button";
 export { RadioButtonGroup } from "./RadioButtonGroup"
 export { Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder } from "./Typography";
