@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Accordion } from "../components";
 
 export default {
-  title: 'Stories/Accordion',
+  title: 'Stories/Components/Accordion',
   component: Accordion
 } as ComponentMeta<typeof Accordion>;
 
@@ -13,5 +13,5 @@ export const Primary = Template.bind({});
 
 Primary.args = {
   primary: true,
-  data: [{id: "Test 1", value: "Value 1"}, {id: "Test 2", value: "Value 2"}, {id: "Test 3", value: "Value 3"}],
+  data: [{title: "Title 1", content: "Value 1"}, {title: "Title 2", content: "Value 2"}, {title: "Title 3", content: "Value 3"}],
 };
