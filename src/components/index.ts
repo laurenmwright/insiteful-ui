@@ -5,5 +5,6 @@ export { Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1
 export { Toggle } from "./Toggle";
 export { Dropdown } from "./Dropdown";
 export { Input } from "./Input";
+export { FormElement } from "./FormElement";
 export { default as ThemeProvider } from "./Theme";
 export { ThemeContext } from "./Theme";
