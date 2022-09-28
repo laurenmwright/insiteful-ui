@@ -5,7 +5,7 @@ import { Button } from "../components";
 import { action } from '@storybook/addon-actions'
 
 export default {
-  title: 'Stories/FormElement',
+  title: 'Stories/Components/FormElement',
   component: FormElement,
   argTypes: {},
   onClick: { action: 'clicked' }

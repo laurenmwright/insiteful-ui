@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Toggle } from '../lib';
+import { Toggle } from '../components';
 
 export default {
-  title: 'Stories/Toggle',
+  title: 'Stories/Components/Toggle',
   component: Toggle,
   argTypes: {
     onChange: { action: 'changed' }

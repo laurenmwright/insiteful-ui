@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { Input } from "../components";
 
 export default {
-  title: "Stories/Input",
+  title: "Stories/Components/Input",
   component: Input,
   argTypes: {
     onChanged: { action: "changed" },

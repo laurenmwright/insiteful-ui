@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Dropdown } from '../lib';
+import { Dropdown } from '../components';
 
 export default {
-  title: 'Stories/Dropdown',
+  title: 'Stories/Components/Dropdown',
   component: Dropdown,
   argTypes: {
   }
