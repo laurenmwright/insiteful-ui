@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext, Accordion} from "./lib";
+import { Button, ThemeContext, Accordion, Title} from "./lib";
 
 
 const colorPaletteTest = {
@@ -54,14 +54,14 @@ function Home() {
   }
 
   const accordionData = [
-    { id: "Test 1", value: "Value 1" },
-    { id: "Test 2", value: "Value 2" },
-    { id: "Test 3", value: "Value 3" },
+    { id: "Test 1", value: 23 },
+    { id: "Test 2", value: <Button onClick={myTest} primary>HI</Button> },
+    { id: "Test 3", value: <Title>Title</Title>},
   ]; 
   
   return (
     <div>
-      <Button onClick={myTest} primary > HI</Button>
+      <Button onClick={myTest} primary> HI</Button>
       <Accordion data={accordionData}></Accordion>
     </div>
   );
