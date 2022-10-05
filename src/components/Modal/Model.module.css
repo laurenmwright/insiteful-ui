@@ -1,0 +1,38 @@
+.dialogBox {
+    width:50%;
+ background-color:white;
+ position:fixed;
+ top: 50%;
+ left: 25%;
+ padding: 10px;
+ border-radius:10px;
+ border:2px solid white;
+ box-shadow:0px 0px 10px 0px grey;
+}
+.button {
+    float: right;
+    vertical-align: top;
+    /* padding-bottom: 20px; */
+}
+.header {
+    display: flex;
+    min-height: 2rem;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-left: 50px;
+  }
+
+/* .test {
+    width:50%;
+ background-color:white;
+ position:fixed;
+ top: 50%;
+ left: 25%;
+ border-radius:10px;
+ border:2px solid white;
+ box-shadow:0px 0px 10px 0px grey;
+} */
