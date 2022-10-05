@@ -1,7 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import classNames from "classnames";
 import { X } from 'react-feather';
-import { Heading1, Title } from "../Typography";
+import { Heading1 } from "../Typography";
 import styles from './Model.module.css';
 
 export type ModalProps = {
@@ -23,16 +23,12 @@ export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
             </button>
             </span>
             {title && (
-              
               <span className={classNames(styles.header)}>
-                <Dialog.Title data-testid="title" aria-labelledby="Div-Main"> 
-                  {title}
+                <Dialog.Title data-testid="title"> 
+                  <Heading1>{title}</Heading1>
                 </Dialog.Title>
               </span>
-              
-            
             )}
-            
             {children}
           </Dialog.Panel>
       </div>
