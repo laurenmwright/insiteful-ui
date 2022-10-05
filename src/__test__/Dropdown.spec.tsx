@@ -1,8 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import { fireEvent, render, screen} from '@testing-library/react';
 import { Dropdown } from '../components';
 
 const dropdownOpts = ["opt1", "opt2", "opt3"];
+
 
 //Dropdown Component Tests
 //-------------------------------------------------------------
@@ -32,5 +33,20 @@ test('selecting an option works', () => {
     const optionElement = getByTestId("1");
     fireEvent.click(optionElement);
     expect(hello).toHaveBeenCalled();
+});
+
+test('changing state', () => {
+    const setStateMock = jest.fn();
+    const useStateMock: any = (useState: any) => [useState, setStateMock];
+    jest.spyOn(React, 'useState').mockImplementation(useStateMock);
+
+    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"selected"} setSelected = {setStateMock} />);
+    const buttonElement = getByTestId("button");
+    fireEvent.click(buttonElement);
+    const optionElement = getByTestId("1");
+    fireEvent.click(optionElement);
+
+    expect(setStateMock).toHaveBeenCalled();
+
 });
 //-------------------------------------------------------------
