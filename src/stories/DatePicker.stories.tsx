@@ -7,6 +7,7 @@ import { string } from 'prop-types';
 export default {
   title: 'Stories/Components/DatePicker',
   component: DatePicker,
+  subcomponents: {DatePicker},
   argTypes: {
     onChange: { action: 'changed' }
   },
