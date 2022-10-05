@@ -71,6 +71,10 @@ function Home() {
       <FormElement label='Radio Label'>
         <RadioButtonGroup data={radioData}></RadioButtonGroup>
       </FormElement>
+
+      <FormElement>
+      left aligned
+      </FormElement>
     </div>
   );
 }
