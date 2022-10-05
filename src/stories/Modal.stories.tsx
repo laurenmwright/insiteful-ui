@@ -4,7 +4,7 @@ import { Modal } from '../components';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Stories/Modal',
+  title: 'Stories/Components/Modal',
   component: Modal,
   argTypes: {
     onClose: {action: ""}

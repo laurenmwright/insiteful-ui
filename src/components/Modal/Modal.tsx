@@ -2,7 +2,7 @@ import { Dialog } from "@headlessui/react";
 import classNames from "classnames";
 import { X } from 'react-feather';
 import { Heading1 } from "../Typography";
-import styles from './Model.module.css';
+import styles from './Modal.module.css';
 
 export type ModalProps = {
   isOpen: boolean;
