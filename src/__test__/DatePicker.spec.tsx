@@ -5,7 +5,7 @@ import userEvent from "@testing-library/user-event";
 
 test('renders DRP', () => {
   const hello = jest.fn();
-  render(<DatePicker onChange={hello} value="1999-01-30"></DatePicker>);
+  render(<DatePicker onChange={hello} dateValue="1999-01-30"></DatePicker>);
   const DateRangeElement = screen.getByTestId("DRP");
   expect(DateRangeElement).toHaveValue("1999-01-30");
 });

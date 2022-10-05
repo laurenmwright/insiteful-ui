@@ -17,6 +17,6 @@ const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...ar
 export const Primary = Template.bind({});
 
 Primary.args = {
-  value: string,
+  dateValue: string,
   onChange: action("Date is changed!")
 };
