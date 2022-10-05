@@ -13,14 +13,17 @@ export default {
 
 const Template: ComponentStory<typeof ConfirmationBox> = (args) => <ConfirmationBox {...args} />;
 
-const myTest = () => {
-    console.log("my test value");
+const myConfirm = () => {
+    console.log("USER CONFIRMED");
+  }
+const myCancel = () => {
+    console.log("USER CANCELLED");
   }
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-    assetId: "sdf",
-    onRemove: myTest,
     popButton: "Click me",
     panelText: "You sure?????",
+    onConfirm: myConfirm,
+    onCancel: myCancel,
 };
