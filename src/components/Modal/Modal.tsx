@@ -29,7 +29,7 @@ export const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
                 </Dialog.Title>
               </span>
             )}
-            {children}
+            <div className={classNames(styles.modaltext)}>{children}</div>
           </Dialog.Panel>
       </div>
     </Dialog>
