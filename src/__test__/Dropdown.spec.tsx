@@ -27,7 +27,6 @@ test('dropdown opens and displays options correctly', () => {
 test('selecting an option works', () => {
     const hello = jest.fn();
     const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"example"} setSelected = {hello} />);
-    const listbox = getByTestId("listbox");
     const buttonElement = getByTestId("button");
     fireEvent.click(buttonElement);
     const optionElement = getByTestId("1");
@@ -35,7 +34,7 @@ test('selecting an option works', () => {
     expect(hello).toHaveBeenCalled();
 });
 
-test('changing state', () => {
+test('changing state when selecting an option', () => {
     const setStateMock = jest.fn();
     const useStateMock: any = (useState: any) => [useState, setStateMock];
     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
@@ -47,6 +46,5 @@ test('changing state', () => {
     fireEvent.click(optionElement);
 
     expect(setStateMock).toHaveBeenCalled();
-
 });
 //-------------------------------------------------------------
