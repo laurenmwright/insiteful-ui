@@ -1,14 +1,16 @@
 import React from "react";
 
+import styles from "./DatePicker.module.css";
+
+import classNames from "classnames";
+
 export type DatePickerProps = {
-    rangeValue?: string;
-    onChange: (newValue: string) => void;
-    min?: any;
-    max?: any;
+    dateValue?: string;
+    onChange?: (newValue: string) => void;
 }
 
 export const DatePicker = ({
-    rangeValue, 
+    dateValue, 
     onChange,
     min,
     max,
@@ -16,8 +18,9 @@ export const DatePicker = ({
 }: DatePickerProps) =>{
     return(
         <input type ="date" 
-            data-testid="DRP" 
-            onChange={(e) => onChange(e.target.value)}
+            data-testid="DRP"
+            value={dateValue}
+            onChange={(e) => onChange!(e.target.value)}
             className={'shadow appearance-none border rounded text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}
         />
     )
