@@ -38,6 +38,7 @@ test('enable changes toggle to primary color', () => {
     expect(toggleElement).toHaveClass('bg-primary');
 });
 
+//TODO: see if what is getting selecting is changing in state!
 test('changing state when selecting an option', () => {
     const setStateMock = jest.fn();
     const useStateMock: any = (useState: any) => [useState, setStateMock];

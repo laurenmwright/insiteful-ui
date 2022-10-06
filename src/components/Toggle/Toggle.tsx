@@ -22,6 +22,7 @@ export const Toggle = ({
       <Switch data-testid="switch"
         checked={enabled}
         onChange={setEnabled}
+        //TODO: Custom color is not working
         className={`${enabled ? (EnabledColor ? EnabledColor : 'bg-primary'): (DisabledColor ? DisabledColor : 'bg-secondary')}
               relative inline-flex h-[27px] w-[63px] 
               shrink-0
