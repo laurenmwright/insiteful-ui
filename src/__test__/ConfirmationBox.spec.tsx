@@ -1,17 +1,14 @@
 import React from 'react';
-import { fireEvent, getByText, render, screen } from '@testing-library/react';
-import { ConfirmationBox, Button } from "../components";
-import { Popover } from '@headlessui/react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { ConfirmationBox } from "../components";
 
 test('renders popover button text', () => {
-    const hello = jest.fn();
     const {getByTestId} = render(<ConfirmationBox popButton= "Click Me" panelText='Are you sure??'></ConfirmationBox>);
     const dropdownElement = getByTestId("popbutton");
     expect(dropdownElement).toHaveTextContent("Click Me");
   });
 
   test('renders popover when clicked', () => {
-    const hello = jest.fn();
     const {getByTestId} = render(<ConfirmationBox popButton= "Click Me" panelText= "Are you sure you want to proceed?"></ConfirmationBox>);
     const dropdownElement = getByTestId("popbutton");
     // fails when fireEvent click is removed proving that the panel is rendering properly when clicked. 
