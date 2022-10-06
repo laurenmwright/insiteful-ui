@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { fireEvent, render} from '@testing-library/react';
 import {Toggle} from '../components';
 
@@ -36,5 +36,17 @@ test('enable changes toggle to primary color', () => {
     const toggleElement = getByTestId("switch");
     fireEvent.click(toggleElement);
     expect(toggleElement).toHaveClass('bg-primary');
+});
+
+test('changing state when selecting an option', () => {
+    const setStateMock = jest.fn();
+    const useStateMock: any = (useState: any) => [useState, setStateMock];
+    jest.spyOn(React, 'useState').mockImplementation(useStateMock);
+
+    const {getByTestId} = render(<Toggle label={"Label"} enabled = {true} setEnabled = {setStateMock} />);
+    const toggleElement = getByTestId("switch");
+    fireEvent.click(toggleElement);
+
+    expect(setStateMock).toHaveBeenCalled();
 });
 //-------------------------------------------------------------

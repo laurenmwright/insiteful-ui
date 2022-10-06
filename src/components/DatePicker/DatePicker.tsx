@@ -1,19 +1,24 @@
 import React from "react";
 
+import styles from "./DatePicker.module.css";
+
+import classNames from "classnames";
+
 export type DatePickerProps = {
-    rangeValue?: string;
-    onChange: (newValue: string) => void;
+    dateValue?: string;
+    onChange?: (newValue: string) => void;
 }
 
 export const DatePicker = ({
-    rangeValue, 
+    dateValue, 
     onChange,
 }: DatePickerProps) =>{
     return(
         <input type ="date" 
             data-testid="DRP" 
-            value={rangeValue}
-            onChange={(e) => onChange(e.target.value)}
+            value={dateValue}
+            onChange={(e) => onChange!(e.target.value)}
+            className={classNames(styles.input)}
         />
     )
 }

@@ -1,0 +1,11 @@
+.formElement {
+    display: flex; 
+    margin-bottom: 1.5rem; 
+    margin-top: 1rem; 
+    flex-direction: column; 
+    width: 10rem; 
+}
+
+.label {
+    padding-bottom: 10px;
+}
