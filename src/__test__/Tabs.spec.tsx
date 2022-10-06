@@ -1,6 +1,6 @@
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { TabComponent, Button, Title } from "../components";
+import { Tabs, Button, Title } from "../components";
 
 const tabData = [
   { title: "Recent", content: "Does drinking coffee make you smarter?" },
@@ -16,7 +16,7 @@ const myTest = () => {
 //-------------------------------------------------------------
 
 test("renders tab titles correctly", () => {
-  render(<TabComponent data={tabData}></TabComponent>);
+  render(<Tabs data={tabData}></Tabs>);
   const tabElement = screen.getByText("Popular");
   expect(tabElement).toBeInTheDocument();
 });
@@ -24,7 +24,7 @@ test("renders tab titles correctly", () => {
 
 
 test("clicks on third tab to see if content is rendered correctly", () => {
-  render(<TabComponent data={tabData}></TabComponent>);
+  render(<Tabs data={tabData}></Tabs>);
   const title3 = screen.getByText("Trending");
   fireEvent.click(title3);
   const tabElement = screen.getByText("10 answers to your questions about coffee");
@@ -33,7 +33,6 @@ test("clicks on third tab to see if content is rendered correctly", () => {
 
 
 test("content accepts any child", () => {
-  const hello = jest.fn();
 
   const newTabData = [
     { title: "Title 1", content: 23 },
@@ -41,7 +40,7 @@ test("content accepts any child", () => {
     { title: "Title 3", content: <Title>Title</Title> },
   ];
 
-  render(<TabComponent data={newTabData}></TabComponent>);
+  render(<Tabs data={newTabData}></Tabs>);
   const title1 = screen.getByText("Title 1");
   const tabElement = screen.getByText(23);
   expect(tabElement).toBeInTheDocument();

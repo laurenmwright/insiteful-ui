@@ -1,13 +1,13 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import {TabComponent } from "../components";
+import { Tabs } from "../components";
 
 export default {
-  title: "Stories/Components/TabComponent",
-  component: TabComponent
-} as ComponentMeta<typeof TabComponent>;
+  title: "Stories/Components/Tabs",
+  component: Tabs
+} as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof TabComponent> = (args) => <TabComponent {...args} />;
+const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
 export const Primary = Template.bind({});
 

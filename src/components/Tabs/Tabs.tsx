@@ -11,7 +11,7 @@ export type TabProps = {
   }[];
 };
 
-export const TabComponent = ({ data }: TabProps) => {
+export const Tabs = ({ data }: TabProps) => {
   return (
     <div className="w-full max-w-md px-2 py-16 sm:px-0">
       <Tab.Group>
@@ -48,4 +48,4 @@ export const TabComponent = ({ data }: TabProps) => {
     </div>
   );
 };
-export default TabComponent;
+export default Tabs;

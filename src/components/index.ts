@@ -10,6 +10,6 @@ export { Accordion } from "./Accordion";
 export { Modal } from "./Modal";
 export { DatePicker } from "./DatePicker";
 export { ConfirmationBox } from "./ConfirmationBox";
-export { TabComponent } from "./TabComponent";
+export { Tabs } from "./Tabs";
 export { default as ThemeProvider } from "./Theme";
 export { ThemeContext } from "./Theme";
