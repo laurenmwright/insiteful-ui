@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { ThemeProvider } from '../src/components';
+import '!style-loader!css-loader!postcss-loader!tailwindcss/tailwind.css';
 
 
 export const parameters = {
