@@ -585,12 +585,15 @@ video {
 .table {
   display: table;
 }
+<<<<<<< HEAD:src/App.css
 .grid {
   display: grid;
 }
 .h-screen {
   height: 100vh;
 }
+=======
+>>>>>>> 8375c9d16b9b2e096556d7fb43a391548e7d99f8:src/components/App.css
 .h-5 {
   height: 1.25rem;
 }
@@ -684,9 +687,12 @@ video {
 .appearance-none {
   -webkit-appearance: none;
           appearance: none;
+<<<<<<< HEAD:src/App.css
 }
 .place-items-center {
   place-items: center;
+=======
+>>>>>>> 8375c9d16b9b2e096556d7fb43a391548e7d99f8:src/components/App.css
 }
 .items-center {
   align-items: center;
@@ -1096,6 +1102,13 @@ video {
 .hover\:bg-red-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+.hover\:bg-white\/\[0\.12\]:hover {
+  background-color: rgb(255 255 255 / 0.12);
+}
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .hover\:bg-white\/\[0\.12\]:hover {
   background-color: rgb(255 255 255 / 0.12);
