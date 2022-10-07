@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 export {ConfirmationBox} from "./ConfirmationBox";
 export { default as Button } from "./Button";
 export { RadioButtonGroup } from "./RadioButtonGroup";
