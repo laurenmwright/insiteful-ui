@@ -14,15 +14,7 @@ export type ThemeProviderProps = {
 
 export const defaultColorPalette = {
     "primary": "#46A689",
-    "dark_gray": "#333333",
-    "secondary": "#E0C591",
-    "light_gray": "#797B7A",
-    "primary_shade_1": "#46575E",
-    "primary_shade_2": "#748186",
-    "primary_shade_3": "#A3ABAF",
-    "secondary_shade_1": "#ECDCBD",
-    "secondary_shade_2": "#F6EEDE",
-    "secondary_shade_3": "#F9F3E9"
+    "secondary": "#E0C591"
   }; 
 
   export const defaultCatalog = {
