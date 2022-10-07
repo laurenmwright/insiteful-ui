@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ThemeProvider } from '../src/lib';
+import { ThemeProvider } from '../src/components';
 
 
 export const parameters = {

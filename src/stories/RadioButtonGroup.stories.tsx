@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { action } from '@storybook/addon-actions'
-import { RadioButtonGroup } from "../lib";
+import { RadioButtonGroup } from "../components";
 
 export default {
-  title: 'Stories/RadioButtonGroup',
+  title: 'Stories/Components/RadioButtonGroup',
   component: RadioButtonGroup,
   argTypes: {
     onChanged: { action: 'changed' }
