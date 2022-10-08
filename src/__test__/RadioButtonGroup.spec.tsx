@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { RadioButtonGroup } from "../";
+import { RadioButtonGroup } from "../components";
 
 //Button Component Tests
 //-------------------------------------------------------------

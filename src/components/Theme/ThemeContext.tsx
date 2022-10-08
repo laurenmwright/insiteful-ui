@@ -1,6 +1,10 @@
 import React, { createContext, useEffect, useState } from "react"
 import { applyTheme, mapTypographyTheme } from "./utils";
+import { PropsWithChildren } from "react";
 
+export type ThemeProviderProps = PropsWithChildren<{
+    children: React.ReactNode;
+}>;
 export const ThemeContext = createContext({
 	colorPalette: {},
     changeColorPalette: (colorPaletteVal: {}) => {},
@@ -8,25 +12,24 @@ export const ThemeContext = createContext({
     typographyCatalog: {}
 })
 
-export type ThemeProviderProps = {
-    children: React.ReactNode | React.ReactNode[];
-}
 
 export const defaultColorPalette = {
     "primary": "#46A689",
-    "secondary": "#E0C591"
+    "secondary": "#E0C591",
+    "actionBlue": "#2F77EE",
+    "darkGray": "#1c1917",
+    "mediumGray": "#78716c",
+    "lightGray": "#d6d3d1"
   }; 
 
   export const defaultCatalog = {
     "common-font": "'Courier New', Courier, monospace",
-
-
   }
 
 
   
 
-const ThemeProvider: React.FC = ({ children }: ThemeProviderProps) => {
+const ThemeProvider = ({ children }: ThemeProviderProps) => {
     const [colorPalette, setColorPalette] = useState({});
     const [typographyCatalog, setTypographyCatalog] = useState({});
 

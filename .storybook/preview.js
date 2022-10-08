@@ -1,8 +1,7 @@
 
 import React from 'react';
+import '../src/App.css';
 import { ThemeProvider } from '../src/components';
-import '!style-loader!css-loader!postcss-loader!tailwindcss/tailwind.css';
-
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

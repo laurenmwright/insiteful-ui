@@ -6,17 +6,13 @@ import {
   Route,
 } from "react-router-dom";
 import { Button, ThemeContext, Accordion } from "./components";
-// import {RadioButtonGroup} from "./components/RadioButtonGroup/RadioButtonGroup";
-// import {ConfirmPopover} from "./lib/components/ConfirmPopover/ConfirmPopover"
-
-
-// const radioData = [
-//   {id: "Test 1", value: "Test 1"},
-//   {id: "Test 2", value: "Test 2"},
-//   {id: "Test 3", value: "Test 3"}
-// ]; 
 
 function App() {
+  const { changeColorPalette } = useContext(ThemeContext);
+
+  useEffect(() => {
+    // changeColorPalette(colorPaletteTest);
+  }, []);
 
 
   return (
@@ -43,6 +39,7 @@ function Home() {
   return (
     <div className="grid h-screen place-items-center">
       <Accordion data={data} />
+      <Button  primary  >text blah blah blah </Button>
 
      </div>
   );
