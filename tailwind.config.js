@@ -27,9 +27,9 @@ module.exports = {
       colors: {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
-        darkGray: "#333333",
-        mediumGray: "#797B7A",
-        lightGray: "#D3D3D3",
+        darkGray: "var(--color-darkGray)",
+        mediumGray: "var(--color-mediumGray)",
+        lightGray: "var(--color-lightGray)",
         actionBlue: "#2F77EE",
         successLight: "#86CCA4",
         successDark: "#0E4325",

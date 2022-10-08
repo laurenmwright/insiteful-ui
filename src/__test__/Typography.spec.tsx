@@ -1,6 +1,17 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import {Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Placeholder, Caption1, Caption2, Menu } from "../";
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import {
+  Heading1,
+  Heading2,
+  Title,
+  Subheading,
+  Link,
+  ButtonTypography,
+  Placeholder,
+  Caption1,
+  Caption2,
+  Menu,
+} from "../components";
 
 //Heading1
 //-------------------------------------------------------------
@@ -67,19 +78,32 @@ test("renders Title with override font", () => {
 //Caption1
 //-------------------------------------------------------------
 test("renders caption with correct text", () => {
-  render(<Caption1>Caption1</Caption1>);
+  const table = document.createElement("table");
+  const { container } = render(<Caption1>Caption1</Caption1>, {
+    container: document.body.appendChild(table),
+  });
+
   const captionElement = screen.getByText(/Caption1/i);
   expect(captionElement).toBeInTheDocument();
 });
 
 test("renders caption with override color", () => {
-  render(<Caption1 overrideColor="red">Caption1</Caption1>);
+  const table = document.createElement("table");
+  const { container } = render(<Caption1 overrideColor="red">Caption1</Caption1>, {
+    container: document.body.appendChild(table),
+  });
   const captionElement = screen.getByText(/Caption1/i);
   expect(captionElement).toHaveStyle({ color: "red" });
 });
 
 test("renders caption with override font", () => {
-  render(<Caption1 overrideFont="Arial">Caption1</Caption1>);
+  const table = document.createElement("table");
+  const { container } = render(
+    <Caption1 overrideFont="Arial">Caption1</Caption1>,
+    {
+      container: document.body.appendChild(table),
+    }
+  );
   const captionElement = screen.getByText(/Caption1/i);
   expect(captionElement).toHaveStyle({ fontFamily: "Arial" });
 });
@@ -88,19 +112,38 @@ test("renders caption with override font", () => {
 //Caption2
 //-------------------------------------------------------------
 test("renders caption with correct text", () => {
-  render(<Caption2>Caption2</Caption2>);
+  const table = document.createElement("table");
+  const { container } = render(
+    <Caption2>Caption2</Caption2>,
+    {
+      container: document.body.appendChild(table),
+    }
+  );
   const caption2Element = screen.getByText(/Caption2/i);
   expect(caption2Element).toBeInTheDocument();
 });
 
 test("renders caption with override color", () => {
-  render(<Caption2 overrideColor="red">Caption2</Caption2>);
+  const table = document.createElement("table");
+  const { container } = render(
+    <Caption2 overrideColor="red">Caption2</Caption2>,
+    {
+      container: document.body.appendChild(table),
+    }
+  );
+
   const caption2Element = screen.getByText(/Caption2/i);
   expect(caption2Element).toHaveStyle({ color: "red" });
 });
 
 test("renders caption with override font", () => {
-  render(<Caption2 overrideFont="Arial">Caption2</Caption2>);
+  const table = document.createElement("table");
+  const { container } = render(
+    <Caption2 overrideFont="Arial">Caption2</Caption2>,
+    {
+      container: document.body.appendChild(table),
+    }
+  );
   const caption2Element = screen.getByText(/Caption2/i);
   expect(caption2Element).toHaveStyle({ fontFamily: "Arial" });
 });
@@ -108,19 +151,19 @@ test("renders caption with override font", () => {
 
 //Menu
 //-------------------------------------------------------------
-test("renders caption with correct text", () => {
+test("renders Menu with correct text", () => {
   render(<Menu>Menu</Menu>);
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toBeInTheDocument();
 });
 
-test("renders caption with override color", () => {
+test("renders Menu with override color", () => {
   render(<Menu overrideColor="red">Menu</Menu>);
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toHaveStyle({ color: "red" });
 });
 
-test("renders caption with override font", () => {
+test("renders Menu with override font", () => {
   render(<Menu overrideFont="Arial">Menu</Menu>);
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toHaveStyle({ fontFamily: "Arial" });
@@ -129,84 +172,84 @@ test("renders caption with override font", () => {
 
 // Placeholder
 //-------------------------------------------------------------
-test('renders title with correct text', () => {
+test("renders title with correct text", () => {
   render(<Placeholder>Placeholder</Placeholder>);
   const placeholderElement = screen.getByText(/Placeholder/i);
   expect(placeholderElement).toBeInTheDocument();
 });
 
-test('renders button with override color', () => {
-  render(<Placeholder overrideColor = "blue" >Placeholder</Placeholder>);
+test("renders Placeholder with override color", () => {
+  render(<Placeholder overrideColor="blue">Placeholder</Placeholder>);
   const placeholderElement = screen.getByText(/Placeholder/i);
-  expect(placeholderElement).toHaveStyle({ color:"blue" });
+  expect(placeholderElement).toHaveStyle({ color: "blue" });
 });
 
-test('renders button with override font', () => {
-  render(<Placeholder overrideFont = 'Arial' >Placeholder</Placeholder>);
+test("renders Placeholder with override font", () => {
+  render(<Placeholder overrideFont="Arial">Placeholder</Placeholder>);
   const placeholderElement = screen.getByText(/Placeholder/i);
-  expect(placeholderElement).toHaveStyle({ fontFamily: 'Arial' });
+  expect(placeholderElement).toHaveStyle({ fontFamily: "Arial" });
 });
 //-------------------------------------------------------------
 
 //Subheading
 //-------------------------------------------------------------
-test('renders subheading with correct text', () => {
+test("renders subheading with correct text", () => {
   render(<Subheading>My subheading</Subheading>);
   const subheadingElement = screen.getByText(/My subheading/i);
   expect(subheadingElement).toBeInTheDocument();
 });
 
-test('renders subheading with override color', () => {
-  render(<Subheading overrideColor = "purple" >My subheading</Subheading>);
+test("renders subheading with override color", () => {
+  render(<Subheading overrideColor="purple">My subheading</Subheading>);
   const subheadingElement = screen.getByText(/My subheading/i);
   expect(subheadingElement).toHaveStyle({ color: "purple" });
 });
 
-test('renders subheading with override font', () => {
-  render(<Subheading overrideFont = "Arial" >My subheading</Subheading>);
+test("renders subheading with override font", () => {
+  render(<Subheading overrideFont="Arial">My subheading</Subheading>);
   const subheadingElement = screen.getByText(/My subheading/i);
-  expect(subheadingElement).toHaveStyle({ fontFamily: 'Arial' });
+  expect(subheadingElement).toHaveStyle({ fontFamily: "Arial" });
 });
 //-------------------------------------------------------------
 
 //Link
 //-------------------------------------------------------------
-test('renders link with correct text', () => {
+test("renders link with correct text", () => {
   render(<Link>My link</Link>);
   const linkElement = screen.getByText(/My link/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-test('renders link with override color', () => {
-  render(<Link overrideColor = "purple" >My link</Link>);
+test("renders link with override color", () => {
+  render(<Link overrideColor="purple">My link</Link>);
   const linkElement = screen.getByText(/My link/i);
   expect(linkElement).toHaveStyle({ color: "purple" });
 });
 
-test('renders link with override font', () => {
-  render(<Link overrideFont = "Arial" >My link</Link>);
+test("renders link with override font", () => {
+  render(<Link overrideFont="Arial">My link</Link>);
   const linkElement = screen.getByText(/My link/i);
-  expect(linkElement).toHaveStyle({ fontFamily: 'Arial' });
+  expect(linkElement).toHaveStyle({ fontFamily: "Arial" });
 });
 //-------------------------------------------------------------
 
 //Button Typography
 //-------------------------------------------------------------
-test('renders button with correct text', () => {
+test("renders button typography with correct text", () => {
   render(<ButtonTypography>My button</ButtonTypography>);
   const buttonElement = screen.getByText(/My button/i);
   expect(buttonElement).toBeInTheDocument();
 });
 
-test('renders button with override color', () => {
-  render(<ButtonTypography overrideColor = "purple" >My button</ButtonTypography>);
+test("renders button typography  with override color", () => {
+  render(<ButtonTypography overrideColor="purple">My button</ButtonTypography>);
   const buttonElement = screen.getByText(/My button/i);
   expect(buttonElement).toHaveStyle({ color: "purple" });
 });
 
-test('renders button with override font', () => {
-  render(<ButtonTypography overrideFont = "Arial" >My button</ButtonTypography>);
+test("renders button typography  with override font", () => {
+  render(<ButtonTypography overrideFont="Arial">My button</ButtonTypography>);
   const buttonElement = screen.getByText(/My button/i);
-  expect(buttonElement).toHaveStyle({ fontFamily: 'Arial' });
+  expect(buttonElement).toHaveStyle({ fontFamily: "Arial" });
 });
 //-------------------------------------------------------------

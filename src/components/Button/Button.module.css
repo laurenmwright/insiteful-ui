@@ -1,10 +1,10 @@
 .button {
-    font-weight: medium;
+    font-weight: bold;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: .625em .625em;
 }
 .button:hover {
-    opacity: .3;
+    opacity: .5;
 }
 .button:focus {
     outline: none; 
@@ -14,9 +14,15 @@
     --tw-ring-opacity: 0.75;--tw-ring-opacity: 0.75;
     
 }
+.button:disabled,
+button[disabled]{
+    opacity: 0.65; 
+    cursor: not-allowed;
+  }
+  
 .primary {
-    color: black;
-    background-color: var(--color-primary);
+    color: white;
+    background-color: var(--color-actionBlue) ;
     
 }
 .secondary {
@@ -25,19 +31,23 @@
 }
 .secondary.outline {
     border: 2px solid var(--color-secondary);
-    background-color: white;;
-    color: var(--color-dark_gray)
+    background-color: transparent;
+    color: var(--color-secondary);
 }
 
 .primary.outline {
-    border: 2px solid var(--color-primary);
-    background-color: white;;
-    color: var(--color-dark_gray)
+    border: 2px solid var(--color-actionBlue) ;
+    background-color: transparent ;
+    color: var(--color-actionBlue) ;
+    font-weight: bold;
 }
 .editor {
     color: black;
     background-color: #dbdaff;
     border: 2px solid #4945FF;
+}
+.darkFont {
+    color: var(--color-darkGray) !important;
 }
 
 

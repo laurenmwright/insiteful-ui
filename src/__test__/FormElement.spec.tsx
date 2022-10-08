@@ -14,7 +14,7 @@ test('renders button inside of a form element', () => {
 });
 
 test('renders button inside form element with override color', () => {
-  render(<FormElement><Button overrideColor = "#ff0000" >My Button</Button></FormElement>);
+  render(<FormElement><Button primary overrideColor = "#ff0000" >My Button</Button></FormElement>);
   const buttonElement = screen.getByText(/My Button/i);
   expect(buttonElement).toHaveStyle({backgroundColor:"#ff0000"});
 });
