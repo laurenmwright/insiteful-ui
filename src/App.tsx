@@ -39,7 +39,7 @@ function Home() {
   return (
     <div className="grid h-screen place-items-center">
       <Accordion data={data} />
-      <Button  primary  >text blah blah blah </Button>
+      <Button  simple overrideColor="#ff0000">text blah blah blah </Button>
 
      </div>
   );

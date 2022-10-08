@@ -36,22 +36,18 @@ export function ConfirmationBox({
       
           <div className="w-80 shadow-lg rounded-md border-solid border-2">
             <div className="flex items-center justify-start relative gap-2 bg-white p-5 ">
-              <AlertTriangle size={24} color="#ff605c" />
+              <AlertTriangle size={24} color="var(--color-errorMedium)" />
               <div data-testid="div" className="text-gray-800">
                 {panelText}
               </div>
             </div>
             <div className="flex justify-end space-x-2 bg-light-gray p-2 bg-error-red">
-              <span className="bg-green-200" data-testid="yes">
-                <Button onClick={onConfirm}>
-                Yes
+              <Button simple overrideColor="var(--color-mediumGray)" onClick={onCancel} data-testid="no">
+                Cancel
               </Button>
-              </span>
-              <span className="bg-gray-200">
-              <Button onClick={onCancel} data-testid="no">
-                No
+              <Button primary data-testid="yes" onClick={onConfirm}>
+                Continue
               </Button>
-              </span>
             </div>
           </div>
         </Popover.Panel>

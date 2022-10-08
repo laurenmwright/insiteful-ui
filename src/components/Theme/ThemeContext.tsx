@@ -19,7 +19,15 @@ export const defaultColorPalette = {
     "actionBlue": "#2F77EE",
     "darkGray": "#1c1917",
     "mediumGray": "#78716c",
-    "lightGray": "#d6d3d1"
+    "lightGray": "#d6d3d1",
+    "successLight": "#86CCA4",
+    "successDark": "#0E4325",
+    "errorLight": "#fca5a5",
+    "errorMedium": "#dc2626",
+    "errorDark": "#7f1d1d",
+    "editorDarkPurple": "#4945FF",
+    "editorMediumPurple": "#928fff",
+    "editorLightPurple": "#dbdaff",
   }; 
 
   export const defaultCatalog = {
