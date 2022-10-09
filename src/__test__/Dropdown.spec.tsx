@@ -2,13 +2,17 @@ import * as React from 'react';
 import { fireEvent, render, screen} from '@testing-library/react';
 import { Dropdown } from '../components';
 
-const dropdownOpts = ["opt1", "opt2", "opt3"];
+const dropdownOpts = [
+    { value: 'opt1', label: 'opt1' },
+    { value: 'opt2', label: 'opt2' },
+    { value: 'opt3', label: 'opt3' },
+  ];
 
 
 //Dropdown Component Tests
 //-------------------------------------------------------------
 test('renders dropdown correctly', () => {
-    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"string"} setSelected = {() => {}} />);
+    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"string"} onChange = {() => {}} />);
     const dropdownElement = getByTestId("div");
     expect(dropdownElement).toContainElement(getByTestId("label"));
     expect(dropdownElement).toContainElement(getByTestId("listbox"));
@@ -16,7 +20,7 @@ test('renders dropdown correctly', () => {
 });
 
 test('dropdown opens and displays options correctly', () => {
-    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"string"} setSelected = {() => {}} />);
+    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"string"} onChange = {() => {}} />);
     const buttonElement = getByTestId("button");
     fireEvent.click(buttonElement);
     const optionElement = getByTestId("1");
@@ -26,7 +30,7 @@ test('dropdown opens and displays options correctly', () => {
 
 test('selecting an option works', () => {
     const hello = jest.fn();
-    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"example"} setSelected = {hello} />);
+    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"example"} onChange = {hello} />);
     const buttonElement = getByTestId("button");
     fireEvent.click(buttonElement);
     const optionElement = getByTestId("1");
@@ -40,7 +44,7 @@ test('changing state when selecting an option', () => {
     const useStateMock: any = (useState: any) => [useState, setStateMock];
     jest.spyOn(React, 'useState').mockImplementation(useStateMock);
 
-    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"selected"} setSelected = {setStateMock} />);
+    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"selected"} onChange = {setStateMock} />);
     const buttonElement = getByTestId("button");
     fireEvent.click(buttonElement);
     const optionElement = getByTestId("1");
