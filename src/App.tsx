@@ -5,6 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
 import { Button, ThemeContext, Accordion, DatePicker } from "./components";
 
 function App() {
@@ -37,8 +38,7 @@ function Home() {
 
   return (
     <div className="grid h-screen place-items-center">
-      <DatePicker onChange={null}></DatePicker>
-
+      <Modal isOpen={false} onClose={myConfirm} size='medium' title="Title">Modal</Modal>
      </div>
   );
 }
