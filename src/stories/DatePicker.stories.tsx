@@ -1,40 +1,22 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { action } from "@storybook/addon-actions";
+import React, {useState} from 'react';
+import { Meta } from '@storybook/react';
 import { DatePicker } from '../components';
-import { string } from 'prop-types';
-import { useArgs } from "@storybook/client-api";
-
 
 export default {
   title: "Stories/Components/DatePicker",
   component: DatePicker,
   argTypes: {
-    dateValue: {
-      control: "text"
-    },
-  },
-  args: {
-    dateValue: "2020-10-10"
-  },
+    onChange: { table: { disable: true } },
+    dateValue: { table: { disable: true } },
+  }
 
-} as ComponentMeta<typeof DatePicker>;
-const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...args} />;
-export const Controlled = (args) => {
-  const [_, setArgs] = useArgs();
-  const onChange = (e, dateValue) => {
-    setArgs({ ...args, dateValue });
-    args.onChange(e, dateValue);
+} as Meta;
+
+export const Default = (args) => {
+  const [value, setValue] = useState<string | null >(null);
+  const onChange = (v) => {
+    setValue(v);
   };
-  return <Template {...args} onChange={onChange} />;
-};
 
-Controlled.argTypes = {
-  onChange: { action: "clicked", table: { disable: true } },
+  return <div style={{width: args.width + "%"}}><DatePicker dateValue={value || args.dateValue} onChange={onChange} /></div>
 };
-
-Controlled.args = {
-  dateValue: "",
-};
-
-export const Uncontrolled = Template.bind({});
