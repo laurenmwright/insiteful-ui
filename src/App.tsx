@@ -5,7 +5,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext, Accordion, Modal, Tabs } from "./components";
+
+import { Button, ThemeContext, Accordion, DatePicker } from "./components";
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -38,7 +39,6 @@ function Home() {
   return (
     <div className="grid h-screen place-items-center">
       <Modal isOpen={false} onClose={myConfirm} size='medium' title="Title">Modal</Modal>
-
      </div>
   );
 }
