@@ -5,20 +5,18 @@ export type InputProps = {
   label?: string;
   value?: string;
   onChange: (newValue: string) => void;
-  className?: string;
-  type: "text" | "number";
+  type: "text" | "number" | "password";
 };
 
 export const Input = ({
   placeholder,
-  className,
   label,
   type,
   onChange,
   value,
 }: InputProps) => {
   return (
-    <div className={`${className}`}>
+    <div>
       {label && (
         <label
           className={`text-left block text-gray-700 text-sm font-bold mb-2`}
@@ -33,6 +31,7 @@ export const Input = ({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder!}
         defaultValue={value}
+        data-testid="input-box"
       />
     </div>
   );

@@ -9,8 +9,6 @@ const dropdownOpts = [
   ];
 
 
-//Dropdown Component Tests
-//-------------------------------------------------------------
 test('renders dropdown correctly', () => {
     const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"string"} onChange = {() => {}} />);
     const dropdownElement = getByTestId("div");
@@ -52,4 +50,3 @@ test('changing state when selecting an option', () => {
 
     expect(setStateMock).toHaveBeenCalled();
 });
-//-------------------------------------------------------------

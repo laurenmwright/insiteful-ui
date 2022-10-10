@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { RadioButtonGroup } from "../components";
 
-//Button Component Tests
-//-------------------------------------------------------------
+
 test('renders radio button group with correct label text', () => {
     const hello = jest.fn();
 
@@ -47,4 +46,3 @@ test('renders radio button group with working onchange function', () => {
 
     expect(hello).toHaveBeenCalled();
 });
-//-------------------------------------------------------------

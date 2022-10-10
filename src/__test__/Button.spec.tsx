@@ -5,9 +5,8 @@ import { Button } from "../components";
 /**
  * Button Component Tests
  * To Do:
- * 1. Test darkFont
- * 2. Test link
- * 3. Test disabled
+ * 1. Test simple
+ * 2. Test disabled
  */
 
 test('renders button with correct text', () => {
