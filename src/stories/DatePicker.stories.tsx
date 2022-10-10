@@ -18,5 +18,5 @@ export const Default = (args) => {
     setValue(v);
   };
 
-  return <div style={{width: args.width + "%"}}><DatePicker dateValue={value || args.dateValue} onChange={onChange} /></div>
+  return <div><DatePicker dateValue={value} onChange={onChange} /></div>
 };
