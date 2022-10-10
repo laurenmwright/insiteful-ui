@@ -24,7 +24,7 @@ export const Tabs = ({ data }: TabProps) => {
                   " w-full py-2.5 text-md leading-5 focus-visible:outline-none",
                   selected
                     ? "text-actionBlue font-bold shadow-b-md border-b-4 border-actionBlue	"
-                    : "text-mediumGray font-medium hover:bg-white/[0.12] hover:text-actionBlue/70 hover:border-b-2 hover:border-actionBlue/70 border-b-2 border-stone-500"
+                    : "text-mediumGray font-medium hover:bg-white/[0.12] hover:text-actionBlue/60 hover:border-b-2 hover:border-actionBlue/60 border-b-2 border-stone-500"
                 )
               }
             >
