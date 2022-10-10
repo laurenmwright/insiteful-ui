@@ -13,10 +13,10 @@ export default {
 
 const Template: ComponentStory<typeof RadioButtonGroup> = (args) => <RadioButtonGroup {...args} />;
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 
-Primary.args = {
-  primary: true,
+Default.args = {
+  label: "Select an option:",
   data: [{id: "Test 1", value: "Test 1"}, {id: "Test 2", value: "Test 2"}, {id: "Test 3", value: "Test 3"}],
   onChange: action("RadioButtonGroup is changed!")
 };

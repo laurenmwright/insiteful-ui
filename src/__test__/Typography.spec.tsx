@@ -13,8 +13,6 @@ import {
   Menu,
 } from "../components";
 
-//Heading1
-//-------------------------------------------------------------
 test("renders Heading1 with correct text", () => {
   render(<Heading1>Heading1</Heading1>);
   const heading1Element = screen.getByText(/Heading1/i);
@@ -32,10 +30,7 @@ test("renders Heading1 with override font", () => {
   const heading1Element = screen.getByText(/Heading1/i);
   expect(heading1Element).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------
 
-//Heading2
-//-------------------------------------------------------------
 test("renders Heading2 with correct text", () => {
   render(<Heading2>Heading2</Heading2>);
   const heading2Element = screen.getByText(/Heading2/i);
@@ -73,10 +68,7 @@ test("renders Title with override font", () => {
   render(<Title overrideFont="Arial">Title</Title>);
   const titleElement = screen.getByText(/Title/i);
 });
-//-------------------------------------------------------------
 
-//Caption1
-//-------------------------------------------------------------
 test("renders caption with correct text", () => {
   const table = document.createElement("table");
   const { container } = render(<Caption1>Caption1</Caption1>, {
@@ -107,10 +99,7 @@ test("renders caption with override font", () => {
   const captionElement = screen.getByText(/Caption1/i);
   expect(captionElement).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------
 
-//Caption2
-//-------------------------------------------------------------
 test("renders caption with correct text", () => {
   const table = document.createElement("table");
   const { container } = render(
@@ -147,10 +136,7 @@ test("renders caption with override font", () => {
   const caption2Element = screen.getByText(/Caption2/i);
   expect(caption2Element).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------
 
-//Menu
-//-------------------------------------------------------------
 test("renders Menu with correct text", () => {
   render(<Menu>Menu</Menu>);
   const menuElement = screen.getByText(/Menu/i);
@@ -168,10 +154,7 @@ test("renders Menu with override font", () => {
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------
 
-// Placeholder
-//-------------------------------------------------------------
 test("renders title with correct text", () => {
   render(<Placeholder>Placeholder</Placeholder>);
   const placeholderElement = screen.getByText(/Placeholder/i);
@@ -189,10 +172,7 @@ test("renders Placeholder with override font", () => {
   const placeholderElement = screen.getByText(/Placeholder/i);
   expect(placeholderElement).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------
 
-//Subheading
-//-------------------------------------------------------------
 test("renders subheading with correct text", () => {
   render(<Subheading>My subheading</Subheading>);
   const subheadingElement = screen.getByText(/My subheading/i);
@@ -210,10 +190,7 @@ test("renders subheading with override font", () => {
   const subheadingElement = screen.getByText(/My subheading/i);
   expect(subheadingElement).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------
 
-//Link
-//-------------------------------------------------------------
 test("renders link with correct text", () => {
   render(<Link>My link</Link>);
   const linkElement = screen.getByText(/My link/i);
@@ -231,10 +208,7 @@ test("renders link with override font", () => {
   const linkElement = screen.getByText(/My link/i);
   expect(linkElement).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------
 
-//Button Typography
-//-------------------------------------------------------------
 test("renders button typography with correct text", () => {
   render(<ButtonTypography>My button</ButtonTypography>);
   const buttonElement = screen.getByText(/My button/i);
@@ -252,4 +226,3 @@ test("renders button typography  with override font", () => {
   const buttonElement = screen.getByText(/My button/i);
   expect(buttonElement).toHaveStyle({ fontFamily: "Arial" });
 });
-//-------------------------------------------------------------

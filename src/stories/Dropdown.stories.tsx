@@ -1,55 +1,39 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React, {useState} from 'react';
+import { ComponentStory, ComponentMeta, Meta } from '@storybook/react';
 import { Dropdown } from '../components';
 import { useArgs } from "@storybook/client-api";
 
-// export default {
-//   title: 'Stories/Components/Dropdown',
-//   component: Dropdown,
-//   argTypes: {
-//   }
-// } as ComponentMeta<typeof Dropdown>;
-
-// const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
-
-// export const Primary = Template.bind({});
-
-// Primary.args = {
-//   label : "Label",
-//   selected: "Value",
-//   options: ['opt1', 'opt2', 'opt3'],
-//   // setSelected not working due to state
-//   //this file is not renaming when we push/pull it 
-// };
 
 export default {
   title: "Stories/Components/Dropdown",
   component: Dropdown,
   argTypes: {
-    selected: {
-      control: "select",
-      options: ['opt1', 'opt2', 'opt3']
+    width: {
+      control: { type: 'number', max: 100, min: 30, step: 1 },
     },
-  },
-  args: {
-    selected: "options",
-    label: "Interesting Option",
-    options: ['opt1', 'opt2', 'opt3']
-  },
-} as ComponentMeta<typeof Dropdown>;
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
-export const Controlled = (args) => {
-  const [_, setArgs] = useArgs();
-  const onChange = (e, checked) => {
-    setArgs({ ...args, checked });
-    args.onChange(e, checked);
+    options: { table: { disable: true } },
+    onChange: { table: { disable: true } },
+    selected: { table: { disable: true } },
+  }
+
+} as Meta;
+
+const options = [
+  { value: 'facebook', label: 'Facebook' },
+  { value: 'twitter', label: 'Twitter' },
+  { value: 'github', label: 'GitHub' },
+  { value: 'google', label: 'Google' },
+  { value: 'azure', label: 'Azure' },
+];
+export const Default = (args) => {
+  const [value, setValue] = useState<string | null >(null);
+  const onChange = (v) => {
+    setValue(v);
   };
-  return <Template {...args} onChange={onChange} />;
+
+  return <div style={{width: args.width + "%"}}><Dropdown selected={value} onChange={onChange} options={options} label={args.label} /></div>
 };
-Controlled.argTypes = {
-  onChange: { action: "clicked", table: { disable: true } },
-};
-Controlled.args = {
-  checked: true,
-};
-export const Uncontrolled = Template.bind({});
+
+Default.args = {
+  label: "Please Select a Platform:"
+}

@@ -14,6 +14,9 @@ export default {
     },
     outline: { control: "boolean" },
     darkFont: { control: "boolean" },
+    disabled: { control: "boolean" },
+    link: { control: "boolean" },
+
     onClick: { action: "clicked", table: { disable: true } },
     primary: { table: { disable: true } },
     secondary: { table: { disable: true } },
@@ -36,6 +39,8 @@ Default.args = {
   outline: false,
   darkFont: false,
   children: "Click Me!",
+  disabled: false,
+  link: false,
   onClick: action("Button is clicked!"),
 };
 
@@ -53,6 +58,27 @@ WithIcon.args = {
   variant: "primary",
   outline: false,
   darkFont: false,
+  disabled: false,
+  link: false,
   children: <div style={{display: "flex", gap: 10}}><div>🔍</div><div>Search</div></div>,
+  onClick: action("Button is clicked!"),
+};
+
+export const ButtonLink = ({ variant, outline, ...args }) => {
+  if (variant === "primary") {
+    console.log(args);
+    return <Button primary outline={outline} {...args} />;
+  } else {
+    return <Button secondary outline={outline} {...args} />;
+  }
+};
+
+ButtonLink.args = {
+  variant: "primary",
+  link: true,
+  outline: false,
+  darkFont: false,
+  disabled: false,
+  children: "Search",
   onClick: action("Button is clicked!"),
 };

@@ -7,6 +7,8 @@ export type TypographyProps = {
     children: React.ReactNode | React.ReactNode[];
     overrideColor?: string;
     overrideFont?: string;
+    customStyles?: {};
+    link?: string;
 }
 
 export const Heading1 = ({children, overrideColor, overrideFont}: TypographyProps ) => {
@@ -57,14 +59,20 @@ export const Subheading = ({children, overrideColor, overrideFont}: TypographyPr
     )
 }
 
-export const Link = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const Link = ({children, overrideColor, overrideFont, link}: TypographyProps ) => {
     return (
-        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.link) }>{children}</p>
+        <a href={link} style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.link) }>{children}</a>
     )
 }
 
 export const ButtonTypography = ({children, overrideColor, overrideFont}: TypographyProps ) => {
     return (
         <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.button) }>{children}</p>
+    )
+}
+
+export const Label = ({children, customStyles}: TypographyProps ) => {
+    return (
+        <label style = {customStyles} className={ classNames(styles.label) }>{children}</label>
     )
 }

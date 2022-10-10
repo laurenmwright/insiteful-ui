@@ -1,32 +1,29 @@
 import { Listbox } from "@headlessui/react";
 import React from "react";
 import { Check, ChevronDown } from "react-feather";
+import { FormElement } from "../FormElement";
 
 export type DropdownProps = {
   label?: string;
-  setSelected: (e: any) => void;
-  selected: string;
-  options: string[];
+  onChange: (e: any) => void;
+  selected: string | null;
+  options: {value: string, label?: string}[];
 };
 
 export const Dropdown = ({
   label,
-  setSelected,
+  onChange,
   selected,
   options,
 }: DropdownProps) => {
     return (
     <div data-testid="div" className={`text-left pb-5`}>
-      {label && (
-        <label data-testid="label" className={`text-left block text-gray-700 text-sm font-bold pb-2`}>
-          {label}
-        </label>
-      )}
+      <FormElement label={label}>
       <Listbox
         as="div"
         className="space-y-1 min-w-fit"
         value={selected}
-        onChange={setSelected}
+        onChange={onChange}
         data-testid="listbox"
       >
         <div data-testid="buttonAndOptions" className="relative min-w-fit ">
@@ -53,7 +50,7 @@ export const Dropdown = ({
                     active ? "bg-amber-100 text-amber-900" : "text-gray-900"
                   }`
                 }
-                value={option}
+                value={option.value}
               >
                 {({ selected }) => (
                   <>
@@ -62,7 +59,7 @@ export const Dropdown = ({
                         selected ?  "font-medium" : "font-normal"
                       }`}
                     >
-                      {option}
+                      {option.label? option.label : option.value}
                     </span>
                     {selected ? (
                       <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
@@ -77,6 +74,7 @@ export const Dropdown = ({
           </Listbox.Options>
         </div>
       </Listbox>
+      </FormElement>
     </div>
   );
 };

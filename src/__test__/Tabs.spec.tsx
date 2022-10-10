@@ -12,8 +12,6 @@ const myTest = () => {
   console.log("my test value");
 };
 
-//Tab Component Tests
-//-------------------------------------------------------------
 
 test("renders tab titles correctly", () => {
   render(<Tabs data={tabData}></Tabs>);
@@ -56,4 +54,3 @@ test("content accepts any child", () => {
   expect(tabElement3).toBeInTheDocument();
 }); 
 
-//--------------------------------------------------------------

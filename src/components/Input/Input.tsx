@@ -1,31 +1,22 @@
 import React from "react";
+import { Label } from "../Typography";
 
 export type InputProps = {
   placeholder?: string;
   label?: string;
   value?: string;
   onChange: (newValue: string) => void;
-  className?: string;
-  type: "text" | "number";
+  type: "text" | "number" | "password";
 };
 
 export const Input = ({
   placeholder,
-  className,
   label,
   type,
   onChange,
   value,
 }: InputProps) => {
   return (
-    <div className={`${className}`}>
-      {label && (
-        <label
-          className={`text-left block text-gray-700 text-sm font-bold mb-2`}
-        >
-          {label}
-        </label>
-      )}
       <input
         value={value}
         type={type}
@@ -33,8 +24,8 @@ export const Input = ({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder!}
         defaultValue={value}
+        data-testid="input-box"
       />
-    </div>
   );
 };
 export default Input;
