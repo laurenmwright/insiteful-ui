@@ -69,3 +69,9 @@ export const ButtonTypography = ({children, overrideColor, overrideFont}: Typogr
         <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.button) }>{children}</p>
     )
 }
+
+export const Label = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+    return (
+        <label style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.label) }>{children}</label>
+    )
+}
