@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof ConfirmationBox> = (args) => <Confirmation
 export const Primary = Template.bind({});
   Primary.args = {
     popButton: "Click me",
-    panelText: "You sure?????",
+    panelText: "Would you like to proceed?",
     onConfirm:action("user confirmed!"),
     onCancel:action("user canceled!"),
 };

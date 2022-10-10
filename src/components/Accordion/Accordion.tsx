@@ -1,6 +1,7 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUp } from "react-feather";
+import { Label } from "../Typography";
 
 export type AccordionProps = {
   data: {
@@ -17,8 +18,8 @@ export const Accordion = ({ data }: AccordionProps) => {
           <Disclosure key={index}>
             {({ open }) => (
               <>
-                <Disclosure.Button className="flex w-full justify-between rounded-lg bg-stone-200 px-4 py-2 text-left text-sm font-medium text-stone-900 hover:bg-stone-300 focus:outline-none focus-visible:ring focus-visible:ring-stone-500 focus-visible:ring-opacity-75">
-                  <span>{data.title}</span>
+                <Disclosure.Button className="flex w-full mb-2 justify-between rounded-lg bg-stone-200 px-4 py-2 text-left text-sm font-medium text-stone-900 hover:bg-stone-300 focus:outline-none focus-visible:ring focus-visible:ring-stone-500 focus-visible:ring-opacity-75">
+                  <Label>{data.title}</Label>
                   <ChevronUp
                     className={`${
                       open ? "rotate-180 transform" : ""

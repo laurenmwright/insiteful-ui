@@ -2,8 +2,6 @@ import React from 'react';
 import { fireEvent, render, screen} from '@testing-library/react';
 import { Modal } from '../components';
 
-//Modal Component Tests
-//-------------------------------------------------------------
 test('renders modal correctly', () => {
   const hello = jest.fn();
   const {getByTestId} = render(<Modal isOpen={true} onClose={hello} title="Title" />);
@@ -14,4 +12,3 @@ test('renders modal correctly', () => {
   fireEvent.click(getByTestId("icon"))
   expect(hello).toHaveBeenCalled();
 });
-//-------------------------------------------------------------

@@ -12,9 +12,6 @@ const myTest = () => {
   console.log("my test value");
 };
 
-//Accordion Component Tests
-//-------------------------------------------------------------
-
 test('renders accordion ids correctly', () => {
   render(<Accordion data={accordionData}></Accordion>);
 
@@ -62,4 +59,3 @@ test("value accepts any child", () => {
   expect(accordionElement3).toBeInTheDocument();
 });
 
-//--------------------------------------------------------------
