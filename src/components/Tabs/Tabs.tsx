@@ -13,19 +13,18 @@ export type TabProps = {
 
 export const Tabs = ({ data }: TabProps) => {
   return (
-    <div className="w-full max-w-md px-2 py-16 sm:px-0">
+    <div className=" w-full px-2 py-16 sm:px-0">
       <Tab.Group>
-        <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
+        <Tab.List className="flex ">
           {data.map((data, index) => (
             <Tab
               key={index}
               className={({ selected }) =>
                 classNames(
-                  "w-full rounded-lg py-2.5 text-sm font-medium leading-5 text-blue-700",
-                  "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2",
+                  " w-full py-2.5 text-md leading-5 focus-visible:outline-none",
                   selected
-                    ? "bg-white shadow"
-                    : "text-blue-100 hover:bg-white/[0.12] hover:text-white"
+                    ? "text-actionBlue font-bold shadow-b-md border-b-4 border-actionBlue	"
+                    : "text-mediumGray font-medium hover:bg-white/[0.12] hover:text-actionBlue/70 hover:border-b-2 hover:border-actionBlue/70 border-b-2 border-stone-500"
                 )
               }
             >
@@ -38,8 +37,7 @@ export const Tabs = ({ data }: TabProps) => {
             <Tab.Panel
               key={index}
               className={classNames(
-                "rounded-xl bg-white p-3",
-                "ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2"
+                "rounded-xl p-3 ",
               )}
             >
               {data.content}

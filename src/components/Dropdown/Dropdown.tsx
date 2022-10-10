@@ -1,6 +1,7 @@
 import { Listbox } from "@headlessui/react";
 import React from "react";
 import { Check, ChevronDown } from "react-feather";
+import { FormElement } from "../FormElement";
 
 export type DropdownProps = {
   label?: string;
@@ -17,11 +18,7 @@ export const Dropdown = ({
 }: DropdownProps) => {
     return (
     <div data-testid="div" className={`text-left pb-5`}>
-      {label && (
-        <label data-testid="label" className={`text-left block text-gray-700 text-sm font-bold pb-2`}>
-          {label}
-        </label>
-      )}
+      <FormElement label={label}>
       <Listbox
         as="div"
         className="space-y-1 min-w-fit"
@@ -77,6 +74,7 @@ export const Dropdown = ({
           </Listbox.Options>
         </div>
       </Listbox>
+      </FormElement>
     </div>
   );
 };

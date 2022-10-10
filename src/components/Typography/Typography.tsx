@@ -7,6 +7,7 @@ export type TypographyProps = {
     children: React.ReactNode | React.ReactNode[];
     overrideColor?: string;
     overrideFont?: string;
+    customStyles?: {};
     link?: string;
 }
 
@@ -70,8 +71,8 @@ export const ButtonTypography = ({children, overrideColor, overrideFont}: Typogr
     )
 }
 
-export const Label = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const Label = ({children, customStyles}: TypographyProps ) => {
     return (
-        <label style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.label) }>{children}</label>
+        <label style = {customStyles} className={ classNames(styles.label) }>{children}</label>
     )
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Label } from "../Typography";
 
 export type InputProps = {
   placeholder?: string;
@@ -16,14 +17,6 @@ export const Input = ({
   value,
 }: InputProps) => {
   return (
-    <div>
-      {label && (
-        <label
-          className={`text-left block text-gray-700 text-sm font-bold mb-2`}
-        >
-          {label}
-        </label>
-      )}
       <input
         value={value}
         type={type}
@@ -33,7 +26,6 @@ export const Input = ({
         defaultValue={value}
         data-testid="input-box"
       />
-    </div>
   );
 };
 export default Input;

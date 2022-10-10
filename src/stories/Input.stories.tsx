@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, Meta } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import { Input } from "../components";
+import { FormElement } from "../components";
 
 export default {
   title: "Stories/Components/Input",
@@ -18,15 +19,15 @@ export default {
   },
 } as Meta;
 
-export const Default = (args) => <div style={{width: args.width + "%"}}><Input {...args} /></div>;
+export const Default = ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} /></FormElement></div>;
 
 Default.args = {
   type: "text",
-  label: "Input numerical value here:",
+  label: "Type value here:",
   placeholder: "Input number...",
   onChange: action("Input is changed!"),
 };
-export const Number = (args) => <div style={{width: args.width + "%"}}><Input {...args} /></div>;
+export const Number =  ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} /></FormElement></div>;
 
 Number.args = {
   type: "number",
@@ -35,7 +36,7 @@ Number.args = {
   onChange: action("Input is changed!"),
 };
 
-export const Password = (args) => <div style={{width: args.width + "%"}}><Input {...args} /></div>;
+export const Password = ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} /></FormElement></div>;
 
 Password.args = {
   type: "password",

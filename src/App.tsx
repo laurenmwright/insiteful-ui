@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext, Accordion } from "./components";
+import { Button, ThemeContext, Accordion, Tabs } from "./components";
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -35,10 +35,10 @@ function Home() {
   }
   const data =  [{title: "Title 1", content: "Value 1"}, {title: "Title 2", content: "Value 2"}, {title: "Title 3", content: "Value 3"}];
 
-  
   return (
     <div className="grid h-screen place-items-center">
       <Accordion data={data} />
+      <Tabs data={data} />
       <Button  simple overrideColor="#ff0000">text blah blah blah </Button>
 
      </div>
