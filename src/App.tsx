@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext, Accordion, Tabs } from "./components";
+import { Button, ThemeContext, Accordion, DatePicker } from "./components";
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -37,9 +37,7 @@ function Home() {
 
   return (
     <div className="grid h-screen place-items-center">
-      <Accordion data={data} />
-      <Tabs data={data} />
-      <Button  simple overrideColor="#ff0000">text blah blah blah </Button>
+      <DatePicker onChange={null}></DatePicker>
 
      </div>
   );
