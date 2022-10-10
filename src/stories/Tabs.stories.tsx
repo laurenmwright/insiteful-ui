@@ -12,7 +12,6 @@ const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  primary: true,
   data: [
     { title: "Recent", content: "Does drinking coffee make you smarter?",},
     { title: "Popular", content: "Is tech making coffee better or worse?"},

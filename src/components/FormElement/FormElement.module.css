@@ -1,11 +1,6 @@
 .formElement {
     display: flex; 
-    margin-bottom: 1.5rem; 
-    margin-top: 1rem; 
+    margin-bottom: 1.5em; 
     flex-direction: column; 
-    width: 10rem; 
-}
-
-.label {
-    padding-bottom: 10px;
+    width: 100%;
 }

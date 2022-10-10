@@ -2,8 +2,13 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Button } from "../components";
 
-//Button Component Tests
-//-------------------------------------------------------------
+/**
+ * Button Component Tests
+ * To Do:
+ * 1. Test simple
+ * 2. Test disabled
+ */
+
 test('renders button with correct text', () => {
   render(<Button primary>My Button</Button>);
   const buttonElement = screen.getByText(/My Button/i);
@@ -29,4 +34,5 @@ test('renders button with working onclick function', () => {
   fireEvent.click(getByText(/My Button/i));
   expect(hello).toHaveBeenCalled();
 });
-//-------------------------------------------------------------
+
+

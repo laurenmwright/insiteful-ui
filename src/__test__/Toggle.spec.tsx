@@ -2,8 +2,6 @@ import * as React from 'react';
 import { fireEvent, render} from '@testing-library/react';
 import {Toggle} from '../components';
 
-//Toggle Component Tests
-//-------------------------------------------------------------
 test('renders toggle correctly', () => {
     const {getByTestId} = render(<Toggle label={"Label"} enabled={true} setEnabled={() => {}}/>);
     const toggleElement = getByTestId("div");
@@ -50,4 +48,3 @@ test('changing state when selecting an option', () => {
 
     expect(setStateMock).toHaveBeenCalled();
 });
-//-------------------------------------------------------------
