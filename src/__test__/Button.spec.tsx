@@ -1,19 +1,24 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { Button } from "../";
+import { Button } from "../components";
 
 //Button Component Tests
 //-------------------------------------------------------------
 test('renders button with correct text', () => {
-  render(<Button>My Button</Button>);
+  render(<Button primary>My Button</Button>);
   const buttonElement = screen.getByText(/My Button/i);
   expect(buttonElement).toBeInTheDocument();
 });
 
-test('renders button with override color', () => {
-  render(<Button overrideColor = "#ff0000" >My Button</Button>);
+test('renders regular button with override color', () => {
+  render(<Button primary overrideColor = "#ff0000" >My Button</Button>);
   const buttonElement = screen.getByText(/My Button/i);
   expect(buttonElement).toHaveStyle({backgroundColor:"#ff0000"});
+});
+test('renders outline button with override color', () => {
+  render(<Button outline overrideColor = "#ff0000" >My Button</Button>);
+  const buttonElement = screen.getByText(/My Button/i);
+  expect(buttonElement).toHaveStyle({color:"#ff0000"});
 });
 
 test('renders button with working onclick function', () => {

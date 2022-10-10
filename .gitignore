@@ -13,6 +13,8 @@
 /dist
 dist
 
+/src/App.css
+
 # misc
 .DS_Store
 .env.local

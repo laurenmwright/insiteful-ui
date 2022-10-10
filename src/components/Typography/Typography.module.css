@@ -1,7 +1,7 @@
 .heading1 {
   font-family: var(--common-font);
   font-size: 32px;
-  color: var(--color-dark_gray);
+  color: var(--color-darkGray);
 }
 
 .heading2 {
@@ -24,7 +24,7 @@
     font-size: 14px;
     line-height: 16.4pt;
     letter-spacing: 0pt;
-    color: var(--color-dark_gray);
+    color: var(--color-darkGray);
 }
 
 .caption2 {
@@ -41,7 +41,7 @@
     font-weight: bolder;
     line-height: 28.1pt;
     letter-spacing: 0pt;
-    color: var(--color-dark_gray);
+    color: var(--color-darkGray);
 }
 
 .placeholder {

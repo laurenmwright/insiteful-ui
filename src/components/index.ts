@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 export {ConfirmationBox} from "./ConfirmationBox";
 export { default as Button } from "./Button";
 export { RadioButtonGroup } from "./RadioButtonGroup";
@@ -10,5 +10,6 @@ export { FormElement } from "./FormElement";
 export { Accordion } from "./Accordion";
 export { Modal } from "./Modal";
 export { DatePicker } from "./DatePicker";
+export { Tabs } from "./Tabs";
 export { default as ThemeProvider } from "./Theme";
 export { ThemeContext } from "./Theme";

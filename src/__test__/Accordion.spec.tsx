@@ -41,7 +41,7 @@ test("value accepts any child", () => {
   const newAccordionData = [
     { title: "Title 1", content: 23 },
     { title: "Title 2", content: <Button onClick={myTest} primary>Button</Button> },
-    { title: "Title 3", content: <Title>Title</Title>},
+    { title: "Title 3", content: <Title>Title</Title> },
   ];
 
   render(<Accordion data={newAccordionData}></Accordion>);

@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Button.module.css";
+import { Search } from "react-feather";
 
 import classNames from "classnames";
 
@@ -8,10 +9,10 @@ export type ButtonProps = {
   disabled?: boolean;
   primary?: boolean;
   secondary?: boolean;
+  darkFont?: boolean;
   overrideColor?: string;
   editor?: boolean;
   outline?: boolean;
-  twClasses?: string;
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
 };
@@ -21,10 +22,10 @@ const Button = ({
   disabled,
   primary,
   secondary,
+  darkFont,
   overrideColor,
   editor,
   outline,
-  twClasses,
   onClick,
   type,
 }: ButtonProps) => {
@@ -33,15 +34,16 @@ const Button = ({
       type={type ? type : "button"}
       onClick={onClick!}
       disabled={disabled}
-      style={{backgroundColor: overrideColor}}
+      style={outline? {color: overrideColor, border: "2px solid " + overrideColor} : primary? {backgroundColor: overrideColor} : {}}
       className={
         classNames(
           styles.button,
           { [styles.primary]: primary },
           { [styles.editor]: editor },
           { [styles.secondary]: secondary },
-          { [styles.outline]: outline }
-        ) + ` ${twClasses ? twClasses : ""}`
+          { [styles.outline]: outline },
+          { [styles.darkFont]: darkFont }
+        )
       }
     >
       {children}
