@@ -779,9 +779,6 @@ video {
 .p-5 {
   padding: 1.25rem;
 }
-.p-4 {
-  padding: 1rem;
-}
 .p-3 {
   padding: 0.75rem;
 }
@@ -1011,8 +1008,8 @@ video {
 .hover\:border-b-2:hover {
   border-bottom-width: 2px;
 }
-.hover\:border-actionBlue\/70:hover {
-  border-color: rgb(47 119 238 / 0.7);
+.hover\:border-actionBlue\/60:hover {
+  border-color: rgb(47 119 238 / 0.6);
 }
 .hover\:bg-stone-300:hover {
   --tw-bg-opacity: 1;
@@ -1021,8 +1018,8 @@ video {
 .hover\:bg-white\/\[0\.12\]:hover {
   background-color: rgb(255 255 255 / 0.12);
 }
-.hover\:text-actionBlue\/70:hover {
-  color: rgb(47 119 238 / 0.7);
+.hover\:text-actionBlue\/60:hover {
+  color: rgb(47 119 238 / 0.6);
 }
 .focus\:border-blue-300:focus {
   --tw-border-opacity: 1;

@@ -6,7 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, ThemeContext, Accordion, DatePicker } from "./components";
+import { Button, ThemeContext, Accordion, DatePicker, Checkbox } from "./components";
+import { Check } from "react-feather";
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -38,7 +39,7 @@ function Home() {
 
   return (
     <div className="grid h-screen place-items-center">
-      <Modal isOpen={false} onClose={myConfirm} size='medium' title="Title">Modal</Modal>
+      <Checkbox label = "Checkbox" checked = {selectedValue} setChecked = {setSelectedValue} />
      </div>
   );
 }
