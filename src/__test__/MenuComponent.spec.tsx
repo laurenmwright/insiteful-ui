@@ -27,7 +27,8 @@ test("if dropdown menu opens & renders menu items correctly", () => {
   expect(menuElement).toBeInTheDocument();
 }); 
 
-test("if dropdown menu opens & renders menu items correctly", () => {
+
+test("if dropdown menu opens & hover color is indeed light grey", () => {
   render(<MenuComponent data={menuData}></MenuComponent>);
   const options = screen.getByText("Options");
   fireEvent.click(options);
