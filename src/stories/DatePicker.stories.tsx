@@ -1,23 +1,22 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { action } from "@storybook/addon-actions";
+import React, {useState} from 'react';
+import { Meta } from '@storybook/react';
 import { DatePicker } from '../components';
-import { string } from 'prop-types';
 
 export default {
-  title: 'Stories/Components/DatePicker',
+  title: "Stories/Components/DatePicker",
   component: DatePicker,
-  subcomponents: {DatePicker},
   argTypes: {
-    onChange: { action: 'changed' }
-  },
-} as ComponentMeta<typeof DatePicker>;
+    onChange: { table: { disable: true } },
+    dateValue: { table: { disable: true } },
+  }
 
-const Template: ComponentStory<typeof DatePicker> = (args) => <DatePicker {...args} />;
+} as Meta;
 
-export const Primary = Template.bind({});
+export const Default = (args) => {
+  const [value, setValue] = useState<string | null >(null);
+  const onChange = (v) => {
+    setValue(v);
+  };
 
-Primary.args = {
-  dateValue: string,
-  onChange: action("Date is changed!")
+  return <div><DatePicker dateValue={value} onChange={onChange} /></div>
 };

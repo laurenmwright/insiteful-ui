@@ -501,20 +501,11 @@ video {
 .pointer-events-none {
   pointer-events: none;
 }
-.fixed {
-  position: fixed;
-}
 .absolute {
   position: absolute;
 }
 .relative {
   position: relative;
-}
-.inset-0 {
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
 }
 .inset-y-0 {
   top: 0px;
@@ -592,9 +583,6 @@ video {
 }
 .max-h-60 {
   max-height: 15rem;
-}
-.min-h-full {
-  min-height: 100%;
 }
 .w-full {
   width: 100%;
@@ -690,9 +678,6 @@ video {
 .justify-end {
   justify-content: flex-end;
 }
-.justify-center {
-  justify-content: center;
-}
 .justify-between {
   justify-content: space-between;
 }
@@ -720,9 +705,6 @@ video {
 }
 .overflow-auto {
   overflow: auto;
-}
-.overflow-y-auto {
-  overflow-y: auto;
 }
 .truncate {
   overflow: hidden;
@@ -836,9 +818,6 @@ video {
 }
 .p-5 {
   padding: 1.25rem;
-}
-.p-4 {
-  padding: 1rem;
 }
 .p-3 {
   padding: 0.75rem;

@@ -12,5 +12,6 @@ export { Modal } from "./Modal";
 export { DatePicker } from "./DatePicker";
 export { Tabs } from "./Tabs";
 export { MenuComponent } from "./MenuComponent";
+export { default as Checkbox } from "./Checkbox";
 export { default as ThemeProvider } from "./Theme";
 export { ThemeContext } from "./Theme";
