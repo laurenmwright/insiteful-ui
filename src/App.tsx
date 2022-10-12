@@ -5,7 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import { Button, ThemeContext, Accordion, Tabs } from "./components";
+import { Button, ThemeContext, DropdownMenu } from "./components";
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -34,13 +34,19 @@ function Home() {
     console.log("user clicked no");
   }
   const data =  [{title: "Title 1", content: "Value 1"}, {title: "Title 2", content: "Value 2"}, {title: "Title 3", content: "Value 3"}];
+  
+    const menuData = [
+    { label: "Edit", link: "..." },
+    { label: "Duplicate", link: "..." },
+    { label: "Archive", link: "..." },
+    { label: "Move", link: "..." },
+    { label: "Delete", link: "..." },
+  ];
 
   return (
     <div className="grid h-screen place-items-center">
-      <Accordion data={data} />
-      <Tabs data={data} />
-      <Button  simple overrideColor="#ff0000">text blah blah blah </Button>
-
+      <Button  primary  >text blah blah blah </Button>
+      <DropdownMenu data = {menuData}/>
      </div>
   );
 }

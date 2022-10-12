@@ -526,6 +526,9 @@ video {
 .left-0 {
   left: 0px;
 }
+.top-16 {
+  top: 4rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -544,6 +547,12 @@ video {
 }
 .mt-1 {
   margin-top: 0.25rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.-mr-1 {
+  margin-right: -0.25rem;
 }
 .mt-2 {
   margin-top: 0.5rem;
@@ -596,6 +605,9 @@ video {
 .w-80 {
   width: 20rem;
 }
+.w-56 {
+  width: 14rem;
+}
 .w-\[63px\] {
   width: 63px;
 }
@@ -608,6 +620,9 @@ video {
 }
 .shrink-0 {
   flex-shrink: 0;
+}
+.origin-top-right {
+  transform-origin: top right;
 }
 .translate-y-1 {
   --tw-translate-y: 0.25rem;
@@ -683,6 +698,15 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.25rem * var(--tw-space-y-reverse));
+}
+.divide-y > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
+.divide-gray-100 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(243 244 246 / var(--tw-divide-opacity));
 }
 .overflow-auto {
   overflow: auto;
@@ -794,6 +818,13 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(254 243 199 / var(--tw-bg-opacity));
 }
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
+}
 .p-2 {
   padding: 0.5rem;
 }
@@ -821,6 +852,10 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -863,6 +898,9 @@ video {
 }
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
 }
 .font-sans {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -961,6 +999,18 @@ video {
   --tw-text-opacity: 1;
   color: rgb(217 119 6 / var(--tw-text-opacity));
 }
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-violet-200 {
+  --tw-text-opacity: 1;
+  color: rgb(221 214 254 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .opacity-0 {
   opacity: 0;
 }
@@ -999,6 +1049,10 @@ video {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(0 0 0 / var(--tw-ring-opacity));
 }
+.ring-actionBlue {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(47 119 238 / var(--tw-ring-opacity));
+}
 .ring-opacity-5 {
   --tw-ring-opacity: 0.05;
 }
@@ -1035,8 +1089,8 @@ video {
 .hover\:border-b-2:hover {
   border-bottom-width: 2px;
 }
-.hover\:border-actionBlue\/70:hover {
-  border-color: rgb(47 119 238 / 0.7);
+.hover\:border-actionBlue\/60:hover {
+  border-color: rgb(47 119 238 / 0.6);
 }
 .hover\:bg-stone-300:hover {
   --tw-bg-opacity: 1;
@@ -1045,8 +1099,15 @@ video {
 .hover\:bg-white\/\[0\.12\]:hover {
   background-color: rgb(255 255 255 / 0.12);
 }
-.hover\:text-actionBlue\/70:hover {
-  color: rgb(47 119 238 / 0.7);
+.hover\:bg-opacity-30:hover {
+  --tw-bg-opacity: 0.3;
+}
+.hover\:text-violet-100:hover {
+  --tw-text-opacity: 1;
+  color: rgb(237 233 254 / var(--tw-text-opacity));
+}
+.hover\:text-actionBlue\/60:hover {
+  color: rgb(47 119 238 / 0.6);
 }
 .focus\:border-blue-300:focus {
   --tw-border-opacity: 1;
@@ -1063,6 +1124,11 @@ video {
 .focus-visible\:ring:focus-visible {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+.focus-visible\:ring-2:focus-visible {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 .focus-visible\:ring-1:focus-visible {
