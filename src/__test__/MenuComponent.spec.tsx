@@ -28,14 +28,10 @@ test("if dropdown menu opens & renders menu items correctly", () => {
 }); 
 
 
-test("if dropdown menu opens & hover color is indeed light grey", () => {
+test("if menu button background is action blue", () => {
   render(<MenuComponent data={menuData}></MenuComponent>);
   const options = screen.getByText("Options");
-  fireEvent.click(options);
-  const menuElement = screen.getByText("Options");
-  fireEvent.mouseOver(menuElement);
-  expect(menuElement).toHaveClass('bg-actionBlue');
+  expect(options).toHaveClass('bg-actionBlue');
 }); 
-
 //-------------------------------------------------------------
 
