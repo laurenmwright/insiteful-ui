@@ -33,7 +33,7 @@ const Button = ({
   type,
 }: ButtonProps) => {
   return (
-    <button
+    <button data-testid = "Button"
       type={type ? type : "button"}
       onClick={onClick!}
       disabled={disabled}
@@ -55,7 +55,7 @@ const Button = ({
         { [styles.darkFont]: darkFont },
         { [styles.simple]: simple }
       )}
-    >
+      >
       {children}
     </button>
   );
