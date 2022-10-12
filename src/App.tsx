@@ -6,10 +6,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, ThemeContext, Accordion, DatePicker, ConfirmationBox, Tabs, FormElement, Checkbox } from "./components";
-import { Paper } from "./components/Paper/Paper";
-import { Input } from "postcss";
-import { Check } from "react-feather";
+import { Button, ThemeContext, MenuComponent } from "./components";
+
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -38,17 +36,22 @@ function Home() {
     console.log("user clicked no");
   }
   const data =  [{title: "Title 1", content: "Value 1"}, {title: "Title 2", content: "Value 2"}, {title: "Title 3", content: "Value 3"}];
+  
+    const menuData = [
+    { label: "Edit", link: "..." },
+    { label: "Duplicate", link: "..." },
+    { label: "Archive", link: "..." },
+    { label: "Move", link: "..." },
+    { label: "Delete", link: "..." },
+  ];
 
   return (
-    <div>
-      <Paper>
-        <Button primary>Button 1</Button>
-        <div>
-        <FormElement>Form Element Text</FormElement>
-        </div>
-        <Button secondary>Button 2</Button>
-      </Paper>
-    </div>
+
+    <div className="grid h-screen place-items-center">
+      <Button  primary  >text blah blah blah </Button>
+      <MenuComponent data = {menuData}/>
+     </div>
+
   );
 }
 
