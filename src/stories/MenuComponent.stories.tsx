@@ -5,11 +5,7 @@ import { MenuComponent } from "../components";
 export default {
   title: "Stories/Components/MenuComponent",
   component: MenuComponent,
-  argTypes: {
-    width: {
-      control: { type: "number", max: 100, min: 10, step: 1 },
-    },
-  },
+  argTypes: {},
 } as Meta;
 
 export const Default = (args) => (
