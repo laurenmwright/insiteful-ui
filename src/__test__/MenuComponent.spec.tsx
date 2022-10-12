@@ -10,16 +10,16 @@ const menuData = [
   { label: "Delete", link: "..." },
 ];
 
-//Dropdown Menu Component Tests
+// Menu Component Tests
 //-------------------------------------------------------------
-test("renders dropdown menu button correctly", () => {
+test("renders menu button correctly", () => {
   render(<MenuComponent data={menuData}/>);
   const menuElement = screen.getByText("Options");
   expect(menuElement).toBeInTheDocument();
 });
 
 
-test("if dropdown menu opens & renders menu items correctly", () => {
+test("if menu opens & renders menu items correctly", () => {
   render(<MenuComponent data={menuData}/>);
   const options = screen.getByText("Options");
   fireEvent.click(options);
