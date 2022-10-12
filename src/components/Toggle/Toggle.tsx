@@ -1,29 +1,27 @@
 import { useState } from 'react';
 import { Switch } from '@headlessui/react';
+import { Label } from '../Typography';
 
 export type ToggleProps = {
-  label: string,
+  label?: string,
   enabled: boolean,
-  setEnabled: (e: any) => void;
-  EnabledColor?: string,
-  DisabledColor?: string,
+  onChange: (e: any) => void;
 };
 
 export const Toggle = ({
   label,
   enabled,
-  setEnabled,
-  EnabledColor,
-  DisabledColor,
+  onChange,
 }: ToggleProps) => {
   return (
-    <div data-testid="div" className="flex items-center" >
-      <p data-testid="label" className={`font-sans mr-3 text-lg`}>{label}</p>
+    <div data-testid="div" className="flex gap-6 items-center" >
+
+      {label && <Label data-testid="label">{label}</Label>}
       <Switch data-testid="switch"
         checked={enabled}
-        onChange={setEnabled}
+        onChange={onChange}
         //TODO: Custom color is not working
-        className={`${enabled ? (EnabledColor ? EnabledColor : 'bg-primary'): (DisabledColor ? DisabledColor : 'bg-secondary')}
+        className={`${enabled ?  'bg-actionBlue':  'bg-lightGray'}
               relative inline-flex h-[27px] w-[63px] 
               shrink-0
               cursor-pointer rounded-full border-2 

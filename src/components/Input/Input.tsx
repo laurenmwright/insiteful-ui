@@ -3,7 +3,6 @@ import { Label } from "../Typography";
 
 export type InputProps = {
   placeholder?: string;
-  label?: string;
   value?: string;
   onChange: (newValue: string) => void;
   type: "text" | "number" | "password";
@@ -11,7 +10,6 @@ export type InputProps = {
 
 export const Input = ({
   placeholder,
-  label,
   type,
   onChange,
   value,

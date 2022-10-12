@@ -6,9 +6,10 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, ThemeContext, Accordion, DatePicker, ConfirmationBox, Tabs, FormElement } from "./components";
+import { Button, ThemeContext, Accordion, DatePicker, ConfirmationBox, Tabs, FormElement, Checkbox } from "./components";
 import { Paper } from "./components/Paper/Paper";
 import { Input } from "postcss";
+import { Check } from "react-feather";
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);

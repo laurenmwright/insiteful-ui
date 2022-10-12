@@ -12,7 +12,7 @@ const dropdownOpts = [
 test('renders dropdown correctly', () => {
     const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"string"} onChange = {() => {}} />);
     const dropdownElement = getByTestId("div");
-    expect(dropdownElement).toContainElement(getByTestId("label"));
+    expect(dropdownElement).toContainElement(getByTestId("form-element"));
     expect(dropdownElement).toContainElement(getByTestId("listbox"));
     expect(dropdownElement).toContainElement(getByTestId("buttonAndOptions"));
 });
