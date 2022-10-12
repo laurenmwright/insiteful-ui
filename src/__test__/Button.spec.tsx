@@ -1,7 +1,6 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { Button } from "../components";
-import { getByLabelText, getByText } from '@storybook/testing-library';
 
 /**
  * Button Component Tests
@@ -36,7 +35,7 @@ test('renders button with working onclick function', () => {
   expect(hello).toHaveBeenCalled();
 });
 
-test('testing the disabled', () => {
+test('testing the disabled prop', () => {
   const {getByTestId} = render(<Button disabled type={"button"} />);
   const buttonElement = getByTestId("Button");
   expect(buttonElement).toBeDisabled();
