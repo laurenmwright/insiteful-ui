@@ -5,7 +5,9 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+
 import { Button, ThemeContext, MenuComponent } from "./components";
+
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -44,12 +46,13 @@ function Home() {
   ];
 
   return (
+
     <div className="grid h-screen place-items-center">
       <Button  primary  >text blah blah blah </Button>
       <MenuComponent data = {menuData}/>
      </div>
+
   );
 }
-
 
 export default App;

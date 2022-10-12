@@ -14,4 +14,5 @@ export { Tabs } from "./Tabs";
 export { MenuComponent } from "./MenuComponent";
 export { default as Checkbox } from "./Checkbox";
 export { default as ThemeProvider } from "./Theme";
+export { Paper } from './Paper';
 export { ThemeContext } from "./Theme";
