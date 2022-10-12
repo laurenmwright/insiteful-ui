@@ -5,9 +5,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
-import { Button, ThemeContext, Accordion, DatePicker, Checkbox } from "./components";
-import { Check } from "react-feather";
+import { Button, ThemeContext, MenuComponent } from "./components";
 
 function App() {
   const { changeColorPalette } = useContext(ThemeContext);
@@ -36,10 +34,19 @@ function Home() {
     console.log("user clicked no");
   }
   const data =  [{title: "Title 1", content: "Value 1"}, {title: "Title 2", content: "Value 2"}, {title: "Title 3", content: "Value 3"}];
+  
+    const menuData = [
+    { label: "Edit", link: "..." },
+    { label: "Duplicate", link: "..." },
+    { label: "Archive", link: "..." },
+    { label: "Move", link: "..." },
+    { label: "Delete", link: "..." },
+  ];
 
   return (
     <div className="grid h-screen place-items-center">
-      <Checkbox label = "Checkbox" checked = {selectedValue} setChecked = {setSelectedValue} />
+      <Button  primary  >text blah blah blah </Button>
+      <MenuComponent data = {menuData}/>
      </div>
   );
 }
