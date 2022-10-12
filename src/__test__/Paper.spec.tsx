@@ -5,10 +5,9 @@ import { Button, Heading1 } from '../components';
 
 test('correctly renders paper with a white background', () => {
   
-const {getByTestId} = render(<Paper children="It's got the juice!" />)
-const PaperElement = getByTestId("Paper-Div"); 
-// expect(PaperElement).toHaveStyle({backgroundColor:"#ffffff"})
-expect(PaperElement).toHaveClass("paper")
+  const {getByTestId} = render(<Paper children="It's got the juice!" />)
+  const PaperElement = getByTestId("Paper-Div"); 
+  expect(PaperElement).toHaveStyle({backgroundColor:"#white"})
 });
 
 test('accepts all types of children', () => {
@@ -20,7 +19,7 @@ test('accepts all types of children', () => {
       
       <Button secondary>Button 2</Button>
   </Paper>)
-  
+
   const PaperElement = getByTestId("Paper-Div");
   const PaperChild1 = screen.getByText("Button 1");
   const PaperChild2 = screen.getByText("Button 2");
@@ -29,4 +28,4 @@ test('accepts all types of children', () => {
   expect(PaperElement).toContainElement(PaperChild1);
   expect(PaperElement).toContainElement(PaperChild2);
   expect(PaperElement).toContainElement(PaperChild3);
-  });
+});
