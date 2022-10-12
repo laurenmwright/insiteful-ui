@@ -16,15 +16,15 @@ export type CheckboxProps = {
     disabled,
   }: CheckboxProps) => {
     return (
-        <div>
+        <div data-testid="checkbox">
             <input
               type="Checkbox"
               checked = {checked}
-              onChange = {() => {setChecked((value) => !value)}}
+              onChange = {() => {setChecked((checked) => !checked)}}
               disabled = {disabled}
-              data-testid="checkbox"
+              data-testid = "input"
             /> 
-            <span className = {classNames(styles.label)} data-testid="label">{label}</span>
+            <span data-testid="span" className = {classNames(styles.label)}>{label}</span>
         </div>
         );
   };
