@@ -1,49 +1,29 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Meta } from "@storybook/react";
 import { MenuComponent } from "../components";
-import { useArgs } from "@storybook/client-api";
 
 export default {
   title: "Stories/Components/MenuComponent",
   component: MenuComponent,
   argTypes: {
-    selected: {
-      control: "select",
-      options: [
-        { label: "Edit", link: "..." },
-        { label: "Duplicate", link: "..." },
-        { label: "Archive", link: "..." },
-        { label: "Move", link: "..." },
-        { label: "Delete", link: "..." },
-      ],
+    width: {
+      control: { type: "number", max: 100, min: 10, step: 1 },
     },
   },
-  args: {
-    selected: "Options",
-    data: [
-      { label: "Edit", link: "..." },
-      { label: "Duplicate", link: "..." },
-      { label: "Archive", link: "..." },
-      { label: "Move", link: "..." },
-      { label: "Delete", link: "..." },
-    ],
-  },
-} as ComponentMeta<typeof MenuComponent>;
-const Template: ComponentStory<typeof MenuComponent> = (args) => (
-  <MenuComponent {...args} />
+} as Meta;
+
+export const Default = (args) => (
+  <div style={{ width: args.width + "%" }}>
+    <MenuComponent data={args.data} />
+  </div>
 );
-export const Controlled = (args) => {
-  const [_, setArgs] = useArgs();
-  const onChange = (e, checked) => {
-    setArgs({ ...args, checked });
-    args.onChange(e, checked);
-  };
-  return <Template {...args} onChange={onChange} />;
+
+Default.args = {
+  data: [
+    { label: "Edit", link: "..." },
+    { label: "Duplicate", link: "..." },
+    { label: "Archive", link: "..." },
+    { label: "Move", link: "..." },
+    { label: "Delete", link: "..." },
+  ],
 };
-Controlled.argTypes = {
-  onChange: { action: "clicked", table: { disable: true } },
-};
-Controlled.args = {
-  checked: true,
-};
-export const Uncontrolled = Template.bind({});
