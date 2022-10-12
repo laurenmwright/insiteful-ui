@@ -34,7 +34,7 @@ export const MenuComponent = ({ data }: MenuProps) => {
           <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
               {data.map((data, index) => (
-                <Menu.Item data-testid={index}>
+                <Menu.Item data-testid={index} key={index}>
                   {({ active }) => (
                     <button
                       className={`${
