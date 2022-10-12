@@ -20,8 +20,15 @@ test('renders regular button with override color', () => {
   const buttonElement = screen.getByText(/My Button/i);
   expect(buttonElement).toHaveStyle({backgroundColor:"#ff0000"});
 });
+
 test('renders outline button with override color', () => {
-  render(<Button outline overrideColor = "#ff0000" >My Button</Button>);
+  render(<Button outline overrideColor = "red" >My Button</Button>);
+  const buttonElement = screen.getByText(/My Button/i);
+  expect(buttonElement).toHaveStyle({border: "2px solid red"});
+});
+
+test('renders button with simple prop', () => {
+  render(<Button simple overrideColor = "#ff0000" >My Button</Button>);
   const buttonElement = screen.getByText(/My Button/i);
   expect(buttonElement).toHaveStyle({color:"#ff0000"});
 });
@@ -34,5 +41,14 @@ test('renders button with working onclick function', () => {
   fireEvent.click(getByText(/My Button/i));
   expect(hello).toHaveBeenCalled();
 });
+
+test('testing the disabled prop', () => {
+  const {getByTestId} = render(<Button disabled type={"button"} />);
+  const buttonElement = getByTestId("Button");
+  expect(buttonElement).toBeDisabled();
+});
+
+
+
 
 
