@@ -1,33 +1,34 @@
 import React, { Children } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button, FormElement, Paper } from '../components';
+import { Button, FormElement, Paper, Input } from '../components';
 
 
 export default {
   title: 'Stories/Components/Paper',
   component: Paper,
-  argTypes: {}
+  argTypes: {
+    width: {
+      control: { type: 'number', max: 100, min: 30, step: 1 },
+    },
+  }
 } as ComponentMeta<typeof Paper>;
 
 export const Default = (args) => {
-  return <Paper>
-    <div><Button primary>Button 1</Button></div>
+  return (
+    <div style={{width: args.width + "%"}}>
+      <Paper>
+        <FormElement label = "FormElement">
+          <Input type = "text" onChange = {() => {}}></Input>
+        </FormElement>
+        <Button primary>Button 1</Button>
 
-    <div>A child!</div>
+        <div>A child!</div>
 
-    <div><FormElement>Form Element</FormElement></div>
-
-    <div><Button secondary>Button 2</Button></div>
-  </Paper>
+        <Button secondary>Button 2</Button>
+      </Paper>
+    </div>
+  )
 }
-
-const Template: ComponentStory<typeof Paper> = (args) => <Paper {...args} />;
-
-// export const Default = Template.bind({});
-
-Default.args = {
-  children: "A child!",
-};
 
 
 
