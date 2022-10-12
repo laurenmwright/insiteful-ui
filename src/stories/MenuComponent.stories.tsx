@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { DropdownMenu } from "../components";
+import { MenuComponent } from "../components";
 import { useArgs } from "@storybook/client-api";
 
 export default {
-  title: "Stories/Components/DropdownMenu",
-  component: DropdownMenu,
+  title: "Stories/Components/MenuComponent",
+  component: MenuComponent,
   argTypes: {
     selected: {
       control: "select",
@@ -28,9 +28,9 @@ export default {
       { label: "Delete", link: "..." },
     ],
   },
-} as ComponentMeta<typeof DropdownMenu>;
-const Template: ComponentStory<typeof DropdownMenu> = (args) => (
-  <DropdownMenu {...args} />
+} as ComponentMeta<typeof MenuComponent>;
+const Template: ComponentStory<typeof MenuComponent> = (args) => (
+  <MenuComponent {...args} />
 );
 export const Controlled = (args) => {
   const [_, setArgs] = useArgs();

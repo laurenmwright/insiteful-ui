@@ -11,6 +11,6 @@ export { Accordion } from "./Accordion";
 export { Modal } from "./Modal";
 export { DatePicker } from "./DatePicker";
 export { Tabs } from "./Tabs";
-export { DropdownMenu } from "./DropdownMenu";
+export { MenuComponent } from "./MenuComponent";
 export { default as ThemeProvider } from "./Theme";
 export { ThemeContext } from "./Theme";

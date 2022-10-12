@@ -1,6 +1,6 @@
 import * as React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { DropdownMenu } from "../components";
+import { MenuComponent } from "../components";
 
 const menuData = [
   { label: "Edit", link: "..." },
@@ -13,25 +13,28 @@ const menuData = [
 //Dropdown Menu Component Tests
 //-------------------------------------------------------------
 test("renders dropdown menu button correctly", () => {
-  render(<DropdownMenu data={menuData}/>);
+  render(<MenuComponent data={menuData}/>);
   const menuElement = screen.getByText("Options");
   expect(menuElement).toBeInTheDocument();
 });
 
 
 test("if dropdown menu opens & renders menu items correctly", () => {
-  render(<DropdownMenu data={menuData}/>);
-  const select = screen.getByText("Options");
-  fireEvent.click(select);
+  render(<MenuComponent data={menuData}/>);
+  const options = screen.getByText("Options");
+  fireEvent.click(options);
   const menuElement = screen.getByText("Duplicate");
   expect(menuElement).toBeInTheDocument();
 }); 
 
+test("if dropdown menu opens & renders menu items correctly", () => {
+  render(<MenuComponent data={menuData}></MenuComponent>);
+  const options = screen.getByText("Options");
+  fireEvent.click(options);
+  const menuElement = screen.getByText("Options");
+  fireEvent.mouseOver(menuElement);
+  expect(menuElement).toHaveClass('bg-actionBlue');
+}); 
 
-// test('if hover color is indeed light gray', () => {
-//   render(<DropdownMenu data = {menuData}/>);
-//   const menuElement = screen.getByText(/My Item/i);
-//   expect(menuElement).toHaveStyle("bg-lightGray");
-// });
 //-------------------------------------------------------------
 
