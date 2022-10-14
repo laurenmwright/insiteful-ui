@@ -13,34 +13,29 @@ export default {
     },
      label: { control: "text" },
      placeholder: { control: "text" },
-     onChange: { table: { disable: true } },
+     onChange: { action : "changed", table: { disable: true } },
      value: { table: { disable: true } },
-
+     type: { table: { disable: true } },
   },
 } as Meta;
 
-export const Default = ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} /></FormElement></div>;
+export const Default = ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} type = "text" onChange = {action("Input is changed!")}/></FormElement></div>;
 
 Default.args = {
-  type: "text",
   label: "Type value here:",
-  placeholder: "Input number...",
-  onChange: action("Input is changed!"),
+  placeholder: "Input text...",
 };
-export const Number =  ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} /></FormElement></div>;
+
+export const Number =  ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} type = "number" onChange = {action("Input is changed!")}/></FormElement></div>;
 
 Number.args = {
-  type: "number",
   label: "Input number here: ",
   placeholder: "Type number...",
-  onChange: action("Input is changed!"),
 };
 
-export const Password = ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} /></FormElement></div>;
+export const Password = ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} type = "password" onChange = {action("Input is changed!")}/></FormElement></div>;
 
 Password.args = {
-  type: "password",
   label: "Input password here: ",
   placeholder: "Type password...",
-  onChange: action("Input is changed!"),
 };
