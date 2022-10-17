@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { Meta } from '@storybook/react';
 import { DatePicker } from '../components';
-import { string } from 'prop-types';
 
 export default {
   title: "Stories/Components/DatePicker",
@@ -9,8 +8,8 @@ export default {
   argTypes: {
     onChange: { table: { disable: true } },
     dateValue: { table: { disable: true } },
-  }
-
+    label: { control: "text" },
+  },
 } as Meta;
 
 export const Default = (args) => {

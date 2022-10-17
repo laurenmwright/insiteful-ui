@@ -46,13 +46,11 @@ function Home() {
   ];
 
   return (
-
     <div className="grid h-screen place-items-center">
-      <Button  primary  >text blah blah blah </Button>
-      <MenuComponent data = {menuData}/>
-      <DatePicker label = "Choose a date here:" dateValue={value} onChange={onChange} />
-     </div>
-
+      {/* <Button primary>text blah blah blah </Button>
+      <MenuComponent data={menuData} /> */}
+      <DatePicker label="Select a date:" dateValue={null} onChange={null} />
+    </div>
   );
 }
 
