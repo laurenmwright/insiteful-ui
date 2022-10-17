@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { DatePicker, Button, ThemeContext, MenuComponent, RadioButtonGroup, Tabs, Toggle, Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder, Label, Checkbox } from "./components";
+import { Button, ThemeContext, MenuComponent, RadioButtonGroup, Tabs, Toggle, Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder, Label, Checkbox, ConfirmationBox } from "./components";
 
 
 function App() {
@@ -50,9 +50,7 @@ function Home() {
 
   return (
     <div className="grid h-screen place-items-center">
-      {/* <Button primary>text blah blah blah </Button>
-      <MenuComponent data={menuData} /> */}
-      <DatePicker label="Select a date:" dateValue={null} onChange={null} />
+      <ConfirmationBox popButton="ClickME" panelText="You sure you want to keep going?"></ConfirmationBox>
     </div>
   );
 }
