@@ -10,7 +10,7 @@ export default {
 
 export const Default = (args) => (
   <div style={{ width: args.width + "%" }}>
-    <MenuComponent data={args.data} />
+    <MenuComponent buttonText = "Options" data={args.data} />
   </div>
 );
 

@@ -48,8 +48,8 @@ function Home() {
   return (
 
     <div className="grid h-screen place-items-center">
-      <Button  primary  >text blah blah blah </Button>
-      <MenuComponent data = {menuData}/>
+      {/* <Button  primary  >text blah blah blah </Button> */}
+      <MenuComponent buttonText = "Options" data = {menuData}/>
      </div>
 
   );

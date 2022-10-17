@@ -1,25 +1,24 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { ChevronDown } from "react-feather";
+import { ButtonTypography } from "../Typography";
 
 export type MenuProps = {
+  buttonText: string;
   data: {
     label: string;
     link: string;
   }[];
 };
 
-export const MenuComponent = ({ data }: MenuProps) => {
+export const MenuComponent = ({ buttonText, data }: MenuProps) => {
   return (
-    <div className="fixed top-16 w-56 text-right">
+    <div className="w-56 text-right">
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="inline-flex w-full justify-center rounded-md bg-actionBlue px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-            Options
-            <ChevronDown
-              className="ml-2 -mr-1 h-5 w-5"
-              aria-hidden="true"
-            />
+            <ButtonTypography>{buttonText}</ButtonTypography>
+            <ChevronDown className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
           </Menu.Button>
         </div>
         <Transition
