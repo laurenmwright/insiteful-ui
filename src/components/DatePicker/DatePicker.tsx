@@ -17,18 +17,18 @@ export const DatePicker = ({
 
 }: DatePickerProps) =>{
     return (
-      <Label>
-        {label}
-        <div>
-          <input
-            type="date"
-            data-testid="date-picker"
-            value={dateValue}
-            className={classNames(styles.input)}
-            onChange={(e) => onChange(e.target.value)}
-          />
-        </div>
-      </Label>
+      <div>
+        <Label>
+          {label}
+        </Label>
+        <input
+          type="date"
+          data-testid="date-picker"
+          value={dateValue}
+          className={classNames(styles.input)}
+          onChange={(e) => onChange(e.target.value)}
+        />
+      </div>
     );
 }
 export default DatePicker;
