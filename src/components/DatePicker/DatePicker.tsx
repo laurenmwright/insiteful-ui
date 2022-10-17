@@ -22,7 +22,7 @@ export const DatePicker = ({
         <div>
           <input
             type="date"
-            data-testid="DRP"
+            data-testid="date-picker"
             value={dateValue}
             className={classNames(styles.input)}
             onChange={(e) => onChange(e.target.value)}
