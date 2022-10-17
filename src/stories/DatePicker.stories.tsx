@@ -8,15 +8,18 @@ export default {
   argTypes: {
     onChange: { table: { disable: true } },
     dateValue: { table: { disable: true } },
-  }
-
+  },
 } as Meta;
 
 export const Default = (args) => {
-  const [value, setValue] = useState<string | null >(null);
+  const [value, setValue] = useState<string | string >();
   const onChange = (v) => {
     setValue(v);
   };
 
-  return <div><DatePicker dateValue={value} onChange={onChange} /></div>
+  return <div><DatePicker label = {args.label} dateValue={value} onChange={onChange} /></div>
 };
+
+Default.args = {
+  label: "Please choose a date:"
+}

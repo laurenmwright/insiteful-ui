@@ -49,11 +49,9 @@ function Home() {
   const radioData = [{id:"1", value:"Option 1"}, {id:"2", value:"Option 2"},{id:"3", value:"Option 3"}]
 
   return (
-
     <div className="grid h-screen place-items-center">
       <ConfirmationBox popButton="ClickME" panelText="You sure you want to keep going?"></ConfirmationBox>
     </div>
-
   );
 }
 
