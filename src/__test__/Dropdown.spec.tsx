@@ -22,18 +22,16 @@ test('dropdown opens and displays options correctly', () => {
     const buttonElement = getByTestId("button");
     fireEvent.click(buttonElement);
     const optionElement = getByTestId("1");
-    fireEvent.click(optionElement);
     expect(optionElement).toHaveClass("relative cursor-default select-none py-2 pl-10 pr-4")
 });
 
-test('selecting an option works', () => {
+test('passing a selected option works', () => {
     const hello = jest.fn();
-    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"example"} onChange = {hello} />);
+    const {getByTestId} = render(<Dropdown label={"Label"} options = {dropdownOpts} selected = {"opt1"} onChange = {hello} />);
     const buttonElement = getByTestId("button");
     fireEvent.click(buttonElement);
-    const optionElement = getByTestId("1");
-    fireEvent.click(optionElement);
-    expect(hello).toHaveBeenCalled();
+    const check = getByTestId("check");
+    expect(check).toBeInTheDocument();
 });
 
 //TODO: see if what is getting selecting is changing in state!
