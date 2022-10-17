@@ -5,6 +5,7 @@ import { Checkbox } from "../components";
 test('renders checkbox correctly', () => {
     const {getByTestId} = render(<Checkbox label={"Checkbox"} checked = {true} setChecked = {() => {}} />);
     const checkboxElement = getByTestId("checkbox");
+    expect(checkboxElement).toContainElement(getByTestId("input"));
     expect(checkboxElement).toContainElement(getByTestId("span"));
 });
 
