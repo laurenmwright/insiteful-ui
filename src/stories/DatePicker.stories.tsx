@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Meta } from '@storybook/react';
 import { DatePicker } from '../components';
+import { string } from 'prop-types';
 
 export default {
   title: "Stories/Components/DatePicker",
@@ -13,10 +14,10 @@ export default {
 } as Meta;
 
 export const Default = (args) => {
-  const [value, setValue] = useState<string | null >(null);
+  const [value, setValue] = useState<string | string >();
   const onChange = (v) => {
     setValue(v);
   };
 
-  return <div><DatePicker dateValue={value} onChange={onChange} /></div>
+  return <div><DatePicker label = "Choose a date here:" dateValue={value} onChange={onChange} /></div>
 };

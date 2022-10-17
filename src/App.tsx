@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, ThemeContext, MenuComponent } from "./components";
+import { Button, ThemeContext, MenuComponent, DatePicker } from "./components";
 
 
 function App() {
@@ -50,6 +50,7 @@ function Home() {
     <div className="grid h-screen place-items-center">
       <Button  primary  >text blah blah blah </Button>
       <MenuComponent data = {menuData}/>
+      <DatePicker label = "Choose a date here:" dateValue={value} onChange={onChange} />
      </div>
 
   );
