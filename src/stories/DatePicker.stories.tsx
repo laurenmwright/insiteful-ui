@@ -8,7 +8,6 @@ export default {
   argTypes: {
     onChange: { table: { disable: true } },
     dateValue: { table: { disable: true } },
-    label: { control: "text" },
   },
 } as Meta;
 
@@ -18,5 +17,9 @@ export const Default = (args) => {
     setValue(v);
   };
 
-  return <div><DatePicker label = "Choose a date here:" dateValue={value} onChange={onChange} /></div>
+  return <div><DatePicker label = {args.label} dateValue={value} onChange={onChange} /></div>
 };
+
+Default.args = {
+  label: "Please choose a date:"
+}
