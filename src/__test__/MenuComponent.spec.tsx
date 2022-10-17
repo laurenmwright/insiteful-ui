@@ -12,15 +12,15 @@ const menuData = [
 
 // Menu Component Tests
 //-------------------------------------------------------------
-test("renders menu button correctly", () => {
-  render(<MenuComponent data={menuData}/>);
+test("renders menu button text correctly", () => {
+  render(<MenuComponent buttonText = "Options" data={menuData}/>);
   const menuElement = screen.getByText("Options");
   expect(menuElement).toBeInTheDocument();
 });
 
 
 test("if menu opens & renders menu items correctly", () => {
-  render(<MenuComponent data={menuData}/>);
+  render(<MenuComponent buttonText="Options" data={menuData} />);
   const options = screen.getByText("Options");
   fireEvent.click(options);
   const menuElement = screen.getByText("Duplicate");
@@ -29,7 +29,7 @@ test("if menu opens & renders menu items correctly", () => {
 
 
 test("if menu button background is action blue", () => {
-  render(<MenuComponent data={menuData}></MenuComponent>);
+  render(<MenuComponent buttonText="Options" data={menuData}></MenuComponent>);
   const options = screen.getByText("Options");
   expect(options).toHaveClass('bg-actionBlue');
 }); 
