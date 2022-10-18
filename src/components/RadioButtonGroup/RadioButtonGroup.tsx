@@ -33,7 +33,7 @@ export const RadioButtonGroup = ({
         <RadioGroup.Option key={element.id} value={element.id} as={Fragment}>
           {({ checked }) => (
               <div className={classNames(styles.item)}>
-                <span className = { checked ? classNames(styles.icon) : "" }><Circle /></span>
+                <span data-testid = {element.id} className = { checked ? classNames(styles.icon) : "" }><Circle /></span>
                 <span className = { classNames(styles.option) }>{element.value}</span>
               </div>
           )}

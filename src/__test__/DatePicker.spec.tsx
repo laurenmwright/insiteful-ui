@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen} from '@testing-library/react';
+import { fireEvent, render, screen} from '@testing-library/react';
 import { DatePicker } from '../components';
 import userEvent from "@testing-library/user-event";
 
@@ -17,10 +17,10 @@ test("correctly renders styles", () => {
   expect(DateRangeElement).toHaveStyle({width: "15rem;"});
 })
 
-test("on change gets called", () => {
+test("on change gets called", async () => {
   const hello = jest.fn();
   const {getByTestId} = render(<DatePicker onChange={hello}/>);
   const DateRangeElement = getByTestId("date-picker");
-  userEvent.type(DateRangeElement, "12"); 
-  expect(hello).toHaveBeenCalled;
+  await fireEvent.change(DateRangeElement, { target: { value: '2020-05-12' } });
+  expect(hello).toHaveBeenCalled();
 });
