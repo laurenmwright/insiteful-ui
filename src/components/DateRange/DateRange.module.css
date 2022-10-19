@@ -1,9 +1,13 @@
 .dateRange1 {
   display: inline-block;
   padding: 10px;
+  inline-size: 260px;
+  overflow-wrap: break-word;
 }
 
 .dateRange2 {
   display: inline-block;
   padding: 10px;
+  inline-size: 260px;
+  overflow-wrap: break-word;
 }
