@@ -8,8 +8,8 @@ export type DateRangeProps = {
   endLabel?: string;
   startDate: string | null;
   endDate: string | null;
-  setStartDate: (startDate: string) => void;
-  setEndDate: (endDate: string) => void;
+  setStartDate: (startDate: string | null) => void;
+  setEndDate: (endDate: string | null) => void;
 };
 
 export const DateRange = ({ startLabel, endLabel, startDate, endDate, setStartDate, setEndDate}: DateRangeProps) => {
