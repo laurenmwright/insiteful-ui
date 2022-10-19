@@ -15,4 +15,5 @@ export { MenuComponent } from "./MenuComponent";
 export { default as Checkbox } from "./Checkbox";
 export { default as ThemeProvider } from "./Theme";
 export { Paper } from './Paper';
+export { DateRange } from './DateRange';
 export { ThemeContext } from "./Theme";
