@@ -1,11 +1,9 @@
-.startDate{
-    display: flex;
+.dateRange1 {
+  float: left;
+  padding: 10px;
 }
 
-.endDate{
-    display: flex 1;
-}
-
-.dateRange{
-    
+.dateRange2 {
+  float: right;
+  padding: 10px;
 }

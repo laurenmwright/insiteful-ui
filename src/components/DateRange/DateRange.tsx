@@ -2,8 +2,6 @@ import React, {useState} from "react";
 import classNames from "classnames";
 import styles from "./DateRange.module.css";
 import { DatePicker } from "../DatePicker";
-import { Label } from "../Typography";
-
 
 export type DateRangeProps = {
   startLabel?: string;
@@ -16,13 +14,13 @@ export type DateRangeProps = {
 
 export const DateRange = ({ startLabel, endLabel, startDate, endDate, setStartDate, setEndDate}: DateRangeProps) => {
   return (
-    <div>
-      <span data-testid="start-date">
+    <div> 
+        <div data-testid="start-date" className={classNames(styles.dateRange1)}>
         <DatePicker label = {startLabel} dateValue={startDate} onChange={setStartDate}></DatePicker>
-        </span>
-        <span data-testid="end-date">
+        </div>
+        <div data-testid="end-date" className={classNames(styles.dateRange2)}>
         <DatePicker label = {endLabel} dateValue={endDate} onChange={setEndDate}></DatePicker>
-        </span>
+        </div>
     </div>
   );
 };
