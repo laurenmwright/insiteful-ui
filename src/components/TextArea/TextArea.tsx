@@ -14,7 +14,7 @@ export type TextAreaProps = {
 export const TextArea = ({ label, placeholderValue }: TextAreaProps) => {
     return (
         
-        <div className={ classNames(styles.div) }>
+        <div>
             <Label data-testid="TextArea-Label" children={label} />
             <textarea data-testid="TextArea-Native"className={ classNames(styles.textArea) } name="Text Area Test" id="TextArea" placeholder={placeholderValue} />
         </div>
