@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, ThemeContext, MenuComponent, RadioButtonGroup, Tabs, Toggle, Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder, Label, Checkbox, ConfirmationBox, DatePicker, DateRange } from "./components";
+import { Button, ThemeContext, MenuComponent, RadioButtonGroup, Tabs, Toggle, Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder, Label, Checkbox, ConfirmationBox, DatePicker, DateRange, FormElement } from "./components";
 
 
 function App() {
@@ -54,8 +54,7 @@ function Home() {
 
   return (
     <div className="grid h-screen place-items-center">
-      {/* <ConfirmationBox popButton="ClickME" panelText="You sure you want to keep going?"></ConfirmationBox> */}
-      <DateRange startLabel = {"Please choose a start date: "} endLabel = {"Please choose an end date:"} startDate = {startDate} endDate = {endDate} setStartDate = {setStartDate} setEndDate = {setEndDate}></DateRange>
+      <FormElement>Label<DateRange startLabel = {"Please choose a start date: "} endLabel = {"Please choose an end date:"} startDate = {startDate} endDate = {endDate} setStartDate = {setStartDate} setEndDate = {setEndDate}></DateRange></FormElement>
     </div>
   );
 }

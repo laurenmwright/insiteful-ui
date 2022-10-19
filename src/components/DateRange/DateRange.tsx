@@ -17,11 +17,12 @@ export type DateRangeProps = {
 export const DateRange = ({ startLabel, endLabel, startDate, endDate, setStartDate, setEndDate}: DateRangeProps) => {
   return (
     <div>
-        {/* <Label>{startLabel}</Label> */}
-        <DatePicker data-testid="start-date" label = {startLabel} dateValue={startDate} onChange={setStartDate}></DatePicker>
-
-        {/* <Label>{endLabel}</Label> */}
-        <DatePicker data-testid="end-date" label = {endLabel} dateValue={endDate} onChange={setEndDate}></DatePicker>
+      <span data-testid="start-date">
+        <DatePicker label = {startLabel} dateValue={startDate} onChange={setStartDate}></DatePicker>
+        </span>
+        <span data-testid="end-date">
+        <DatePicker label = {endLabel} dateValue={endDate} onChange={setEndDate}></DatePicker>
+        </span>
     </div>
   );
 };
