@@ -501,9 +501,6 @@ video {
 .pointer-events-none {
   pointer-events: none;
 }
-.fixed {
-  position: fixed;
-}
 .absolute {
   position: absolute;
 }
@@ -519,9 +516,6 @@ video {
 }
 .left-0 {
   left: 0px;
-}
-.top-16 {
-  top: 4rem;
 }
 .mx-auto {
   margin-left: auto;

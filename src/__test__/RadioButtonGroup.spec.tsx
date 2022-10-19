@@ -6,7 +6,7 @@ import { RadioButtonGroup } from "../components";
 test('renders radio button group with correct label text', () => {
     const hello = jest.fn();
 
-    render(<RadioButtonGroup onChange={hello} isSelected={''} data={[{id: "Test 1", value: "Test 1"}]} label={'Label'} defaultColor={''} overrideColor={''}></RadioButtonGroup>);
+    render(<RadioButtonGroup onChange={hello} isSelected={''} data={[{id: "Test 1", value: "Test 1"}]} label={'Label'}></RadioButtonGroup>);
 
     const radioButtonElement = screen.getByLabelText("Label")
 
@@ -22,7 +22,7 @@ test('renders radio button group with correct options', () => {
         {id: "Test 3", value: "Test 3"}
     ]; 
 
-    render(<RadioButtonGroup onChange={hello} isSelected={''} data={radioData} label={'Label'} defaultColor={''} overrideColor={''}></RadioButtonGroup>);
+    render(<RadioButtonGroup onChange={hello} isSelected={''} data={radioData} label={'Label'}></RadioButtonGroup>);
 
     const radioButtonElement = screen.getByText("Test 3")
 
@@ -39,10 +39,28 @@ test('renders radio button group with working onchange function', () => {
     ];
 
     const { getByText } = render(
-      <RadioButtonGroup onChange={hello} isSelected={''} data={radioData} label={'Label'} defaultColor={''} overrideColor={''}></RadioButtonGroup>
+      <RadioButtonGroup onChange={hello} isSelected={''} data={radioData} label={'Label'}></RadioButtonGroup>
     );
 
     fireEvent.click(getByText(/Test 3/i));
 
     expect(hello).toHaveBeenCalled();
+});
+
+test('renders radio button group with correct selected option', () => {
+    const hello = jest.fn();
+
+    const radioData = [
+        {id: "Test 1", value: "Test 1"},
+        {id: "Test 2", value: "Test 2"},
+        {id: "Test 3", value: "Test 3"}
+    ];
+
+    const { getByTestId } = render(
+      <RadioButtonGroup onChange={hello} isSelected={"Test 1"} data={radioData} label={'Label'}></RadioButtonGroup>
+    );
+    
+    const circle = getByTestId("Test 1");
+    
+    expect(circle).toBeInTheDocument();
 });

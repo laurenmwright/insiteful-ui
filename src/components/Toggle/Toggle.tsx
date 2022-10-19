@@ -5,12 +5,14 @@ import { Label } from '../Typography';
 export type ToggleProps = {
   label?: string,
   enabled: boolean,
+  disabled?: boolean,
   onChange: (e: any) => void;
 };
 
 export const Toggle = ({
   label,
   enabled,
+  disabled,
   onChange,
 }: ToggleProps) => {
   return (
@@ -18,6 +20,7 @@ export const Toggle = ({
 
       {label && <Label data-testid="label">{label}</Label>}
       <Switch data-testid="switch"
+        disabled={disabled}
         checked={enabled}
         onChange={onChange}
         //TODO: Custom color is not working

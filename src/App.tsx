@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, ThemeContext, MenuComponent, TextArea, Placeholder } from "./components";
+import { Button, ThemeContext, MenuComponent, RadioButtonGroup, Tabs, Toggle, Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder, Label, Checkbox, ConfirmationBox, TextArea } from "./components";
 
 
 function App() {
@@ -28,6 +28,8 @@ function App() {
 
 function Home() {
   const [selectedValue, setSelectedValue] = useState();
+  const [selectedToggle, setSelectedToggle] = useState(true);
+ 
 
   const myConfirm = () => {
     console.log("user clicked yes");
@@ -44,19 +46,13 @@ function Home() {
     { label: "Move", link: "..." },
     { label: "Delete", link: "..." },
   ];
+  const radioData = [{id:"1", value:"Option 1"}, {id:"2", value:"Option 2"},{id:"3", value:"Option 3"}]
 
   return (
-
-    // <div className="grid h-screen place-items-center">
-    //   <Button  primary  >text blah blah blah </Button>
-    //   <MenuComponent data = {menuData}/>
-    //  </div>
 
     <div>
       <TextArea label="Test Label"></TextArea>
     </div>
-    
-    // <TextArea></TextArea>
   );
 }
 
