@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label, Placeholder } from '../Typography';
+import { Label } from '../Typography';
 import styles from './TextArea.module.css';
 import classNames from 'classnames';
 
