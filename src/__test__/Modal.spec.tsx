@@ -4,11 +4,12 @@ import { Modal } from '../components';
 
 test('renders modal correctly', () => {
   const hello = jest.fn();
-  const {getByTestId} = render(<Modal isOpen={true} onClose={hello} title="Title" size='medium'/>);
+  const {getByTestId} = render(<Modal isOpen={true} onClose={hello} title="Title" size='large'>Hello, this is a modal</Modal>);
   const ModalElement = getByTestId("dialog");
   expect(ModalElement).toContainElement(getByTestId("dialog"));
   expect(ModalElement).toContainElement(getByTestId("panel"));
   expect(ModalElement).toContainElement(getByTestId("title"));
   fireEvent.click(getByTestId("icon"))
   expect(hello).toHaveBeenCalled();
+  expect(getByTestId("title")).toHaveStyle({width: "50%;"});
 });

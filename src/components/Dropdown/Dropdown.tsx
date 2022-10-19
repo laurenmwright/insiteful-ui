@@ -29,7 +29,7 @@ export const Dropdown = ({
         <div data-testid="buttonAndOptions" className="relative min-w-fit ">
           <span className="inline-block min-w-fit w-full rounded-md shadow-sm">
             <Listbox.Button data-testid="button" className=" flex bg-white shadow appearance-none border rounded w-full text-gray-700 leading-tight cursor-default relative w-full py-2 px-3 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition ease-in-out duration-150 sm:leading-5">
-              <span className="mr-[25px] block truncate">{selected ? selected : "Select..."}</span>
+              <span data-testid = "button-text" className="mr-[25px] block truncate">{selected ? selected : "Select..."}</span>
               <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                 {
                     <ChevronDown>
@@ -64,7 +64,7 @@ export const Dropdown = ({
                     {selected ? (
                       <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
                         {/* <CheckIcon className="h-5 w-5" aria-hidden="true" /> */}
-                        {<Check> className="h-5 w-5" aria-hidden="true"</Check>}
+                        {<Check data-testid="check"> className="h-5 w-5" aria-hidden="true"</Check>}
                       </span>
                     ) : null}
                   </>
