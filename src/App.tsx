@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, ThemeContext, MenuComponent } from "./components";
+import { Button, ThemeContext, MenuComponent, TextArea, Placeholder } from "./components";
 
 
 function App() {
@@ -47,11 +47,16 @@ function Home() {
 
   return (
 
-    <div className="grid h-screen place-items-center">
-      <Button  primary  >text blah blah blah </Button>
-      <MenuComponent data = {menuData}/>
-     </div>
+    // <div className="grid h-screen place-items-center">
+    //   <Button  primary  >text blah blah blah </Button>
+    //   <MenuComponent data = {menuData}/>
+    //  </div>
 
+    <div>
+      <TextArea label="Test Label"></TextArea>
+    </div>
+    
+    // <TextArea></TextArea>
   );
 }
 
