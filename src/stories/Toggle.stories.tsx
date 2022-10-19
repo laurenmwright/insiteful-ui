@@ -12,6 +12,7 @@ export default {
       options: [true, false]
     },
     onChange: { table: { disable: true } },
+    disabled: { control: { type: 'boolean' } },
 
   }
 } as Meta;
@@ -19,7 +20,7 @@ export const Default = ({ onChange, ...args}) => {
   const [{ enabled }, updateArgs] = useArgs();
   const handleChange = () => updateArgs({ enabled: !enabled });
 
-  return <Toggle onChange={() => updateArgs({ enabled: !enabled })} enabled={args.enabled} label={args.label} />
+  return <Toggle disabled={args.disabled} onChange={() => updateArgs({ enabled: !enabled })} enabled={args.enabled} label={args.label} />
 
 };
 
