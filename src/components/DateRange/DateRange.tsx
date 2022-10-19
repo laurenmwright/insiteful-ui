@@ -16,10 +16,10 @@ export const DateRange = ({ startLabel, endLabel, startDate, endDate, setStartDa
   return (
     <div> 
         <div data-testid="start-date" className={classNames(styles.dateRange1)}>
-        <DatePicker label = {startLabel} dateValue={startDate} onChange={setStartDate}></DatePicker>
+          <DatePicker label = {startLabel} dateValue={startDate} onChange={setStartDate}></DatePicker>
         </div>
         <div data-testid="end-date" className={classNames(styles.dateRange2)}>
-        <DatePicker label = {endLabel} dateValue={endDate} onChange={setEndDate}></DatePicker>
+          <DatePicker label = {endLabel} dateValue={endDate} onChange={setEndDate}></DatePicker>
         </div>
     </div>
   );
