@@ -15,3 +15,7 @@
 .div {
     margin:10%;
 }
+
+textarea:focus{
+    outline: none;
+}
