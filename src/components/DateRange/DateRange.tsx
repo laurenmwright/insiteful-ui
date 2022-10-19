@@ -6,8 +6,8 @@ import { DatePicker } from "../DatePicker";
 export type DateRangeProps = {
   startLabel?: string;
   endLabel?: string;
-  startDate: string;
-  endDate: string;
+  startDate: string | null;
+  endDate: string | null;
   setStartDate: (startDate: string) => void;
   setEndDate: (endDate: string) => void;
 };
