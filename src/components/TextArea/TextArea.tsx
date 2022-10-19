@@ -6,7 +6,6 @@ import classNames from 'classnames';
 
 
 export type TextAreaProps = {
-    children?: React.ReactNode | React.ReactNode[];
     label?: string;
     placeholderValue?: string;
   };
