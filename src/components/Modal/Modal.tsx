@@ -9,12 +9,10 @@ export type ModalProps = {
   onClose: () => void;
   title?: string;
   children?: React.ReactNode | React.ReactNode[];
-  size: "small" | "medium" | "large";  
+  size?: "small" | "medium" | "large";  
 };
 
 export const Modal = ({ isOpen, onClose, title, children, size}: ModalProps) => {
-  var root = document.documentElement;
-  root.style.setProperty('--width', size);
 
   return (
     <div>
@@ -23,11 +21,11 @@ export const Modal = ({ isOpen, onClose, title, children, size}: ModalProps) => 
           <Dialog.Panel data-testid="panel" >
             {/* Class name in 'button' right aligns the X-button */}
             <button data-testid="icon" onClick = {onClose} className={ classNames(styles.buttonIcon)} >
-              <X color='red' size={18} />
+              <X color="var(--color-mediumGray)" size={18} />
             </button>
             {title && (
                 <Dialog.Title data-testid="title" className={ classNames(styles.title)}> 
-                  <Title>{title}</Title>
+                  <Title overrideColor="var(--color-darkGray)" >{title}</Title>
                 </Dialog.Title>
             )}
             {children}

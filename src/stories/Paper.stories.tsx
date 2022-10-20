@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button, FormElement, Paper, Input } from '../components';
+import { Button, FormElement, Paper, Input, Title } from '../components';
 
 
 export default {
@@ -17,14 +17,17 @@ export const Default = (args) => {
   return (
     <div style={{width: args.width + "%"}}>
       <Paper>
-        <FormElement label = "FormElement">
+        <Title className="text-darkGray pb-3">Create new user</Title>
+        <FormElement label = "Name">
           <Input type = "text" onChange = {() => {}}></Input>
         </FormElement>
-        <Button primary>Button 1</Button>
-
-        <div>A child!</div>
-
-        <Button secondary>Button 2</Button>
+        <FormElement label = "Username">
+          <Input type = "text" onChange = {() => {}}></Input>
+        </FormElement>
+        <FormElement label = "Email">
+          <Input type = "text" onChange = {() => {}}></Input>
+        </FormElement>
+        <Button primary>Submit</Button>
       </Paper>
     </div>
   )

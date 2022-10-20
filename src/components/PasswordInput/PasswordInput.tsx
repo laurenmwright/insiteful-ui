@@ -30,8 +30,8 @@ export const PasswordInput = ({
       <button className="-translate-x-9" onClick={() => setShowPassword(!showPassword)}>
         {
           showPassword? 
-          <Eye size={24} /> :
-          <EyeOff size={24} />
+          <Eye color="var(--color-mediumGray)" size={24} /> :
+          <EyeOff color="var(--color-mediumGray)" size={24} />
         }
 
       </button> 

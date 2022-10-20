@@ -7,72 +7,73 @@ export type TypographyProps = {
     children: React.ReactNode | React.ReactNode[];
     overrideColor?: string;
     overrideFont?: string;
-    customStyles?: {};
+    className?: string;
     link?: string;
 }
 
-export const Heading1 = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const Heading1 = ({children, className, overrideColor, overrideFont}: TypographyProps ) => {
     return (
-        <h1 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.heading1) }>{children}</h1>
+        <h1 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.heading1)  + ` ${className ? className : ""}`}>{children}</h1>
     )
 }
 
-export const Heading2 = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const Heading2 = ({children, overrideColor, overrideFont, className}: TypographyProps ) => {
     return (
-        <h2 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.heading2) }>{children}</h2>
+        <h2 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.heading2) + ` ${className ? className : ""}` }>{children}</h2>
     )
 }
 
-export const Title = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const Title = ({children, overrideColor, overrideFont, className}: TypographyProps ) => {
     return (
-        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.title) }>{children}</p>
+        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.title) + ` ${className ? className : ""}` }>{children}</p>
     )
+    
 }
 
-export const Caption1 = ({ children, overrideColor, overrideFont}: TypographyProps) => {
+export const Caption1 = ({ children, overrideColor, overrideFont, className}: TypographyProps) => {
   return (
-        <caption style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption1) }>{children}</caption>
+        <caption style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption1) + ` ${className ? className : ""}` }>{children}</caption>
     )
 }
 
-export const Caption2 = ({ children, overrideColor, overrideFont}: TypographyProps) => {
+export const Caption2 = ({ children, overrideColor, overrideFont, className}: TypographyProps) => {
   return (
-        <caption style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption2) }>{children}</caption>
+        <caption style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption2) + ` ${className ? className : ""}` }>{children}</caption>
     )
 }
 
-export const Menu = ({ children, overrideColor, overrideFont}: TypographyProps) => {
+export const Menu = ({ children, overrideColor, className, overrideFont}: TypographyProps) => {
   return (
-        <p style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption2) }>{children}</p>
+        <p style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption2) + ` ${className ? className : ""}` }>{children}</p>
     )
 }
 
-export const Placeholder = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const Placeholder = ({children, overrideColor, className, overrideFont}: TypographyProps ) => {
     return (
-        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.placeholder) }>{children}</p>
+        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.placeholder) + ` ${className ? className : ""}` }>{children}</p>
     )
 }
 
-export const Subheading = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const Subheading = ({children, overrideColor, className, overrideFont}: TypographyProps ) => {
     return (
-        <h3 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.subheading) }>{children}</h3>
+        <h3 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.subheading) + ` ${className ? className : ""}` }>{children}</h3>
     )
 }
 
-export const Link = ({children, overrideColor, overrideFont, link}: TypographyProps ) => {
+export const Link = ({children, overrideColor, className, overrideFont, link}: TypographyProps ) => {
     return (
-        <a href={link} style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.link) }>{children}</a>
+        <a href={link} style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.link)  + ` ${className ? className : ""}`}>{children}</a>
     )
 }
 
-export const ButtonTypography = ({children, overrideColor, overrideFont}: TypographyProps ) => {
+export const ButtonTypography = ({children, overrideColor, className, overrideFont}: TypographyProps ) => {
     return (
-        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.button) }>{children}</p>
+        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.button)  + ` ${className ? className : ""}`}>{children}</p>
     )
 }
 
-export const Label = ({children, customStyles}: TypographyProps ) => {
+export const Label = ({children, className}: TypographyProps ) => {
     return (
-        <label style = {customStyles} className={ classNames(styles.label) }>{children}</label>
+        <label className={ classNames(styles.label) + ` ${className ? className : ""}`  }>{children}</label>
     )
 }

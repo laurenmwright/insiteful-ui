@@ -15,7 +15,7 @@ export function FormElement({
   return (
     <div data-testid="form-element" className={classNames(styles.formElement)}>
       {label && (
-        <Label customStyles={{paddingBottom: "0.6250em"}}>
+        <Label className="pb-2.5">
           {label}
         </Label>
       )}

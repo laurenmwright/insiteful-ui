@@ -517,6 +517,9 @@ video {
 .left-0 {
   left: 0px;
 }
+.z-50 {
+  z-index: 50;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -841,6 +844,9 @@ video {
 .pr-4 {
   padding-right: 1rem;
 }
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
 .pt-16 {
   padding-top: 4rem;
 }
@@ -861,6 +867,9 @@ video {
 }
 .pl-3 {
   padding-left: 0.75rem;
+}
+.pb-2\.5 {
+  padding-bottom: 0.625rem;
 }
 .text-left {
   text-align: left;
