@@ -37,7 +37,7 @@ export function ConfirmationBox({
           <div className="w-80 shadow-lg rounded-md border-solid border-2">
             <div className="flex pt-2 px-2">
               <AlertTriangle className="w-1/6 relative mt-3" size={24} color="var(--color-errorMedium)" />
-                <div data-testid="div" className="w-5/6 overflow-scroll relative bg-white p-3 text-gray-800">
+                <div data-testid="div" className="w-5/6 relative bg-white p-3 text-gray-800">
                     {panelText}
                 </div>
             </div>
