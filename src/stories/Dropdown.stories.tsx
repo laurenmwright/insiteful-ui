@@ -19,11 +19,11 @@ export default {
 } as Meta;
 
 const options = [
-  { value: 'facebook', label: 'Facebook' },
-  { value: 'twitter', label: 'Twitter' },
-  { value: 'github', label: 'GitHub' },
-  { value: 'google', label: 'Google' },
-  { value: 'azure', label: 'Azure' },
+  { value: 'Facebook', label: 'Facebook' },
+  { value: 'Twitter', label: 'Twitter' },
+  { value: 'Github', label: 'GitHub' },
+  { value: 'Google', label: 'Google' },
+  { value: 'Azure', label: 'Azure' },
 ];
 export const Default = (args) => {
   const [value, setValue] = useState<string | null >(null);

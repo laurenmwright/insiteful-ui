@@ -13,6 +13,7 @@ export default {
       control: { type: "radio" },
     },
     outline: { control: "boolean" },
+    simple: { control: "boolean" },
     darkFont: { control: "boolean" },
     disabled: { control: "boolean" },
     link: { control: "boolean" },
@@ -64,21 +65,15 @@ WithIcon.args = {
   onClick: action("Button is clicked!"),
 };
 
-export const ButtonLink = ({ variant, outline, ...args }) => {
-  if (variant === "primary") {
-    console.log(args);
-    return <Button primary outline={outline} {...args} />;
-  } else {
-    return <Button secondary outline={outline} {...args} />;
-  }
+export const SimpleButton = ({ variant, outline, ...args }) => {
+  return <Button simple {...args} />;
 };
 
-ButtonLink.args = {
-  variant: "primary",
-  link: true,
+SimpleButton.args = {
+  simple: true,
   outline: false,
   darkFont: false,
   disabled: false,
-  children: "Search",
+  children: "Cancel",
   onClick: action("Button is clicked!"),
 };

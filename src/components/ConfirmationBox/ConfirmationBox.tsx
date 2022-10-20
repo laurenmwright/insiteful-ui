@@ -35,11 +35,11 @@ export function ConfirmationBox({
         <Popover.Panel data-testid="panel" className=" absolute z-1000 px-4 mt-3  transform -translate-x-96 -translate-y-24 sm:px-0 lg:max-w-3xl">
           
           <div className="w-80 shadow-lg rounded-md border-solid border-2">
-          <AlertTriangle className="relative mt-3 ml-3" size={24} color="var(--color-errorMedium)" />
-            <div className="flex items-center justify-start relative gap-2 bg-white p-5 ">
-            <div data-testid="div" className="relative text-gray-800">
-                {panelText}
-            </div>
+            <div className="flex pt-2 px-2">
+              <AlertTriangle className="w-1/6 relative mt-3" size={24} color="var(--color-errorMedium)" />
+                <div data-testid="div" className="w-5/6 overflow-scroll relative bg-white p-3 text-gray-800">
+                    {panelText}
+                </div>
             </div>
             <div className="flex justify-end space-x-2 bg-light-gray p-2 bg-error-red">
               <Button simple overrideColor="var(--color-mediumGray)" onClick={onCancel} data-testid="no">

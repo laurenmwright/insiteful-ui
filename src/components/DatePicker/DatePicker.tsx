@@ -2,6 +2,7 @@ import React from "react";
 import styles from './DatePicker.module.css';
 import classNames from "classnames";
 import { Label } from "../Typography";
+import { FormElement } from "../FormElement";
 
 
 export type DatePickerProps = {
@@ -18,10 +19,7 @@ export const DatePicker = ({
 
 }: DatePickerProps) =>{
     return (
-      <div>
-        <Label>
-          {label}
-        </Label>
+        <FormElement label={label}>
         <input
           type="date"
           data-testid="date-picker"
@@ -29,7 +27,7 @@ export const DatePicker = ({
           className={classNames(styles.input)}
           onChange={(e) => onChange(e.target.value)}
         />
-      </div>
+        </FormElement>
     );
 }
 export default DatePicker;

@@ -6,6 +6,7 @@ export { Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1
 export { Toggle } from "./Toggle";
 export { Dropdown } from "./Dropdown";
 export { Input } from "./Input";
+export { PasswordInput } from "./PasswordInput";
 export { FormElement } from "./FormElement";
 export { Accordion } from "./Accordion";
 export { Modal } from "./Modal";

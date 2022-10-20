@@ -32,10 +32,3 @@ Number.args = {
   label: "Input number here: ",
   placeholder: "Type number...",
 };
-
-export const Password = ({label, width, args}) => <div style={{width: width + "%"}}><FormElement label={label} ><Input {...args} type = "password" onChange = {action("Input is changed!")}/></FormElement></div>;
-
-Password.args = {
-  label: "Input password here: ",
-  placeholder: "Type password...",
-};
