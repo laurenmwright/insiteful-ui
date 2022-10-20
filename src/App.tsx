@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Button, PasswordInput, ThemeContext, MenuComponent, RadioButtonGroup, Tabs, Toggle, Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder, Label, Checkbox, ConfirmationBox, DatePicker, DateRange, FormElement } from "./components";
+import { Button, PasswordInput, ThemeContext, RadioButtonGroup, Tabs, Toggle, Heading1, Heading2, Title, Subheading, Link, ButtonTypography, Caption1, Caption2, Menu, Placeholder, Label, Checkbox, ConfirmationBox, DatePicker, DateRange, FormElement } from "./components";
 import { Eye } from "react-feather";
 
 
@@ -56,6 +56,7 @@ function Home() {
 
   return (
     <div className="grid h-screen place-items-center">
+      <Menu positionLeft={true} title={'options'} data={menuData} />
       <PasswordInput value={inputVal} onChange={setInputVal} />
       <FormElement>Label<DateRange startLabel = {"Please choose a start date: "} endLabel = {"Please choose an end date:"} startDate = {startDate} endDate = {endDate} setStartDate = {setStartDate} setEndDate = {setEndDate}></DateRange></FormElement>
     </div>

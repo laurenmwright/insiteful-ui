@@ -1,25 +1,27 @@
-import { Menu, Transition } from "@headlessui/react";
+import { Menu as MenuComponent, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useRef, useState } from "react";
 import { ChevronDown } from "react-feather";
 import { ButtonTypography } from "../Typography";
 
 export type MenuProps = {
-  buttonText: string;
+  title: string;
+  positionLeft?: boolean;
   data: {
     label: string;
     link: string;
   }[];
 };
 
-export const MenuComponent = ({ buttonText, data }: MenuProps) => {
+export const Menu = ({ title, positionLeft, data }: MenuProps) => {
   return (
-    <div className="w-56 text-right">
-      <Menu as="div" className="relative inline-block text-left">
+    <div className={positionLeft ? "text-left w-56 z-50" : "w-56 text-right z-50"}>
+       {/* + positionLeft? "right-0" : "" */}
+      <MenuComponent as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex w-full justify-center rounded-md bg-actionBlue px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
-            {buttonText}
+          <MenuComponent.Button className="inline-flex w-full justify-center rounded-md bg-actionBlue px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+            {title}
             <ChevronDown className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
-          </Menu.Button>
+          </MenuComponent.Button>
         </div>
         <Transition
           as={Fragment}
@@ -30,10 +32,10 @@ export const MenuComponent = ({ buttonText, data }: MenuProps) => {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <MenuComponent.Items className={ positionLeft ? "absolute mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none " : "right-0 absolute mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none "}>
             <div className="px-1 py-1 ">
               {data.map((data, index) => (
-                <Menu.Item data-testid={index} key={index}>
+                <MenuComponent.Item data-testid={index} key={index}>
                   {({ active }) => (
                     <button
                       className={`${
@@ -43,13 +45,13 @@ export const MenuComponent = ({ buttonText, data }: MenuProps) => {
                       {data.label}
                     </button>
                   )}
-                </Menu.Item>
+                </MenuComponent.Item>
               ))}
             </div>
-          </Menu.Items>
+          </MenuComponent.Items>
         </Transition>
-      </Menu>
+      </MenuComponent>
     </div>
   );
 };
-export default MenuComponent;
+export default Menu;
