@@ -19,4 +19,5 @@ export { Paper } from './Paper';
 export { DateRange } from './DateRange';
 export { TextArea } from './TextArea';
 export { Alert } from './Alert';
+export { Table } from './Table';
 export { ThemeContext } from "./Theme";

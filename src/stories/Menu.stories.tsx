@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta } from "@storybook/react";
-import { Menu } from "../components";
+import { Menu, Paper, Label } from "../components";
+import { MoreVertical } from "react-feather";
 
 export default {
   title: "Stories/Components/Menu",
@@ -9,11 +10,10 @@ export default {
 } as Meta;
 
 const menuData = [
+  { label: "View", link: "..." },
   { label: "Edit", link: "..." },
-  { label: "Duplicate", link: "..." },
-  { label: "Archive", link: "..." },
-  { label: "Move", link: "..." },
-  { label: "Delete", link: "..." },
+  { label: "Submit", link: "..." },
+  { label: "Canel", link: "..." },
 ];
 
 export const Default = (args) => (
@@ -24,5 +24,27 @@ export const Default = (args) => (
 
 Default.args = {
   title: "Options",
-  positionLeft: false
+  positionLeft: false,
+};
+
+export const CustomAnchor = (args) => (
+  <div style={{ width: args.width + "%" }}>
+    <Paper>
+      <span className="flex justify-between">
+        <Label className="text-center"><strong>Draft Rule Proposal 10-X-.02 </strong> - Pending Admin Approval</Label>
+        <Menu
+          
+          anchor={
+              <MoreVertical size={24} color="var(--color-mediumGray)" />
+          }
+          data={menuData}
+        />
+      </span>
+    </Paper>
+  </div>
+);
+
+CustomAnchor.args = {
+  title: "Options",
+  positionLeft: false,
 };

@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Column } from "react-table";
 
 import {
   Button,
@@ -27,6 +28,7 @@ import {
   DatePicker,
   DateRange,
   FormElement,
+  Table
 } from "./components";
 import { Eye } from "react-feather";
 
@@ -67,6 +69,13 @@ function Home() {
     { title: "Title 3", content: "Value 3" },
   ];
 
+  const navOptions = [
+    "Home",
+    "Admin Monthly",
+    "Monthly Manual",
+    "Upcoming Proposals",
+    "Emergency Rules"
+  ]
   const menuData = [
     { label: "Edit", link: "..." },
     { label: "Duplicate", link: "..." },
@@ -79,9 +88,38 @@ function Home() {
     { id: "2", value: "Option 2" },
     { id: "3", value: "Option 3" },
   ];
-
+  
+  const columns: Column[] = [
+    {
+      Header: "User ID",
+      accessor: "id",
+    },
+    {
+      Header: "First Name",
+      accessor: "fname",
+    },
+    {
+      Header: "Last Name",
+      accessor: "lname",
+    },
+    {
+      Header: "Email",
+      accessor: "email",
+    },
+  ];
+  const tableRows = [
+    { id: "1", fname: "Jenny", lname: "Hagood", email: "jhagood@alabama.us" },
+    { id: "2", fname: "Othni", lname: "Lathram", email: "oLathram@alabam.us" },
+    { id: "3", fname: "Jane Claire", lname: "Carter", email: "jcarter@alabama.us" },
+    { id: "4", fname: "Lauren", lname: "Wright", email: "lauren@insitely.us" }
+  ];
   return (
     <div className="grid h-screen place-items-center">
+        <Table columns={columns} data={tableRows} />
+
+          <Menu positionLeft={true} data={menuData} anchor={<button>test</button>} />
+
+      {/* <Menu data={menuData} />
       <Modal
         size="medium"
         isOpen={true}
@@ -98,7 +136,7 @@ function Home() {
           <Input type="text" onChange={() => {}}></Input>
         </FormElement>
         <Button primary>Submit</Button>
-      </Modal>
+      </Modal> */}
 
     </div>
   );
