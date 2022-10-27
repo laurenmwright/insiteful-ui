@@ -10,7 +10,7 @@ import {
   Placeholder,
   Caption1,
   Caption2,
-  Menu,
+  MenuLabel,
 } from "../components";
 
 test("renders Heading1 with correct text", () => {
@@ -138,19 +138,19 @@ test("renders caption with override font", () => {
 });
 
 test("renders Menu with correct text", () => {
-  render(<Menu>Menu</Menu>);
+  render(<MenuLabel>Menu</MenuLabel>);
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toBeInTheDocument();
 });
 
 test("renders Menu with override color", () => {
-  render(<Menu overrideColor="red">Menu</Menu>);
+  render(<MenuLabel overrideColor="red">Menu</MenuLabel>);
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toHaveStyle({ color: "red" });
 });
 
 test("renders Menu with override font", () => {
-  render(<Menu overrideFont="Arial">Menu</Menu>);
+  render(<MenuLabel overrideFont="Arial">Menu</MenuLabel>);
   const menuElement = screen.getByText(/Menu/i);
   expect(menuElement).toHaveStyle({ fontFamily: "Arial" });
 });
