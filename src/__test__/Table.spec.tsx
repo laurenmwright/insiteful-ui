@@ -41,10 +41,14 @@ test("renders global filter & table with correct styling", () => {
 
 test("correctly renders data in a table", async () => {
     const {getByTestId} = render(<Table columns={columns} data={tableRows} />);
-    expect(getByTestId("table")).toHaveTextContent("Othni");
-    expect(getByTestId("table")).toHaveTextContent("Lauren");
-    expect(getByTestId("table")).toHaveTextContent("Jenny");
-    expect(getByTestId("table")).toHaveTextContent("Jane Claire");
+    expect(getByTestId("t-head")).toHaveTextContent("User ID");
+    expect(getByTestId("t-head")).toHaveTextContent("First Name");
+    expect(getByTestId("t-head")).toHaveTextContent("Last Name");
+    expect(getByTestId("t-head")).toHaveTextContent("Email");
+    expect(getByTestId("t-body")).toHaveTextContent("Othni");
+    expect(getByTestId("t-body")).toHaveTextContent("Lauren");
+    expect(getByTestId("t-body")).toHaveTextContent("Jenny");
+    expect(getByTestId("t-body")).toHaveTextContent("Jane Claire");
 });
 
 test("global filter value updates & correctly filters a table", async () => {
