@@ -31,8 +31,14 @@ test("renders Heading1 with override font", () => {
   expect(heading1Element).toHaveStyle({ fontFamily: "Arial" });
 });
 
+test("renders Heading1 with additional classes", () => {
+  render(<Heading1 className = "text-lg">Heading1</Heading1>);
+  const heading1Element = screen.getByText(/Heading1/i);
+  expect(heading1Element).toHaveClass("text-lg");
+});
+
 test("renders Heading2 with correct text", () => {
-  render(<Heading2>Heading2</Heading2>);
+  render(<Heading2 className = "text-red-500">Heading2</Heading2>);
   const heading2Element = screen.getByText(/Heading2/i);
   expect(heading2Element).toBeInTheDocument();
 });
@@ -47,6 +53,12 @@ test("renders Heading2 with override font", () => {
   render(<Heading2 overrideFont="Arial">Heading2</Heading2>);
   const heading2Element = screen.getByText(/Heading2/i);
   expect(heading2Element).toHaveStyle({ fontFamily: "Arial" });
+});
+
+test("renders Heading2 with additional classes", () => {
+  render(<Heading2 className = "text-lg">Heading2</Heading2>);
+  const heading2Element = screen.getByText(/Heading2/i);
+  expect(heading2Element).toHaveClass("text-lg");
 });
 //-------------------------------------------------------------
 
@@ -67,6 +79,13 @@ test("renders Title with override color", () => {
 test("renders Title with override font", () => {
   render(<Title overrideFont="Arial">Title</Title>);
   const titleElement = screen.getByText(/Title/i);
+  expect(titleElement).toHaveStyle({ fontFamily: "Arial" });
+});
+
+test("renders Title with addtional classes", () => {
+  render(<Title overrideFont="Arial" className = "text-lg">Title</Title>);
+  const titleElement = screen.getByText(/Title/i);
+  expect(titleElement).toHaveClass("text-lg");
 });
 
 test("renders caption with correct text", () => {
@@ -98,6 +117,18 @@ test("renders caption with override font", () => {
   );
   const captionElement = screen.getByText(/Caption1/i);
   expect(captionElement).toHaveStyle({ fontFamily: "Arial" });
+});
+
+test("renders caption with addtional classes", () => {
+  const table = document.createElement("table");
+  const { container } = render(
+    <Caption1 className = "text-lg">Caption1</Caption1>,
+    {
+      container: document.body.appendChild(table),
+    }
+  );
+  const captionElement = screen.getByText(/Caption1/i);
+  expect(captionElement).toHaveClass("text-lg");
 });
 
 test("renders caption with correct text", () => {
@@ -137,6 +168,18 @@ test("renders caption with override font", () => {
   expect(caption2Element).toHaveStyle({ fontFamily: "Arial" });
 });
 
+test("renders caption with addtional classes", () => {
+  const table = document.createElement("table");
+  const { container } = render(
+    <Caption2 className = "text-lg">Caption2</Caption2>,
+    {
+      container: document.body.appendChild(table),
+    }
+  );
+  const captionElement = screen.getByText(/Caption2/i);
+  expect(captionElement).toHaveClass("text-lg");
+});
+
 test("renders Menu with correct text", () => {
   render(<MenuLabel>Menu</MenuLabel>);
   const menuElement = screen.getByText(/Menu/i);
@@ -155,7 +198,13 @@ test("renders Menu with override font", () => {
   expect(menuElement).toHaveStyle({ fontFamily: "Arial" });
 });
 
-test("renders title with correct text", () => {
+test("renders Menu with addtional classes", () => {
+  render(<MenuLabel className = "text-lg">Menu</MenuLabel>);
+  const menuElement = screen.getByText(/Menu/i);
+  expect(menuElement).toHaveClass("text-lg");
+});
+
+test("renders Placeholder with correct text", () => {
   render(<Placeholder>Placeholder</Placeholder>);
   const placeholderElement = screen.getByText(/Placeholder/i);
   expect(placeholderElement).toBeInTheDocument();
@@ -171,6 +220,12 @@ test("renders Placeholder with override font", () => {
   render(<Placeholder overrideFont="Arial">Placeholder</Placeholder>);
   const placeholderElement = screen.getByText(/Placeholder/i);
   expect(placeholderElement).toHaveStyle({ fontFamily: "Arial" });
+});
+
+test("renders Placeholder with addtional classes", () => {
+  render(<Placeholder className = "text-lg">Placeholder</Placeholder>);
+  const placeholderElement = screen.getByText(/Placeholder/i);
+  expect(placeholderElement).toHaveClass("text-lg");
 });
 
 test("renders subheading with correct text", () => {
@@ -191,6 +246,12 @@ test("renders subheading with override font", () => {
   expect(subheadingElement).toHaveStyle({ fontFamily: "Arial" });
 });
 
+test("renders subheading with addtional classes", () => {
+  render(<Subheading className = "text-lg">Subheading</Subheading>);
+  const subheadingElement = screen.getByText(/Subheading/i);
+  expect(subheadingElement).toHaveClass("text-lg");
+});
+
 test("renders link with correct text", () => {
   render(<Link>My link</Link>);
   const linkElement = screen.getByText(/My link/i);
@@ -209,6 +270,12 @@ test("renders link with override font", () => {
   expect(linkElement).toHaveStyle({ fontFamily: "Arial" });
 });
 
+test("renders link with addtional classes", () => {
+  render(<Link className = "text-lg">Link</Link>);
+  const linkElement = screen.getByText(/Link/i);
+  expect(linkElement).toHaveClass("text-lg");
+});
+
 test("renders button typography with correct text", () => {
   render(<ButtonTypography>My button</ButtonTypography>);
   const buttonElement = screen.getByText(/My button/i);
@@ -225,4 +292,10 @@ test("renders button typography  with override font", () => {
   render(<ButtonTypography overrideFont="Arial">My button</ButtonTypography>);
   const buttonElement = screen.getByText(/My button/i);
   expect(buttonElement).toHaveStyle({ fontFamily: "Arial" });
+});
+
+test("renders button typography with addtional classes", () => {
+  render(<ButtonTypography className = "text-lg">My button</ButtonTypography>);
+  const buttonElement = screen.getByText(/My button/i);
+  expect(buttonElement).toHaveClass("text-lg");
 });
