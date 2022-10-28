@@ -39,10 +39,11 @@ export function Table<T extends object>({ columns, data, children }: TableProps<
       />
       </div>
       <table
+        data-testid="table"
         className="min-w-full divide-y divide-gray-200 border border-gray"
         {...getTableProps()}
       >
-        <thead className="bg-gray-50">
+        <thead data-testid="t-head" className="bg-gray-50">
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
@@ -57,13 +58,14 @@ export function Table<T extends object>({ columns, data, children }: TableProps<
           ))}
         </thead>
         <tbody
+          data-testid="t-body"
           className="bg-white divide-y divide-gray-200"
           {...getTableBodyProps()}
         >
           {rows.map((row, i) => {
             prepareRow(row);
             return (
-              <tr {...row.getRowProps()}>
+              <tr data-testid={i} {...row.getRowProps()}>
                 {row.cells.map((cell) => {
                   return (
                     <td
