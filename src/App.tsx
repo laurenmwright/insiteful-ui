@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Column } from "react-table";
+//import { Column } from "react-table";
 
 import {
   Button,
@@ -28,7 +28,9 @@ import {
   DatePicker,
   DateRange,
   FormElement,
-  Table
+  Table,
+  Loader,
+  Load,
 } from "./components";
 import { Eye } from "react-feather";
 
@@ -89,24 +91,24 @@ function Home() {
     { id: "3", value: "Option 3" },
   ];
   
-  const columns: Column[] = [
-    {
-      Header: "User ID",
-      accessor: "id",
-    },
-    {
-      Header: "First Name",
-      accessor: "fname",
-    },
-    {
-      Header: "Last Name",
-      accessor: "lname",
-    },
-    {
-      Header: "Email",
-      accessor: "email",
-    },
-  ];
+  // const columns: Column[] = [
+  //   {
+  //     Header: "User ID",
+  //     accessor: "id",
+  //   },
+  //   {
+  //     Header: "First Name",
+  //     accessor: "fname",
+  //   },
+  //   {
+  //     Header: "Last Name",
+  //     accessor: "lname",
+  //   },
+  //   {
+  //     Header: "Email",
+  //     accessor: "email",
+  //   },
+  // ];
   const tableRows = [
     { id: "1", fname: "Jenny", lname: "Hagood", email: "jhagood@alabama.us" },
     { id: "2", fname: "Othni", lname: "Lathram", email: "oLathram@alabam.us" },
@@ -114,30 +116,8 @@ function Home() {
     { id: "4", fname: "Lauren", lname: "Wright", email: "lauren@insitely.us" }
   ];
   return (
-    <div className="grid h-screen place-items-center">
-        <Table columns={columns} data={tableRows} />
-
-          <Menu positionLeft={true} data={menuData} anchor={<button>test</button>} />
-
-      {/* <Menu data={menuData} />
-      <Modal
-        size="medium"
-        isOpen={true}
-        onClose={() => console.log("close")}
-        title="test "
-      >
-        <FormElement label="Name">
-          <Input type="text" onChange={() => {}}></Input>
-        </FormElement>
-        <FormElement label="Username">
-          <Input type="text" onChange={() => {}}></Input>
-        </FormElement>
-        <FormElement label="Email">
-          <Input type="text" onChange={() => {}}></Input>
-        </FormElement>
-        <Button primary>Submit</Button>
-      </Modal> */}
-
+    <div>
+       <Load/>
     </div>
   );
 }

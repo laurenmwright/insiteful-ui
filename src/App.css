@@ -560,12 +560,6 @@ video {
 .table {
   display: table;
 }
-.grid {
-  display: grid;
-}
-.h-screen {
-  height: 100vh;
-}
 .h-5 {
   height: 1.25rem;
 }
@@ -675,9 +669,6 @@ video {
 }
 .appearance-none {
   appearance: none;
-}
-.place-items-center {
-  place-items: center;
 }
 .items-center {
   align-items: center;

@@ -21,3 +21,4 @@ export { TextArea } from './TextArea';
 export { Alert } from './Alert';
 export { Table } from './Table';
 export { ThemeContext } from "./Theme";
+export { Loader } from "./Loader";
