@@ -31,7 +31,7 @@ export const Alert = ({
           { [styles.error]: error },
           { [styles.success]: success },)} >
       <div className="flex items-center gap-4">
-          {notification ? <AlertCircle/> : (success ? <CheckCircle/> : (error ? <AlertTriangle/> : <AlertCircle/>))} 
+          {notification ? <AlertCircle data-testid="notification"/> : (success ? <CheckCircle data-testid="success"/> : (error ? <AlertTriangle data-testid="error"/> : <AlertCircle/>))} 
           <div className={styles.message} data-testid="test">
             {message}
           </div>

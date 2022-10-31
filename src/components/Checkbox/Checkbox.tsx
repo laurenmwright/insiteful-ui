@@ -20,7 +20,7 @@ export type CheckboxProps = {
             <input
               type="Checkbox"
               checked = {checked}
-              onChange = {() => {setChecked((checked) => !checked)}}
+              onChange = {() => {setChecked(!checked)}}
               disabled = {disabled}
               data-testid = "input"
             /> 

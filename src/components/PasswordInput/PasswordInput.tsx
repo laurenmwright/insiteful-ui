@@ -24,14 +24,13 @@ export const PasswordInput = ({
         className={'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder!}
-        defaultValue={value}
-        data-testid="input-box"
+        data-testid="password-input-box"
       />
-      <button className="-translate-x-9" onClick={() => setShowPassword(!showPassword)}>
+      <button data-testid="hide-icon" className="-translate-x-9" onClick={() => setShowPassword(!showPassword)}>
         {
           showPassword? 
-          <Eye color="var(--color-mediumGray)" size={24} /> :
-          <EyeOff color="var(--color-mediumGray)" size={24} />
+          <Eye data-testid = "eye" color="var(--color-mediumGray)" size={24} /> :
+          <EyeOff data-testid = "eye-off" color="var(--color-mediumGray)" size={24} />
         }
 
       </button> 
