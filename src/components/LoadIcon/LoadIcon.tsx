@@ -1,4 +1,4 @@
-import classNames from "classnames";
+// import classNames from "classnames";
 import { Loader } from 'react-feather';
 
 export type LoaderProps = {
@@ -9,7 +9,7 @@ export type LoaderProps = {
 export const Load = ({overrideColor, center}: LoaderProps) => {
     return (
         <div>
-            <Loader/>
+            <Loader className="animate-spin stroke-actionBlue" />
         </div>
     )
 }
