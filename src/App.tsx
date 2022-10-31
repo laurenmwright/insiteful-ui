@@ -33,7 +33,7 @@ import {
 
 function App() {
   return (
-    <Load />
+    <Load center/>
   );
 }
 
