@@ -9,7 +9,7 @@ export type LoaderProps = {
 
 export const Load = ({overrideColor, center}: LoaderProps) => {
     return (
-        <div className={ (center===true ? classNames(styles.centerTrue) : null)}>
+        <div data-testid="Div-Style" className={ (center===true ? classNames(styles.centerTrue) : null)}>
             <Loader data-testid="Feather-Icon-Loader" className={`animate-spin ${classNames(styles.spin)}`} color={overrideColor} />
         </div>
     )
