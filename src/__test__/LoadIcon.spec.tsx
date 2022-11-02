@@ -13,11 +13,14 @@ test("renders icon correctly", () => {
 });
 
 test("Correctly applies the centered styling prop", () => {
-    const {getByTestId} = render(<Load center/>)
-    const LoadElement = getByTestId("Feather-Icon-Loader")
-    expect(LoadElement).toHaveStyle({
-        position: "absolute",
-        top: "50%",
-        left: "50%"
-    })
+    const {getByTestId} = render(<Load center/>);
+    const LoadElement = getByTestId("Div-Style");
+    expect(LoadElement).toHaveClass('centerTrue');
 });
+
+test("Correctly applies actionBlue color to loading icon", () => {
+    const {getByTestId} = render(<Load />);
+    const LoadElement = getByTestId("Feather-Icon-Loader");
+    expect(LoadElement).toHaveStyle('color: var(--color-actionBlue)');
+});
+
