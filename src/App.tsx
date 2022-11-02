@@ -29,7 +29,8 @@ import {
   DatePicker,
   DateRange,
   FormElement,
-  Table
+  Table,
+  ProgressBar
 } from "./components";
 import { Eye } from "react-feather";
 
@@ -116,29 +117,7 @@ function Home() {
   ];
   return (
     <div className="grid h-screen place-items-center">
-        <Table columns={columns} data={tableRows} />
-
-          <Menu positionLeft={true} data={menuData} anchor={<button>test</button>} />
-
-      {/* <Menu data={menuData} />
-      <Modal
-        size="medium"
-        isOpen={true}
-        onClose={() => console.log("close")}
-        title="test "
-      >
-        <FormElement label="Name">
-          <Input type="text" onChange={() => {}}></Input>
-        </FormElement>
-        <FormElement label="Username">
-          <Input type="text" onChange={() => {}}></Input>
-        </FormElement>
-        <FormElement label="Email">
-          <Input type="text" onChange={() => {}}></Input>
-        </FormElement>
-        <Button primary>Submit</Button>
-      </Modal> */}
-
+      <ProgressBar /*percentage={80}*/ numerator={3} denominator={5}></ProgressBar>
     </div>
   );
 }

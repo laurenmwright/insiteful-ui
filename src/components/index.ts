@@ -20,4 +20,5 @@ export { DateRange } from './DateRange';
 export { TextArea } from './TextArea';
 export { Alert } from './Alert';
 export { Table } from './Table';
+export { ProgressBar } from './ProgressBar';
 export { ThemeContext } from "./Theme";
