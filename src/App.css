@@ -822,9 +822,6 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
-.stroke-actionBlue {
-  stroke: #2F77EE;
-}
 .p-2 {
   padding: 0.5rem;
 }
@@ -875,14 +872,14 @@ video {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
-.pb-3 {
-  padding-bottom: 0.75rem;
-}
 .pl-10 {
   padding-left: 2.5rem;
 }
 .pr-4 {
   padding-right: 1rem;
+}
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 .pt-16 {
   padding-top: 4rem;
