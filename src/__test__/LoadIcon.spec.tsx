@@ -16,12 +16,6 @@ test("Correctly applies the centered styling prop", () => {
     expect(LoadElement).toHaveClass('centerTrue');
 });
 
-test("Correctly applies actionBlue color to loading icon", () => {
-    const {getByTestId} = render(<Load />);
-    const LoadElement = getByTestId("Feather-Icon-Loader");
-    expect(LoadElement).toHaveStyle('color: var(--color-actionBlue)');
-});
-
 test("Correctly applies override color to loading icon", () => {
     const {getByTestId} = render(<Load overrideColor = "red"/>);
     const LoadElement = getByTestId("Feather-Icon-Loader");
