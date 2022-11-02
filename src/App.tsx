@@ -117,7 +117,6 @@ function Home() {
   ];
   return (
     <div className="grid h-screen place-items-center">
-      <ProgressBar /*percentage={80}*/ numerator={3} denominator={5}></ProgressBar>
     </div>
   );
 }
