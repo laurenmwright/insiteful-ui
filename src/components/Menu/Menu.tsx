@@ -17,6 +17,7 @@ export const Menu = ({ title, anchor, positionLeft, data }: MenuProps) => {
   return (
     <div
       className={positionLeft ? "text-left z-50" : " text-right z-50"}
+      data-testid="div"
     >
       {/* + positionLeft? "right-0" : "" */}
       <MenuComponent as="div" className="relative inline-block text-left">
