@@ -38,12 +38,12 @@ test("accepts a placeholder", async () => {
     expect(passwordInput).toBeInTheDocument();
 });
 
-test("accepts a value", async () => {
+test("testing hide password icon", async () => {
     const hello = jest.fn();
     const {getByTestId} = render(<PasswordInput onChange={hello} value = "This is a default value"/>);
     const hideButton = getByTestId("hide-icon");
     expect(getByTestId("eye-off")).toBeInTheDocument();
     fireEvent.click(hideButton);
     expect(getByTestId("eye")).toBeInTheDocument();
-  });
+});
 
