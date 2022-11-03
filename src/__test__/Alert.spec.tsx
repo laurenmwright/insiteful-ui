@@ -9,7 +9,7 @@ test('renders alert message correctly', () => {
 });
 
 test('renders notification correctly', () => {
-    const {getByTestId} = render(<Alert message='message' notification={true} success={false} error={false}/>);
+    const {getByTestId} = render(<Alert message='message' notification={true}/>);
     const notificationElement = getByTestId("notification");
     expect(notificationElement).toBeInTheDocument();
 });
