@@ -1,57 +1,56 @@
-
-
 export interface ITheme {
-    [key: string]: string;
-  }
-  
-  export interface IThemes {
-    [key: string]: ITheme;
-  }
-  
-  export interface IMappedTheme {
-    [key: string]: string | null;
-  }
+	[key: string]: string
+}
 
-  export const mapTheme = (variables: any): any => {
-    let newObj = {};
-    Object.keys(variables).forEach((key) => {
-      newObj[`--color-${key.toString()}`] = variables[key];
-    })
-    
-    return newObj;
-  };
+export interface IThemes {
+	[key: string]: ITheme
+}
 
-  export const mapTypographyTheme = (variables: any): any => {
-    let newObj = {};
-    Object.keys(variables).forEach((key) => {
-      newObj[`--${key.toString()}`] = variables[key];
-    })
-    
-    return newObj;
-  };
+export interface IMappedTheme {
+	[key: string]: string | null
+}
 
-  export const applyTheme = (theme: any, isColor: boolean): void => {
-    let themeObject: IMappedTheme;
+export const mapTheme = (variables: Record<string, string>): any => {
+	let newObj: Record<string, string> = {}
 
-    if (!isColor) themeObject = mapTypographyTheme(theme);
-    else themeObject =  mapTheme(theme);
-    
+	Object.entries(variables).forEach(([key, value]) => {
+		newObj[`--color-${key}`] = value
+	})
 
-    if (!themeObject) return;
-    
-    const root = document.documentElement;
-  
-    Object.keys(themeObject).forEach((property) => {
-      if (property === 'name') {
-        return;
-      }
-  
-      root.style.setProperty(property, themeObject[property]);
-    });
-  };
-  export const extend = (
-    extending: ITheme,
-    newTheme: ITheme
-  ): ITheme => {
-    return { ...extending, ...newTheme };
-  };
+	return newObj
+}
+
+export const mapTypographyTheme = (variables: Record<string, string>): any => {
+	let newObj: Record<string, string> = {}
+
+	Object.entries(variables).forEach(([key, value]) => {
+		newObj[`--${key}`] = value
+	})
+
+	return newObj
+}
+
+export const applyTheme = (theme: Record<string, string>, isColor: boolean): void => {
+	let themeObject: IMappedTheme
+
+	if (!isColor) {
+		themeObject = mapTypographyTheme(theme)
+	} else {
+		themeObject = mapTheme(theme)
+	}
+
+	if (!themeObject) return
+
+	const root = document.documentElement
+
+	Object.keys(themeObject).forEach((property) => {
+		if (property === "name") {
+			return
+		}
+
+		root.style.setProperty(property, themeObject[property] || null)
+	})
+}
+export const extend = (extending: ITheme, newTheme: ITheme): ITheme => {
+	return { ...extending, ...newTheme }
+}

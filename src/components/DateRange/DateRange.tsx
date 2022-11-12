@@ -1,30 +1,59 @@
-import React, {useState} from "react";
-import classNames from "classnames";
-import styles from "./DateRange.module.css";
-import { DatePicker } from "../DatePicker";
+import { DatePicker } from "../DatePicker"
+import React from "react"
+import { twMerge, twJoin } from "tailwind-merge"
+import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 
 export type DateRangeProps = {
-  startLabel?: string;
-  endLabel?: string;
-  startDate: string | null;
-  endDate: string | null;
-  setStartDate: (e: any) => void;
-  setEndDate: (e: any) => void;
-};
+	className?: {
+		container?: ClassNameValue
+		start?: ClassNameValue
+		end?: ClassNameValue
+	}
+	startLabel?: string
+	endLabel?: string
+	start: string | undefined
+	end: string | undefined
+	setStart: (e: string) => void
+	setEnd: (e: string) => void
+}
 
-export const DateRange = ({ startLabel, endLabel, startDate, endDate, setStartDate, setEndDate}: DateRangeProps) => {
-  return (
-    <div> 
-        <div data-testid="start-date" className={classNames(styles.dateRange1)}>
-          <DatePicker label = {startLabel} dateValue={startDate} onChange={setStartDate}></DatePicker>
-        </div>
-        <div data-testid="end-date" className={classNames(styles.dateRange2)}>
-          <DatePicker label = {endLabel} dateValue={endDate} onChange={setEndDate}></DatePicker>
-        </div>
-    </div>
-  );
-};
-
-
-export default DateRange;
-
+export const DateRange: React.FC<DateRangeProps> = ({
+	className = {},
+	startLabel,
+	endLabel,
+	start,
+	end,
+	setStart,
+	setEnd
+}) => {
+	return (
+		<div className={twJoin(className.container)}>
+			<div
+				className={twMerge(
+					"inline-block p-2.5 [inline-size:260px] [overflow-wrap:break-word]",
+					className.start
+				)}
+			>
+				<DatePicker
+					label={startLabel}
+					value={start}
+					onChange={setStart}
+					data-testid="start-date"
+				></DatePicker>
+			</div>
+			<div
+				className={twMerge(
+					"inline-block p-2.5 [inline-size:260px] [overflow-wrap:break-word]",
+					className.end
+				)}
+			>
+				<DatePicker
+					label={endLabel}
+					value={end}
+					onChange={setEnd}
+					data-testid="end-date"
+				></DatePicker>
+			</div>
+		</div>
+	)
+}

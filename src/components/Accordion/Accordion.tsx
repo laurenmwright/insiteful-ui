@@ -1,40 +1,48 @@
-import { Disclosure } from "@headlessui/react";
-import { ChevronUp } from "react-feather";
-import { Label } from "../Typography";
+import { Disclosure } from "@headlessui/react"
+import React from "react"
+import { ChevronUp } from "react-feather"
+import { Label } from "../Typography"
+import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
+import { twMerge } from "tailwind-merge"
 
 export type AccordionProps = {
-  data: {
-    title: string;
-    content: any;
-  }[];
-};
+	className?: {
+		wrapper?: ClassNameValue
+		innerWrapper?: ClassNameValue
+	}
+	rows: {
+		title: string
+		content: React.ReactNode
+		className?: ClassNameValue
+	}[]
+}
 
-export const Accordion = ({ data }: AccordionProps) => {
-  return (
-    <div className="w-full px-4 pt-16">
-      <div className="mx-auto w-full rounded-2xl p-2">
-        {data.map((data, index) => (
-          <Disclosure key={index}>
-            {({ open }) => (
-              <>
-                <Disclosure.Button className="flex w-full mb-2 justify-between rounded-lg bg-stone-200 px-4 py-2 text-left text-sm font-medium text-stone-900 hover:bg-stone-300 focus:outline-none focus-visible:ring focus-visible:ring-stone-500 focus-visible:ring-opacity-75">
-                  <Label>{data.title}</Label>
-                  <ChevronUp
-                    className={`${
-                      open ? "rotate-180 transform" : ""
-                    } h-5 w-5 text-stone-900`}
-                  />
-                </Disclosure.Button>
-                <Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-600">
-                  {data.content}
-                </Disclosure.Panel>
-              </>
-            )}
-          </Disclosure>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default Accordion;
+export const Accordion: React.FC<AccordionProps> = ({ className, rows }) => {
+	return (
+		<div className={twMerge("w-full px-4 pt-16", className?.wrapper)}>
+			<div className={twMerge("mx-auto w-full rounded-2xl p-2", className?.innerWrapper)}>
+				{rows.map(({ title, content, className }, index) => (
+					<Disclosure key={index}>
+						{({ open }) => (
+							<>
+								<Disclosure.Button className="flex w-full mb-2 justify-between rounded-lg bg-stone-200 px-4 py-2 text-left text-sm font-medium text-stone-900 hover:bg-stone-300 focus:outline-none focus-visible:ring focus-visible:ring-stone-500 focus-visible:ring-opacity-75">
+									<Label>{title}</Label>
+									<ChevronUp
+										className={twMerge(
+											"h-5 w-5 text-stone-900",
+											open && "transform rotate-180",
+											className
+										)}
+									/>
+								</Disclosure.Button>
+								<Disclosure.Panel className="px-4 pt-4 pb-2 text-sm text-gray-600">
+									{content}
+								</Disclosure.Panel>
+							</>
+						)}
+					</Disclosure>
+				))}
+			</div>
+		</div>
+	)
+}
