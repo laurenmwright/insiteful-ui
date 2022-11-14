@@ -30,7 +30,8 @@ import {
   DateRange,
   FormElement,
   Table,
-  ProgressBar
+  ProgressBar,
+  DateTimePicker
 } from "./components";
 import { Eye } from "react-feather";
 
@@ -117,6 +118,7 @@ function Home() {
   ];
   return (
     <div className="grid h-screen place-items-center">
+      <DateTimePicker label= "Label" onChange={setStartDate}></DateTimePicker>
     </div>
   );
 }
