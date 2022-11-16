@@ -31,8 +31,8 @@ export const Tabs: React.FC<TabsProps> = ({ className, tabs }) => {
 								twMerge(
 									"w-full py-2.5 text-md leading-5 focus-visible:outline-none",
 									selected
-										? "text-actionBlue font-bold shadow-b-md border-b-4 border-actionBlue	"
-										: "text-mediumGray font-medium hover:bg-white/[0.12] hover:text-actionBlue/60 hover:border-b-2 hover:border-actionBlue/60 border-b-2 border-stone-500",
+										? "text-action-blue font-bold shadow-b-md border-b-4 border-action-blue	"
+										: "text-gray-light font-medium hover:bg-white/[0.12] hover:text-action-blue/60 hover:border-b-2 hover:border-action-blue/60 border-b-2 border-stone-500",
 									className?.title
 								)
 							}

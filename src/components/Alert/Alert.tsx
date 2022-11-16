@@ -24,12 +24,9 @@ export const Alert: React.FC<AlertProps> = ({
 			data-testid="icontest"
 			className={twMerge(
 				"p-4 overflow-hidden rounded-sm min-h-[0.0625rem] right-0 min-w-[16rem] border border-l-4 w-fit mt-4 mr-4 z-10 absolute",
-				notification &&
-					"bg-[var(--color-lightGray)] text-[var(--color-darkGray)] border-[var(--color-darkGray)] h-fit",
-				error &&
-					"bg-[var(--color-errorLight)] text-[var(--color-errorDark)] border-[var(--color-errorDark)]",
-				success &&
-					"bg-[var(--color-successLight)] text-[var(--color-successDark)] border-[var(--color-successDark)]",
+				notification && "bg-gray-lightest text-gray-darker border-gray-darker h-fit",
+				error && "bg-error-light text-error-dark border-error-dark",
+				success && "bg-success-light text-success-dark border-success-dark",
 				className
 			)}
 		>

@@ -15,19 +15,22 @@ export const ThemeContext = createContext({
 export const defaultColorPalette = {
 	primary: "#46A689",
 	secondary: "#E0C591",
-	actionBlue: "#2F77EE",
-	darkestGray: "#1c1917",
-	darkGray: "#292524",
-	mediumGray: "#78716c",
-	lightGray: "#d6d3d1",
-	successLight: "#86CCA4",
-	successDark: "#0E4325",
-	errorLight: "#fca5a5",
-	errorMedium: "#dc2626",
-	errorDark: "#7f1d1d",
-	editorDarkPurple: "#4945FF",
-	editorMediumPurple: "#928fff",
-	editorLightPurple: "#dbdaff"
+	"gray-lightest": "#d6d3d1",
+	"gray-lighter": "#959595",
+	"gray-light": "#78716c",
+	"gray-medium": "#666",
+	"gray-dark": "#333",
+	"gray-darker": "#292524",
+	"gray-darkest": "#1c1917",
+	"action-blue": "#2F77EE",
+	"success-light": "#86CCA4",
+	"success-dark": "#0E4325",
+	"error-light": "#fca5a5",
+	"error-medium": "#dc2626",
+	"error-dark": "#7f1d1d",
+	"editor-dark-purple": "#4945FF",
+	"editor-medium-purple": "#928fff",
+	"editor-light-purple": "#dbdaff"
 }
 
 export const defaultCatalog = {

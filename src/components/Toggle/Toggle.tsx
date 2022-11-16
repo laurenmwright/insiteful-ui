@@ -45,7 +45,7 @@ export const Toggle: React.FC<ToggleProps> = ({
 				//TODO: Custom color is not working
 				className={twMerge(
 					"relative inline-flex h-[27px] w-[63px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-opacity-75",
-					value ? "bg-actionBlue" : "bg-lightGray",
+					value ? "bg-action-blue" : "bg-gray-lightest",
 					className?.input
 				)}
 			>

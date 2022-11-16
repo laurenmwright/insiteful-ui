@@ -19,38 +19,38 @@ test("renders button with correct text", () => {
 
 test("renders regular button with override color", () => {
 	render(
-		<Button primary overrideColor="#ff0000">
+		<Button primary className="bg-[red]">
 			My Button
 		</Button>
 	)
 
 	const buttonElement = screen.getByText(/My Button/i)
 
-	expect(buttonElement).toHaveStyle({ backgroundColor: "#ff0000" })
+	expect(buttonElement).toHaveClass("bg-[red]")
 })
 
 test("renders outline button with override color", () => {
 	render(
-		<Button outline overrideColor="red">
+		<Button outline className="border-[red]">
 			My Button
 		</Button>
 	)
 
 	const buttonElement = screen.getByText(/My Button/i)
 
-	expect(buttonElement).toHaveStyle({ border: "2px solid red" })
+	expect(buttonElement).toHaveClass("border-[red]")
 })
 
 test("renders button with simple prop", () => {
 	render(
-		<Button simple overrideColor="#ff0000">
+		<Button simple className="text-[red]">
 			My Button
 		</Button>
 	)
 
 	const buttonElement = screen.getByText(/My Button/i)
 
-	expect(buttonElement).toHaveStyle({ color: "#ff0000" })
+	expect(buttonElement).toHaveClass("text-[red]")
 })
 
 test("renders button with working onclick function", () => {

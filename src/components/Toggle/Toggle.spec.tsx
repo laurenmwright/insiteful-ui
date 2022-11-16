@@ -17,7 +17,7 @@ test("renders toggle with correct disabled color", () => {
 
 	const toggleElement = screen.getByTestId("switch")
 
-	expect(toggleElement).toHaveClass("bg-lightGray")
+	expect(toggleElement).toHaveClass("bg-gray-lightest")
 })
 
 test("enable changes toggle color", () => {
@@ -27,7 +27,7 @@ test("enable changes toggle color", () => {
 
 	fireEvent.click(toggleElement)
 
-	expect(toggleElement).toHaveClass("bg-actionBlue")
+	expect(toggleElement).toHaveClass("bg-action-blue")
 })
 
 //TODO: see if what is getting selecting is changing in state!

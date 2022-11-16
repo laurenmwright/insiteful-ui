@@ -9,12 +9,7 @@ export type TypographyProps = {
 
 export const Heading1: React.FC<TypographyProps> = ({ children, className }) => {
 	return (
-		<h1
-			className={twMerge(
-				"[font-family:var(--common-font)] text-[2rem] text-[var(--color-darkGray)]",
-				className
-			)}
-		>
+		<h1 className={twMerge("font-mono text-[2rem] text-gray-darker", className)}>
 			{children}
 		</h1>
 	)
@@ -34,7 +29,7 @@ export const Title: React.FC<TypographyProps> = ({ children, className }) => {
 	return (
 		<p
 			className={twMerge(
-				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.5rem] [font-weight:bolder] leading-[1.17083334] text-[#666]",
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.5rem] [font-weight:bolder] leading-[1.17083334] text-gray-medium",
 				className
 			)}
 		>
@@ -47,7 +42,7 @@ export const Caption1: React.FC<TypographyProps> = ({ children, className }) => 
 	return (
 		<caption
 			className={twMerge(
-				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',,Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[0.875rem] leading-[1.17142] text-[var(--color-darkGray)]",
+				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',,Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[0.875rem] leading-[1.17142] text-gray-darker",
 				className
 			)}
 		>
@@ -60,7 +55,7 @@ export const Caption2: React.FC<TypographyProps> = ({ children, className }) => 
 	return (
 		<caption
 			className={twMerge(
-				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[0.9375rem] leading-[1.173333] text-[#666]",
+				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[0.9375rem] leading-[1.173333] text-gray-medium",
 				className
 			)}
 		>
@@ -73,7 +68,7 @@ export const MenuLabel: React.FC<TypographyProps> = ({ children, className }) =>
 	return (
 		<p
 			className={twMerge(
-				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[1.5rem] leading-[1.1708333] [font-weight:bolder] text-[var(--color-darkGray)]",
+				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[1.5rem] leading-[1.1708333] [font-weight:bolder] text-gray-darker",
 				className
 			)}
 		>
@@ -86,7 +81,7 @@ export const Placeholder: React.FC<TypographyProps> = ({ children, className }) 
 	return (
 		<p
 			className={twMerge(
-				"font-['Roboto'] text-[0.875rem] leading-[1.17142857] text-[#959595]",
+				"font-['Roboto'] text-[0.875rem] leading-[1.17142857] text-gray-lighter",
 				className
 			)}
 		>
@@ -99,7 +94,7 @@ export const Subheading: React.FC<TypographyProps> = ({ children, className }) =
 	return (
 		<h3
 			className={twMerge(
-				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.0625rem] [font-weight:bolder] leading-[1.2823529] text-[#333]",
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.0625rem] [font-weight:bolder] leading-[1.2823529] text-gray-dark",
 				className
 			)}
 		>
@@ -117,7 +112,7 @@ export const Link: React.FC<TypographyProps & { link?: string }> = ({
 		<a
 			href={link}
 			className={twMerge(
-				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.125rem] leading-[1.1666667] text-[#182d36]",
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.125rem] leading-[1.1666667] text-gray-darkest",
 				className
 			)}
 		>
@@ -130,7 +125,7 @@ export const ButtonTypography: React.FC<TypographyProps> = ({ children, classNam
 	return (
 		<p
 			className={twMerge(
-				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.125rem] leading-[1.1666667] text-[#000]",
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.125rem] leading-[1.1666667] text-black",
 				className
 			)}
 		>
@@ -141,9 +136,7 @@ export const ButtonTypography: React.FC<TypographyProps> = ({ children, classNam
 
 export const Label: React.FC<TypographyProps> = ({ children, className }) => {
 	return (
-		<label
-			className={twMerge("block text-[1rem] text-[var(--color-darkGray)]", className)}
-		>
+		<label className={twMerge("block text-[1rem] text-gray-darker", className)}>
 			{children}
 		</label>
 	)

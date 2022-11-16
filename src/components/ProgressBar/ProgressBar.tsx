@@ -29,7 +29,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
 			<progress
 				data-testid="progress-bar"
 				className={twMerge(
-					"flex-grow appearance-none h-[0.3125rem] pr-1.5 [&::-webkit-progress-value]:bg-[var(--color-actionBlue)] [&::-webkit-progress-bar]:bg-[var(--color-lightGray)]",
+					"flex-grow appearance-none h-[0.3125rem] pr-1.5 [&::-webkit-progress-value]:bg-action-blue [&::-webkit-progress-bar]:bg-gray-lightest",
 					className?.progress
 				)}
 				value={percentage != null ? percentage / 100 : numerator! / denominator!}

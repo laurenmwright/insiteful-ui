@@ -30,7 +30,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 			<input
 				type="Checkbox"
 				className={twMerge(
-					"accent-[var(--color-actionBlue)] h-5 w-5 align-middle mr-[0.9375rem]",
+					"accent-action-blue h-5 w-5 align-middle mr-[0.9375rem]",
 					className?.input
 				)}
 				checked={checked}
@@ -40,7 +40,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 			/>
 			<span
 				data-testid="span"
-				className={twMerge("text-[var(--color-darkGray)] align-middle", className?.label)}
+				className={twMerge("text-gray-darker align-middle", className?.label)}
 			>
 				{label}
 			</span>

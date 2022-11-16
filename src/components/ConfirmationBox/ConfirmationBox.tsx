@@ -48,9 +48,8 @@ export const ConfirmationBox: React.FC<ConfirmPopoverProps> = ({
 					<div className="w-80 shadow-lg rounded-md border-solid border-2">
 						<div className="flex pt-2 px-2">
 							<AlertTriangle
-								className="w-1/6 relative mt-3"
+								className="w-1/6 relative mt-3 text-error-medium"
 								size={24}
-								color="var(--color-errorMedium)"
 							/>
 							<div
 								data-testid="div"
@@ -59,10 +58,10 @@ export const ConfirmationBox: React.FC<ConfirmPopoverProps> = ({
 								{children}
 							</div>
 						</div>
-						<div className="flex justify-end space-x-2 bg-light-gray p-2 bg-error-red">
+						<div className="flex justify-end space-x-2 bg-gray-lightest p-2 bg-error-red">
 							<Button
 								simple
-								overrideColor="var(--color-mediumGray)"
+								className="text-gray-light"
 								onClick={onCancel}
 								data-testid="no"
 							>

@@ -46,7 +46,7 @@ export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
 					{({ checked }) => (
 						<div
 							className={twMerge(
-								"flex text-base gap-2 m-5 text-[var(--color-mediumGray)]",
+								"flex text-base gap-2 m-5 text-gray-light",
 								className?.wrapper
 							)}
 						>
@@ -54,12 +54,12 @@ export const RadioButtonGroup: React.FC<RadioButtonGroupProps> = ({
 								data-testid={key}
 								className={twJoin(
 									checked &&
-										"text-[var(--color-actionBlue)] bg-[radial-gradient(circle,var(--color-actionBlue)_40%,white_50%)] rounded-full"
+										"text-action-blue bg-[radial-gradient(circle,var(--color-action-blue,#2F77EE)_40%,white_50%)] rounded-full"
 								)}
 							>
 								<Circle />
 							</span>
-							<span className={twMerge("text-[var(--color-darkGray)]", className?.label)}>
+							<span className={twMerge("text-gray-darker", className?.label)}>
 								{text}
 							</span>
 						</div>

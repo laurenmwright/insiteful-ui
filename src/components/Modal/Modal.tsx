@@ -39,14 +39,14 @@ export const Modal: React.FC<ModalProps> = ({
 		>
 			<Dialog.Panel data-testid="panel" className={twJoin(className?.panel)}>
 				<button data-testid="icon" onClick={onClose} className="float-right align-top">
-					<X color="var(--color-mediumGray)" size={18} />
+					<X className="text-gray-light" size={18} />
 				</button>
 				{title && (
 					<Dialog.Title
 						data-testid="title"
-						className="break-words min-h-[2rem] border border-[#dedede] pb-4 mb-4 items-center justify-center text-center"
+						className="break-words min-h-[2rem] border border-gray-lightest pb-4 mb-4 items-center justify-center text-center"
 					>
-						<Title className="text-[var(--color-darkGray)]">{title}</Title>
+						<Title className="text-gray-darker">{title}</Title>
 					</Dialog.Title>
 				)}
 				{children}

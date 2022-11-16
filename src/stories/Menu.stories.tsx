@@ -35,7 +35,7 @@ export const CustomAnchor = (args) => (
 					<strong>Draft Rule Proposal 10-X-.02 </strong> - Pending Admin Approval
 				</Label>
 				<Menu
-					anchor={<MoreVertical size={24} color="var(--color-mediumGray)" />}
+					anchor={<MoreVertical size={24} className="text-gray-light" />}
 					items={menuData}
 				/>
 			</span>

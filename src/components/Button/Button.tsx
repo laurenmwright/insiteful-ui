@@ -11,8 +11,6 @@ export type ButtonProps = {
 	outline?: boolean
 	darkFont?: boolean
 	simple?: boolean
-	overrideFont?: boolean
-	overrideColor?: string
 	editor?: boolean
 	onClick?: () => void
 	type?: "button" | "submit" | "reset"
@@ -26,7 +24,6 @@ export const Button: React.FC<ButtonProps> = ({
 	secondary,
 	simple,
 	darkFont,
-	overrideColor,
 	editor,
 	outline,
 	onClick,
@@ -38,28 +35,19 @@ export const Button: React.FC<ButtonProps> = ({
 			type={type ? type : "button"}
 			onClick={onClick!}
 			disabled={disabled}
-			style={
-				simple
-					? { color: overrideColor }
-					: outline
-					? { color: overrideColor, border: "2px solid " + overrideColor }
-					: primary
-					? { backgroundColor: overrideColor }
-					: {}
-			}
 			className={twMerge(
 				"font-semibold rounded-[0.3125rem] py-[0.4375rem] px-[0.625rem] hover:opacity-50 focus:outline-none focus-visible:shadow-sm disabled:opacity-[0.65] disabled:cursor-not-allowed",
 				primary &&
 					(outline
-						? "border-2 border-[var(--color-actionBlue) text-[var(--color-actionBlue)] bg-transparent font-bold"
-						: "text-white bg-[var(--color-actionBlue)]"),
+						? "border-2 border-action-blue text-action-blue bg-transparent font-bold"
+						: "text-white bg-action-blue"),
 				secondary &&
 					(outline
-						? "border-2 border-[var(--color-secondary)] text-[var(--color-secondary)] bg-transparent"
-						: "text-white bg-[var(--color-secondary)]"),
-				editor && "text-black bg-[#dbdaff] border-2 border-[#4945ff]",
-				darkFont && "!text-[var(--color-darkGray)]",
-				simple && "![background:none] !border-none text-[var(--color-mediumGray)]",
+						? "border-2 border-secondary text-secondary bg-transparent"
+						: "text-white bg-secondary"),
+				editor && "text-black bg-editor-light-purple border-2 border-editor-dark-purple",
+				darkFont && "!text-gray-darker",
+				simple && "![background:none] border-none text-gray-light",
 				className
 			)}
 		>

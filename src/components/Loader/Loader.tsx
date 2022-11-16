@@ -20,10 +20,7 @@ export const Loader: React.FC<LoaderProps> = ({ color, center, className }) => {
 		>
 			<FeatherLoader
 				data-testid="Feather-Icon-Loader"
-				className={twMerge(
-					"animate-spin text-[var(--color-actionBlue)]",
-					className?.loader
-				)}
+				className={twMerge("animate-spin text-action-blue", className?.loader)}
 				color={color}
 			/>
 		</div>

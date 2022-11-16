@@ -37,7 +37,7 @@ test("if menu button background is action blue", () => {
 
 	const options = screen.getByText("Options")
 
-	expect(options).toHaveClass("bg-actionBlue")
+	expect(options).toHaveClass("bg-action-blue")
 })
 
 test("position left and right with an anchor", () => {

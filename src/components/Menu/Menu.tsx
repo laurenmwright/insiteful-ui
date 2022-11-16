@@ -36,7 +36,7 @@ export const Menu: React.FC<MenuProps> = ({ className, title, anchor, left, item
 						{anchor}
 					</MenuComponent.Button>
 				) : (
-					<MenuComponent.Button className="inline-flex w-full justify-center rounded-md bg-actionBlue px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+					<MenuComponent.Button className="inline-flex w-full justify-center rounded-md bg-action-blue px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
 						{title}
 						<ChevronDown className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
 					</MenuComponent.Button>
@@ -64,8 +64,8 @@ export const Menu: React.FC<MenuProps> = ({ className, title, anchor, left, item
 										link ? (
 											<a
 												className={twMerge(
-													"group flex w-full items-center rounded-md px-2 py-2 text-sm text-darkGray",
-													active && "bg-lightGray",
+													"group flex w-full items-center rounded-md px-2 py-2 text-sm text-gray-darker",
+													active && "bg-gray-lightest",
 													className
 												)}
 												href={link}
@@ -76,8 +76,8 @@ export const Menu: React.FC<MenuProps> = ({ className, title, anchor, left, item
 										) : (
 											<button
 												className={twMerge(
-													"group flex w-full items-center rounded-md px-2 py-2 text-sm text-darkGray",
-													active && "bg-lightGray",
+													"group flex w-full items-center rounded-md px-2 py-2 text-sm text-gray-darker",
+													active && "bg-gray-lightest",
 													className
 												)}
 												onClick={action}

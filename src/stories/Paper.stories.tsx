@@ -16,7 +16,7 @@ export const Default = (args) => {
 	return (
 		<div style={{ width: args.width + "%" }}>
 			<Paper>
-				<Title className="text-darkGray pb-3">Create new user</Title>
+				<Title className="text-gray-darker pb-3">Create new user</Title>
 				<FormElement label="Name">
 					<Input type="text" onChange={() => {}}></Input>
 				</FormElement>

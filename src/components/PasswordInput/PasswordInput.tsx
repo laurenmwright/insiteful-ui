@@ -53,9 +53,9 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
 				type="button"
 			>
 				{showPassword ? (
-					<EyeOff data-testid="eye-off" color="var(--color-mediumGray)" size={24} />
+					<EyeOff data-testid="eye-off" className="text-gray-light" size={24} />
 				) : (
-					<Eye data-testid="eye" color="var(--color-mediumGray)" size={24} />
+					<Eye data-testid="eye" className="text-gray-light" size={24} />
 				)}
 			</button>
 		</div>

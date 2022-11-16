@@ -22,7 +22,7 @@ test("renders button inside of a form element", () => {
 test("renders button inside form element with override color", () => {
 	render(
 		<FormElement>
-			<Button primary overrideColor="#ff0000">
+			<Button primary className="text-[red]">
 				My Button
 			</Button>
 		</FormElement>
@@ -30,7 +30,7 @@ test("renders button inside form element with override color", () => {
 
 	const buttonElement = screen.getByText(/My Button/i)
 
-	expect(buttonElement).toHaveStyle({ backgroundColor: "#ff0000" })
+	expect(buttonElement).toHaveClass("text-[red]")
 })
 
 test("renders button inside form element with working onclick function", () => {
