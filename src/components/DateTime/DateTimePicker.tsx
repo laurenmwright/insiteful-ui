@@ -1,5 +1,4 @@
 import React from "react";
-import styles from './DateTimePicker.module.css';
 import classNames from "classnames";
 import { Label } from "../Typography";
 import { FormElement } from "../FormElement";
