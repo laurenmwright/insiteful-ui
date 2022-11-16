@@ -7,7 +7,7 @@ export default {
   component: DateTimePicker,
   argTypes: {
     onChange: { table: { disable: true } },
-    dateTimeValue: { table: { disable: true } },
+    value: { table: { disable: true } },
   },
 } as Meta;
 
@@ -17,7 +17,7 @@ export const Default = (args) => {
     setValue(v);
   };
 
-  return <div><DateTimePicker label = {args.label} dateTimeValue={value} onChange={onChange} /></div>
+  return <div><DateTimePicker label = {args.label} value={value} onChange={onChange} /></div>
 };
 
 Default.args = {

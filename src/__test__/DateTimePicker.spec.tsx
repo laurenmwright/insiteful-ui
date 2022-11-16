@@ -7,8 +7,8 @@ import userEvent from "@testing-library/user-event";
 test("correctly renders styles", () => {
   const hello = jest.fn();
   const { getByTestId } = render(<DateTimePicker onChange={hello} />);
-  const DateRangeElement = getByTestId("date-time-picker");
-  expect(DateRangeElement).toHaveStyle({ width: "15rem;" });
+  const DateTimeElement = getByTestId("date-time-picker");
+  expect(DateTimeElement).toHaveStyle({ width: "15rem;" });
 }); 
 
 test("renders date time picker", () => {
@@ -16,7 +16,7 @@ test("renders date time picker", () => {
   render(
     <DateTimePicker
       onChange={hello}
-      dateTimeValue="2016-01-04T10:34:23.000"
+      value="2016-01-04T10:34:23.000"
     ></DateTimePicker>
   );
   const DateRangeElement = screen.getByTestId("date-time-picker");
