@@ -1,25 +1,30 @@
-import React from "react";
-import styles from "./FormElement.module.css";
-import classNames from "classnames";
-import { Label } from "../Typography";
+import React from "react"
+import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
+import { twMerge } from "tailwind-merge"
+
+import { Label } from "../Typography"
 
 export type FormElementProps = {
-  label?: string;
-  children?: React.ReactNode | React.ReactNode[];
-};
+	className?: {
+		wrapper?: ClassNameValue
+		label?: ClassNameValue
+	}
+	label?: string
+	children?: React.ReactNode
+}
 
-export function FormElement({
-  label,
-  children,
-}: FormElementProps) {
-  return (
-    <div data-testid="form-element" className={classNames(styles.formElement)}>
-      {label && (
-        <Label className="pb-2.5">
-          {label}
-        </Label>
-      )}
-      {children}
-    </div>
-  );
+export const FormElement: React.FC<FormElementProps> = ({
+	className,
+	label,
+	children
+}) => {
+	return (
+		<div
+			data-testid="form-element"
+			className={twMerge("flex mb-6 flex-col w-full", className?.wrapper)}
+		>
+			{label && <Label className={twMerge("pb-2.5", className?.label)}>{label}</Label>}
+			{children}
+		</div>
+	)
 }

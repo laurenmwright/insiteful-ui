@@ -1,79 +1,143 @@
-import React from "react";
-import styles from "./Typography.module.css";
-import classNames from "classnames";
-
+import React from "react"
+import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
+import { twMerge } from "tailwind-merge"
 
 export type TypographyProps = {
-    children: React.ReactNode | React.ReactNode[];
-    overrideColor?: string;
-    overrideFont?: string;
-    className?: string;
-    link?: string;
+	children?: React.ReactNode
+	className?: ClassNameValue
 }
 
-export const Heading1 = ({children, className, overrideColor, overrideFont}: TypographyProps ) => {
-    return (
-        <h1 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.heading1)  + ` ${className ? className : ""}`}>{children}</h1>
-    )
+export const Heading1: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<h1 className={twMerge("font-mono text-[2rem] text-gray-darker", className)}>
+			{children}
+		</h1>
+	)
 }
 
-export const Heading2 = ({children, overrideColor, overrideFont, className}: TypographyProps ) => {
-    return (
-        <h2 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.heading2) + ` ${className ? className : ""}` }>{children}</h2>
-    )
+export const Heading2: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<h2
+			className={twMerge("font-['Roboto'] text-[1.125rem] leading-[1.17222]", className)}
+		>
+			{children}
+		</h2>
+	)
 }
 
-export const Title = ({children, overrideColor, overrideFont, className}: TypographyProps ) => {
-    return (
-        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.title) + ` ${className ? className : ""}` }>{children}</p>
-    )
-    
+export const Title: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<p
+			className={twMerge(
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.5rem] [font-weight:bolder] leading-[1.17083334] text-gray-medium",
+				className
+			)}
+		>
+			{children}
+		</p>
+	)
 }
 
-export const Caption1 = ({ children, overrideColor, overrideFont, className}: TypographyProps) => {
-  return (
-        <caption style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption1) + ` ${className ? className : ""}` }>{children}</caption>
-    )
+export const Caption1: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<caption
+			className={twMerge(
+				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',,Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[0.875rem] leading-[1.17142] text-gray-darker",
+				className
+			)}
+		>
+			{children}
+		</caption>
+	)
 }
 
-export const Caption2 = ({ children, overrideColor, overrideFont, className}: TypographyProps) => {
-  return (
-        <caption style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption2) + ` ${className ? className : ""}` }>{children}</caption>
-    )
+export const Caption2: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<caption
+			className={twMerge(
+				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[0.9375rem] leading-[1.173333] text-gray-medium",
+				className
+			)}
+		>
+			{children}
+		</caption>
+	)
 }
 
-export const Menu = ({ children, overrideColor, className, overrideFont}: TypographyProps) => {
-  return (
-        <p style = {{ color : overrideColor, fontFamily : overrideFont }} className={ classNames(styles.caption2) + ` ${className ? className : ""}` }>{children}</p>
-    )
+export const MenuLabel: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<p
+			className={twMerge(
+				"font-[system-ui,-apple-system,BlinkMacSystem,'Segoe_UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open_Sans','Helvetica_Neue',sans-serif] text-[1.5rem] leading-[1.1708333] [font-weight:bolder] text-gray-darker",
+				className
+			)}
+		>
+			{children}
+		</p>
+	)
 }
 
-export const Placeholder = ({children, overrideColor, className, overrideFont}: TypographyProps ) => {
-    return (
-        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.placeholder) + ` ${className ? className : ""}` }>{children}</p>
-    )
+export const Placeholder: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<p
+			className={twMerge(
+				"font-['Roboto'] text-[0.875rem] leading-[1.17142857] text-gray-lighter",
+				className
+			)}
+		>
+			{children}
+		</p>
+	)
 }
 
-export const Subheading = ({children, overrideColor, className, overrideFont}: TypographyProps ) => {
-    return (
-        <h3 style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.subheading) + ` ${className ? className : ""}` }>{children}</h3>
-    )
+export const Subheading: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<h3
+			className={twMerge(
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.0625rem] [font-weight:bolder] leading-[1.2823529] text-gray-dark",
+				className
+			)}
+		>
+			{children}
+		</h3>
+	)
 }
 
-export const Link = ({children, overrideColor, className, overrideFont, link}: TypographyProps ) => {
-    return (
-        <a href={link} style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.link)  + ` ${className ? className : ""}`}>{children}</a>
-    )
+export const Link: React.FC<TypographyProps & { link?: string }> = ({
+	children,
+	className,
+	link
+}) => {
+	return (
+		<a
+			href={link}
+			className={twMerge(
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.125rem] leading-[1.1666667] text-gray-darkest",
+				className
+			)}
+		>
+			{children}
+		</a>
+	)
 }
 
-export const ButtonTypography = ({children, overrideColor, className, overrideFont}: TypographyProps ) => {
-    return (
-        <p style = {{ color: overrideColor, fontFamily: overrideFont }} className={ classNames(styles.button)  + ` ${className ? className : ""}`}>{children}</p>
-    )
+export const ButtonTypography: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<p
+			className={twMerge(
+				"font-['Lucida_Sans','Lucida_Sans_Regular','Lucida_Grande','Lucida_Sans_Unicode',Geneva,Verdana,sans-serif] text-[1.125rem] leading-[1.1666667] text-black",
+				className
+			)}
+		>
+			{children}
+		</p>
+	)
 }
 
-export const Label = ({children, className}: TypographyProps ) => {
-    return (
-        <label className={ classNames(styles.label) + ` ${className ? className : ""}`  }>{children}</label>
-    )
+export const Label: React.FC<TypographyProps> = ({ children, className }) => {
+	return (
+		<label className={twMerge("block text-[1rem] text-gray-darker", className)}>
+			{children}
+		</label>
+	)
 }

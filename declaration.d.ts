@@ -1,2 +1,2 @@
-declare module "insiteful-ui";
-declare module "*.module.css";
+declare module "insiteful-ui"
+declare module "*.module.css"

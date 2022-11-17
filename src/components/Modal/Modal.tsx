@@ -1,38 +1,56 @@
-import { Dialog } from "@headlessui/react";
-import classNames from "classnames";
-import { X } from 'react-feather';
-import { Title } from "../Typography";
-import styles from './Modal.module.css';
+import { Dialog } from "@headlessui/react"
+import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
+import { twMerge, twJoin } from "tailwind-merge"
+import { X } from "react-feather"
+import { Title } from "../Typography"
+import React from "react"
 
 export type ModalProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  title?: string;
-  children?: React.ReactNode | React.ReactNode[];
-  size?: "small" | "medium" | "large";  
-};
+	className?: {
+		dialog?: ClassNameValue
+		panel?: ClassNameValue
+	}
+	isOpen: boolean
+	onClose: () => void
+	title?: React.ReactNode
+	children?: React.ReactNode
+	size?: "small" | "medium" | "large"
+}
 
-export const Modal = ({ isOpen, onClose, title, children, size}: ModalProps) => {
-
-  return (
-    <div>
-      {isOpen && <Dialog data-testid="dialog" as="div" open={isOpen} onClose={onClose} className={ (size==='small' ? classNames(styles.dialogSmall) : size==='medium' ? classNames(styles.dialogMedium) : size==='large' ? classNames(styles.dialogLarge) : classNames(styles.dialogMedium)) }>
-        <div>
-          <Dialog.Panel data-testid="panel" >
-            {/* Class name in 'button' right aligns the X-button */}
-            <button data-testid="icon" onClick = {onClose} className={ classNames(styles.buttonIcon)} >
-              <X color="var(--color-mediumGray)" size={18} />
-            </button>
-            {title && (
-                <Dialog.Title data-testid="title" className={ classNames(styles.title)}> 
-                  <Title overrideColor="var(--color-darkGray)" >{title}</Title>
-                </Dialog.Title>
-            )}
-            {children}
-          </Dialog.Panel>
-        </div>    
-      </Dialog> 
-      }
-    </div>
-  )
+export const Modal: React.FC<ModalProps> = ({
+	className,
+	isOpen,
+	onClose,
+	title,
+	children,
+	size = "medium"
+}) => {
+	return isOpen ? (
+		<Dialog
+			data-testid="dialog"
+			as="div"
+			open={isOpen}
+			onClose={onClose}
+			className={twMerge(
+				"absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 p-2.5 bg-white break-words border-2 border-white rounded-[0.625rem] shadow-[0px_0px_10px_0px_grey]",
+				size === "small" ? "w-1/4" : size === "medium" ? "w-1/2" : "w-3/4",
+				className?.dialog
+			)}
+		>
+			<Dialog.Panel data-testid="panel" className={twJoin(className?.panel)}>
+				<button data-testid="icon" onClick={onClose} className="float-right align-top">
+					<X className="text-gray-light" size={18} />
+				</button>
+				{title && (
+					<Dialog.Title
+						data-testid="title"
+						className="break-words min-h-[2rem] border border-gray-lightest pb-4 mb-4 items-center justify-center text-center"
+					>
+						<Title className="text-gray-darker">{title}</Title>
+					</Dialog.Title>
+				)}
+				{children}
+			</Dialog.Panel>
+		</Dialog>
+	) : null
 }

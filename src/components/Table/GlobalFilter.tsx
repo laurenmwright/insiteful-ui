@@ -1,32 +1,41 @@
+import React, { useCallback, useState } from "react"
+import { useAsyncDebounce } from "react-table"
+import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
+import { twMerge } from "tailwind-merge"
 
-import React, { useMemo, useState, useEffect } from 'react';
-import {
-    useAsyncDebounce,
-  } from 'react-table';
+import { Input } from "../Input"
 
-import { Input } from "../Input";
+export type GlobalFilterProps = {
+	className?: ClassNameValue
+	preGlobalFilteredRows?: any
 
-export function GlobalFilter({
-    preGlobalFilteredRows,
-    globalFilter,
-    setGlobalFilter,
-  }) {
-    const count = preGlobalFilteredRows.length
-    const [value, setValue] = useState(globalFilter)
-    const onChange = useAsyncDebounce(value => {
-      setGlobalFilter(value || undefined)
-    }, 200)
-  
-    return (
-      <Input
-        type="text"
-        value={value || ""}
-        onChange={(e) => {
-          setValue(e);
-          onChange(e);
-        }}
-        placeholder={`Search`}
-        className="w-60"
-      />
-    )
-  }
+	globalFilter: string
+	setGlobalFilter: (newValue: string) => void
+}
+
+export const GlobalFilter: React.FC<GlobalFilterProps> = ({
+	className,
+	globalFilter,
+	setGlobalFilter
+}) => {
+	const [value, setValue] = useState(globalFilter)
+	const onChange = useAsyncDebounce(setGlobalFilter, 200)
+
+	const setBoth = useCallback(
+		(e: string) => {
+			setValue(e)
+			onChange(e)
+		},
+		[onChange]
+	)
+
+	return (
+		<Input
+			type="text"
+			value={value}
+			onChange={setBoth}
+			placeholder="Search"
+			className={twMerge("w-60", className)}
+		/>
+	)
+}

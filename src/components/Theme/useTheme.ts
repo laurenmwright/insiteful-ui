@@ -1,29 +1,26 @@
-import { bool } from "prop-types";
-import { useEffect, useState, useContext } from "react";
-import { applyTheme } from "./utils";
+import { useState } from "react"
+import { applyTheme } from "./utils"
 
+export function useTheme() {
+	const [colorPalette, setColorPalette] = useState<any[]>([])
+	const [updatingTheme] = useState(false)
+	const [typography, setTypography] = useState()
+	const [themeLoading] = useState(true)
+	const [themeError] = useState(false)
 
-export default function useTheme() {
+	const applyColors = (data: Record<string, string>) => {
+		// setColorPalette(data);
+		applyTheme(data, true)
+	}
 
-  const [colorPalette, setColorPalette] = useState<any[]>([])  ;
-  const [updatingTheme, setUpdatingTheme] = useState(false)  ;
-  const [typography, setTypography] = useState();
-  const [themeLoading, setThemeLoading] = useState(true);
-  const [themeError, setThemeError] = useState(false);
-
-  const applyColors = (data) => {
-    // setColorPalette(data);
-    applyTheme(data, true);
-  }
-
-  return {
-    colorPalette,
-    setColorPalette,
-    typography,
-    setTypography,
-    themeLoading,
-    themeError,
-    applyColors,
-    updatingTheme
-  };
+	return {
+		colorPalette,
+		setColorPalette,
+		typography,
+		setTypography,
+		themeLoading,
+		themeError,
+		applyColors,
+		updatingTheme
+	}
 }
