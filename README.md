@@ -65,10 +65,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ### Publishing changes
 
-Follow these steps to publish:
+To publish the latest changes, follow these steps:
 
-1. Update version number in `package.json`.
-1. Run `npm i` to propagate that version number.
-1. Run `npm run build`
-1. Change directory into the dist directory: `cd dist`.
-1. Run publish: `npm publish`.
+1. Update the version number according to your change (Since we are still not full release, use `npm run version minor` for breaking changes, `npm run version patch` for any other changes, or choose your version number). Commit this version update **with** your changes in your PR.
+1. After your changes **with the version update** are merged, run `npm run publish` on the branch being published.

@@ -6,6 +6,8 @@ async function run() {
 		fs.readFile("package.json").then((f) => {
 			const json = JSON.parse(f.toString())
 
+			json.private = false
+
 			for (const key of ["main", "module", "types"]) {
 				json[key] = json[key]?.replace("dist/", "")
 			}
