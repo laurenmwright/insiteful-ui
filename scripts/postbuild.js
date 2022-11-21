@@ -37,7 +37,10 @@ async function run() {
 				JSON.stringify(json, null, "\t")
 			)
 		}),
-		fs.copyFile("README.md", path.join("dist", "README.md"))
+		fs.copyFile("README.md", path.join("dist", "README.md")),
+		process.env.LINK_NODE_MODULES === "true"
+			? fs.symlink("../../aacms-frontend/node_modules", "dist/node_modules")
+			: undefined
 	])
 }
 

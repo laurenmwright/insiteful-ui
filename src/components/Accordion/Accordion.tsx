@@ -1,15 +1,21 @@
 import { Disclosure } from "@headlessui/react"
 import React from "react"
 import { ChevronUp } from "react-feather"
-import { Label } from "../Typography"
-import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge } from "tailwind-merge"
+import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
+
+import { isClassNameValue } from "../helpers/helpers"
+
+import { Label } from "../Typography"
 
 export type AccordionProps = {
-	className?: {
-		wrapper?: ClassNameValue
-		innerWrapper?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				innerWrapper?: ClassNameValue
+		  }
 	rows: {
 		title: string
 		content: React.ReactNode
@@ -18,9 +24,15 @@ export type AccordionProps = {
 }
 
 export const Accordion: React.FC<AccordionProps> = ({ className, rows }) => {
+	if (isClassNameValue(className)) {
+		className = {
+			wrapper: className
+		}
+	}
+
 	return (
-		<div className={twMerge("w-full px-4 pt-16", className?.wrapper)}>
-			<div className={twMerge("mx-auto w-full rounded-2xl p-2", className?.innerWrapper)}>
+		<div className={twMerge("w-full px-4 pt-16", className.wrapper)}>
+			<div className={twMerge("mx-auto w-full rounded-2xl p-2", className.innerWrapper)}>
 				{rows.map(({ title, content, className }, index) => (
 					<Disclosure key={index}>
 						{({ open }) => (

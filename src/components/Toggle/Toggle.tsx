@@ -4,13 +4,17 @@ import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge, twJoin } from "tailwind-merge"
 
 import { Label } from "../Typography"
+import { isClassNameValue } from "../helpers/helpers"
 
 export type ToggleProps = {
-	className?: {
-		wrapper?: ClassNameValue
-		label?: ClassNameValue
-		input?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				label?: ClassNameValue
+				input?: ClassNameValue
+		  }
 
 	label?: string
 
@@ -27,13 +31,19 @@ export const Toggle: React.FC<ToggleProps> = ({
 	disabled,
 	onChange
 }) => {
+	if (isClassNameValue(className)) {
+		className = {
+			wrapper: className
+		}
+	}
+
 	return (
 		<div
 			data-testid="div"
-			className={twMerge("flex gap-6 items-center", className?.wrapper)}
+			className={twMerge("flex gap-6 items-center", className.wrapper)}
 		>
 			{label && (
-				<Label data-testid="label" className={twJoin(className?.label)}>
+				<Label data-testid="label" className={twJoin(className.label)}>
 					{label}
 				</Label>
 			)}
@@ -46,7 +56,7 @@ export const Toggle: React.FC<ToggleProps> = ({
 				className={twMerge(
 					"relative inline-flex h-[27px] w-[63px] shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-opacity-75",
 					value ? "bg-action-blue" : "bg-gray-lightest",
-					className?.input
+					className.input
 				)}
 			>
 				<span className="sr-only">Use setting</span>

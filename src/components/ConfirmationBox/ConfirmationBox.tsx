@@ -4,13 +4,18 @@ import { AlertTriangle } from "react-feather"
 import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge, twJoin } from "tailwind-merge"
 
+import { isClassNameValue } from "../helpers/helpers"
+
 import { Button } from "../Button"
 
 export type ConfirmPopoverProps = {
-	className?: {
-		button?: ClassNameValue
-		panel?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the button. */
+	className?:
+		| ClassNameValue
+		| {
+				button?: ClassNameValue
+				panel?: ClassNameValue
+		  }
 	onCancel?: () => void
 	onConfirm?: () => void
 	button?: React.ReactNode
@@ -24,9 +29,15 @@ export const ConfirmationBox: React.FC<ConfirmPopoverProps> = ({
 	button,
 	children
 }) => {
+	if (isClassNameValue(className)) {
+		className = {
+			button: className
+		}
+	}
+
 	return (
 		<Popover>
-			<Popover.Button data-testid="popbutton" className={twJoin(className?.button)}>
+			<Popover.Button data-testid="popbutton" className={twJoin(className.button)}>
 				{button}
 			</Popover.Button>
 			<Transition
@@ -42,7 +53,7 @@ export const ConfirmationBox: React.FC<ConfirmPopoverProps> = ({
 					data-testid="panel"
 					className={twMerge(
 						"absolute z-1000 px-4 mt-3  transform -translate-x-96 -translate-y-24 sm:px-0 lg:max-w-3xl",
-						className?.panel
+						className.panel
 					)}
 				>
 					<div className="w-80 shadow-lg rounded-md border-solid border-2">

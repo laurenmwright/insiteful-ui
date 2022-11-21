@@ -2,13 +2,17 @@ import React, { useCallback } from "react"
 import { Label } from "../Typography"
 import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge, twJoin } from "tailwind-merge"
+import { isClassNameValue } from "../helpers/helpers"
 
 export type TextAreaProps = {
-	className?: {
-		wrapper?: ClassNameValue
-		label?: ClassNameValue
-		input?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				label?: ClassNameValue
+				input?: ClassNameValue
+		  }
 
 	label?: string
 	placeholder?: string
@@ -24,6 +28,12 @@ export const TextArea: React.FC<TextAreaProps> = ({
 	value,
 	onChange
 }) => {
+	if (isClassNameValue(className)) {
+		className = {
+			wrapper: className
+		}
+	}
+
 	const forwardValue = useCallback(
 		(e: React.ChangeEvent<HTMLTextAreaElement>) => {
 			onChange?.(e.currentTarget.value)
@@ -32,15 +42,15 @@ export const TextArea: React.FC<TextAreaProps> = ({
 	)
 
 	return (
-		<div className={twJoin(className?.wrapper)}>
-			<Label data-testid="TextArea-Label" className={className?.label}>
+		<div className={twJoin(className.wrapper)}>
+			<Label data-testid="TextArea-Label" className={className.label}>
 				{label}
 			</Label>
 			<textarea
 				data-testid="TextArea-Native"
 				className={twMerge(
 					"w-1/4 relative resize mt-[0.3125rem] p-2.5 mg-white break-words border border-grey rounded-[0.625rem] focus:outline-none",
-					className?.input
+					className.input
 				)}
 				name="Text Area Test"
 				id="TextArea"

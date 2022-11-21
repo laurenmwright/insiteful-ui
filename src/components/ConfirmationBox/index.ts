@@ -1,1 +1,1 @@
-export { ConfirmationBox } from "./ConfirmationBox"
+export * from "./ConfirmationBox"

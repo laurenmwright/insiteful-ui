@@ -3,12 +3,16 @@ import { useTable, Column, useGlobalFilter } from "react-table"
 import { GlobalFilter } from "./GlobalFilter"
 import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge, twJoin } from "tailwind-merge"
+import { isClassNameValue } from "../helpers/helpers"
 
 type TableProps<T extends Record<string, any>> = {
-	className?: {
-		wrapper?: ClassNameValue
-		table?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				table?: ClassNameValue
+		  }
 	data: T[]
 	columns: Column<T>[]
 	/** The heading */
@@ -21,6 +25,12 @@ export function Table<T extends Record<string, any>>({
 	data,
 	children
 }: TableProps<T>) {
+	if (isClassNameValue(className)) {
+		className = {
+			wrapper: className
+		}
+	}
+
 	// Use the state and functions returned from useTable to build your UI
 	const {
 		getTableProps,
@@ -41,7 +51,7 @@ export function Table<T extends Record<string, any>>({
 
 	// Render the UI for your table
 	return (
-		<div className={twJoin(className?.wrapper)}>
+		<div className={twJoin(className.wrapper)}>
 			<div className="flex justify-between pb-1">
 				{children}
 				<GlobalFilter
@@ -54,7 +64,7 @@ export function Table<T extends Record<string, any>>({
 				data-testid="table"
 				className={twMerge(
 					"min-w-full divide-y divide-gray-200 border border-gray",
-					className?.table
+					className.table
 				)}
 				{...getTableProps()}
 			>

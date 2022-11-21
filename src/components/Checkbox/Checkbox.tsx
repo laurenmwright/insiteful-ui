@@ -2,12 +2,17 @@ import React, { useCallback } from "react"
 import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge, twJoin } from "tailwind-merge"
 
+import { isClassNameValue } from "../helpers/helpers"
+
 export type CheckboxProps = {
-	className?: {
-		container?: ClassNameValue
-		input?: ClassNameValue
-		label?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				input?: ClassNameValue
+				label?: ClassNameValue
+		  }
 	disabled?: boolean
 	label?: string
 	checked: boolean
@@ -21,17 +26,21 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 	setChecked,
 	disabled
 }) => {
+	if (isClassNameValue(className)) {
+		className = { wrapper: className }
+	}
+
 	const toggleChecked = useCallback(() => {
 		setChecked((c) => !c)
 	}, [setChecked])
 
 	return (
-		<div data-testid="checkbox" className={twJoin(className?.container)}>
+		<label data-testid="checkbox" className={twJoin(className.wrapper)}>
 			<input
 				type="Checkbox"
 				className={twMerge(
 					"accent-action-blue h-5 w-5 align-middle mr-[0.9375rem]",
-					className?.input
+					className.input
 				)}
 				checked={checked}
 				onChange={toggleChecked}
@@ -40,10 +49,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({
 			/>
 			<span
 				data-testid="span"
-				className={twMerge("text-gray-darker align-middle", className?.label)}
+				className={twMerge("text-gray-darker align-middle", className.label)}
 			>
 				{label}
 			</span>
-		</div>
+		</label>
 	)
 }

@@ -4,11 +4,16 @@ import { ChevronDown } from "react-feather"
 import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge } from "tailwind-merge"
 
+import { isClassNameValue } from "../helpers/helpers"
+
 export type MenuProps = {
-	className?: {
-		wrapper?: ClassNameValue
-		menu?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				menu?: ClassNameValue
+		  }
 	title?: string
 	anchor?: React.ReactNode
 	left?: boolean
@@ -21,15 +26,21 @@ export type MenuProps = {
 }
 
 export const Menu: React.FC<MenuProps> = ({ className, title, anchor, left, items }) => {
+	if (isClassNameValue(className)) {
+		className = {
+			wrapper: className
+		}
+	}
+
 	return (
 		<div
-			className={twMerge("z-50", left ? "text-left" : "text-right", className?.wrapper)}
+			className={twMerge("z-50", left ? "text-left" : "text-right", className.wrapper)}
 			data-testid="div"
 		>
 			{/* + positionLeft? "right-0" : "" */}
 			<MenuComponent
 				as="div"
-				className={twMerge("relative inline-block text-left", className?.menu)}
+				className={twMerge("relative inline-block text-left", className.menu)}
 			>
 				{anchor ? (
 					<MenuComponent.Button className="focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">

@@ -16,6 +16,7 @@
 dist
 
 /src/components/index.css
+/src/components/index.ts
 
 # misc
 .DS_Store

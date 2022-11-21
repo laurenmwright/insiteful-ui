@@ -4,13 +4,17 @@ import { Check, ChevronDown } from "react-feather"
 import { FormElement } from "../FormElement"
 import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
 import { twMerge, twJoin } from "tailwind-merge"
+import { isClassNameValue } from "../helpers/helpers"
 
 export type DropdownProps = {
-	className?: {
-		wrapper?: ClassNameValue
-		button?: ClassNameValue
-		panel?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				button?: ClassNameValue
+				panel?: ClassNameValue
+		  }
 	label?: string
 	onChange: (e: any) => void
 	selected: string | null
@@ -24,8 +28,14 @@ export const Dropdown: React.FC<DropdownProps> = ({
 	selected,
 	options
 }) => {
+	if (isClassNameValue(className)) {
+		className = {
+			wrapper: className
+		}
+	}
+
 	return (
-		<div data-testid="div" className={twMerge("text-left pb-5", className?.wrapper)}>
+		<div data-testid="div" className={twMerge("text-left pb-5", className.wrapper)}>
 			<FormElement data-testid="form-element" label={label}>
 				<Listbox
 					as="div"
@@ -40,7 +50,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
 								data-testid="button"
 								className={twMerge(
 									"flex bg-white shadow appearance-none border rounded w-full text-gray-700 leading-tight cursor-default relative py-2 px-3 text-left focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition ease-in-out duration-150 sm:leading-5",
-									className?.button
+									className.button
 								)}
 							>
 								<span data-testid="button-text" className="mr-[25px] block truncate">
@@ -54,7 +64,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
 						<Listbox.Options
 							className={twMerge(
 								"absolute mt-1 min-w-fit max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm",
-								className?.panel
+								className.panel
 							)}
 						>
 							{options.map(({ className, value, label }, index) => (

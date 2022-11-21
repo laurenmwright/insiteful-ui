@@ -1,5 +1,7 @@
 import React from "react"
 import { fireEvent, render, screen } from "@testing-library/react"
+import { BrowserRouter } from "react-router-dom"
+
 import { Button } from "./Button"
 
 /**
@@ -10,63 +12,71 @@ import { Button } from "./Button"
  */
 
 test("renders button with correct text", () => {
-	render(<Button primary>My Button</Button>)
+	render(<Button>My Button</Button>)
 
-	const buttonElement = screen.getByText(/My Button/i)
+	const button = screen.getByTestId("button")
 
-	expect(buttonElement).toBeInTheDocument()
+	expect(button).toHaveTextContent("My Button")
 })
 
-test("renders regular button with override color", () => {
-	render(
-		<Button primary className="bg-[red]">
-			My Button
-		</Button>
-	)
+test("adds additional classes to button", () => {
+	render(<Button className="bg-[red]">My Button</Button>)
 
-	const buttonElement = screen.getByText(/My Button/i)
+	const button = screen.getByTestId("button")
 
-	expect(buttonElement).toHaveClass("bg-[red]")
+	expect(button).toHaveClass("bg-[red]")
 })
 
-test("renders outline button with override color", () => {
-	render(
-		<Button outline className="border-[red]">
-			My Button
-		</Button>
-	)
-
-	const buttonElement = screen.getByText(/My Button/i)
-
-	expect(buttonElement).toHaveClass("border-[red]")
-})
-
-test("renders button with simple prop", () => {
-	render(
-		<Button simple className="text-[red]">
-			My Button
-		</Button>
-	)
-
-	const buttonElement = screen.getByText(/My Button/i)
-
-	expect(buttonElement).toHaveClass("text-[red]")
-})
-
-test("renders button with working onclick function", () => {
+test("adds onClick to button", () => {
 	const hello = jest.fn()
 
 	render(<Button onClick={hello}> My Button</Button>)
 
-	fireEvent.click(screen.getByText(/My Button/i))
+	fireEvent.click(screen.getByTestId("button"))
 
 	expect(hello).toHaveBeenCalled()
 })
 
-test("testing the disabled prop", () => {
-	render(<Button disabled type={"button"} />)
+test("renders disabled button", () => {
+	render(<Button disabled />)
 
-	const buttonElement = screen.getByTestId("Button")
+	const buttonElement = screen.getByTestId("button")
 
 	expect(buttonElement).toBeDisabled()
+})
+
+test("renders an anchor if `to` is passed", () => {
+	render(
+		<BrowserRouter>
+			<Button to="/" />
+		</BrowserRouter>
+	)
+
+	const buttonElement = screen.getByTestId("button")
+
+	expect(buttonElement).toBeInstanceOf(HTMLAnchorElement)
+})
+
+test("renders a disabled button if `to` is passed with disabled", () => {
+	render(<Button to="/" disabled />)
+
+	const buttonElement = screen.getByTestId("button")
+
+	expect(buttonElement).toBeInstanceOf(HTMLButtonElement)
+})
+
+test("renders an anchor if `href` is passed", () => {
+	render(<Button href="https://google.com" />)
+
+	const buttonElement = screen.getByTestId("button")
+
+	expect(buttonElement).toBeInstanceOf(HTMLAnchorElement)
+})
+
+test("renders a disabled button if `href` is passed with disabled", () => {
+	render(<Button href="https://google.com" disabled />)
+
+	const buttonElement = screen.getByTestId("button")
+
+	expect(buttonElement).toBeInstanceOf(HTMLButtonElement)
 })

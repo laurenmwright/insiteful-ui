@@ -1,27 +1,25 @@
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { fireEvent, render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { Input } from "./Input"
 
-test("correctly renders input", () => {
+test("renders input", () => {
 	const hello = jest.fn()
 
-	render(<Input type="number" onChange={hello} />)
+	render(<Input onChange={hello} />)
 
 	expect(screen.getByTestId("input-box")).toBeInTheDocument()
 })
 
-test("correctly renders styling", () => {
-	const hello = jest.fn()
+test("passes value to input", async () => {
+	render(<Input type="text" value="This is a default value" />)
 
-	render(<Input type="number" onChange={hello} />)
+	const inputElement = screen.getByTestId("input-box")
 
-	expect(screen.getByTestId("input-box")).toHaveClass(
-		"shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-	)
+	expect(inputElement).toHaveValue("This is a default value")
 })
 
-test("on change gets called", async () => {
+test("onChange gets called", async () => {
 	const hello = jest.fn()
 
 	render(<Input type="text" onChange={hello} />)
@@ -33,47 +31,47 @@ test("on change gets called", async () => {
 	expect(hello).toHaveBeenCalled()
 })
 
-test("number input allows numbers and has correct type", () => {
-	const hello = jest.fn()
-
-	render(<Input type="number" onChange={hello} />)
+test("number input has correct type", () => {
+	render(<Input type="number" />)
 
 	const input = screen.getByTestId("input-box")
 
-	userEvent.type(input, "text")
-
-	expect(hello).toHaveBeenCalledTimes(0)
 	expect(input).toHaveAttribute("type", "number")
 })
 
-test("Number input type only allows numbers", () => {
-	const hello = jest.fn()
+describe("password input", () => {
+	test("renders in dom", () => {
+		render(<Input type="password" />)
 
-	render(<Input type="number" onChange={hello} />)
+		const input = screen.getByTestId("input-box")
 
-	const input = screen.getByTestId("input-box")
+		expect(input).toBeInTheDocument()
+	})
 
-	userEvent.type(input, "text")
+	test("accepts a placeholder", async () => {
+		render(<Input type="password" placeholder="This is a default placeholder" />)
 
-	expect(hello).toHaveBeenCalledTimes(0)
-})
+		const input = screen.getByTestId("input-box")
 
-test("password input numbers", async () => {
-	const hello = jest.fn()
+		expect(input).toHaveAttribute("placeholder", "This is a default placeholder")
+	})
 
-	render(<Input type="password" onChange={hello} />)
+	test("defaults to password hidden", async () => {
+		render(<Input type="password" value="This is a default value" />)
 
-	const inputElement = screen.getByTestId("input-box")
+		const input = screen.getByTestId("input-box")
 
-	expect(inputElement).toHaveAttribute("type", "password")
-})
+		expect(input).toHaveAttribute("type", "password")
+	})
 
-test("accepts a value", async () => {
-	const hello = jest.fn()
+	test("button toggles visibility of password", async () => {
+		render(<Input type="password" value="This is a default value" />)
 
-	render(<Input type="text" onChange={hello} value="This is a default value" />)
+		const input = screen.getByTestId("input-box")
+		const hideButton = screen.getByTestId("hide-icon")
 
-	const inputElement = screen.getByTestId("input-box")
+		fireEvent.click(hideButton)
 
-	expect(inputElement).toHaveValue("This is a default value")
+		expect(input).toHaveAttribute("type", "text")
+	})
 })

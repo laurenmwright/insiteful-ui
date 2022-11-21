@@ -2,13 +2,30 @@ import { DatePicker } from "../DatePicker"
 import React from "react"
 import { twMerge, twJoin } from "tailwind-merge"
 import { ClassNameValue } from "tailwind-merge/dist/lib/tw-join"
+import { isClassNameValue } from "../helpers/helpers"
+import { DatePickerProps } from "../DatePicker/DatePicker"
 
 export type DateRangeProps = {
-	className?: {
-		container?: ClassNameValue
-		start?: ClassNameValue
-		end?: ClassNameValue
-	}
+	/** If a class name value is passed directly, it will apply to the wrapper. */
+	className?:
+		| ClassNameValue
+		| {
+				wrapper?: ClassNameValue
+				/** If a class name value is passed directly, it will apply to the wrapper. */
+				start?:
+					| ClassNameValue
+					| {
+							wrapper?: ClassNameValue
+							picker?: DatePickerProps["className"]
+					  }
+				/** If a class name value is passed directly, it will apply to the wrapper. */
+				end?:
+					| ClassNameValue
+					| {
+							wrapper?: ClassNameValue
+							picker?: DatePickerProps["className"]
+					  }
+		  }
 	startLabel?: string
 	endLabel?: string
 	start: string | undefined
@@ -18,7 +35,7 @@ export type DateRangeProps = {
 }
 
 export const DateRange: React.FC<DateRangeProps> = ({
-	className = {},
+	className,
 	startLabel,
 	endLabel,
 	start,
@@ -26,12 +43,30 @@ export const DateRange: React.FC<DateRangeProps> = ({
 	setStart,
 	setEnd
 }) => {
+	if (isClassNameValue(className)) {
+		className = {
+			wrapper: className
+		}
+	}
+
+	if (isClassNameValue(className.start)) {
+		className.start = {
+			wrapper: className.start
+		}
+	}
+
+	if (isClassNameValue(className.end)) {
+		className.end = {
+			wrapper: className.end
+		}
+	}
+
 	return (
-		<div className={twJoin(className.container)}>
+		<div className={twJoin(className.wrapper)}>
 			<div
 				className={twMerge(
 					"inline-block p-2.5 [inline-size:260px] [overflow-wrap:break-word]",
-					className.start
+					className.start.wrapper
 				)}
 			>
 				<DatePicker
@@ -39,12 +74,13 @@ export const DateRange: React.FC<DateRangeProps> = ({
 					value={start}
 					onChange={setStart}
 					data-testid="start-date"
-				></DatePicker>
+					className={className.start.picker}
+				/>
 			</div>
 			<div
 				className={twMerge(
 					"inline-block p-2.5 [inline-size:260px] [overflow-wrap:break-word]",
-					className.end
+					className.end.wrapper
 				)}
 			>
 				<DatePicker
@@ -52,7 +88,8 @@ export const DateRange: React.FC<DateRangeProps> = ({
 					value={end}
 					onChange={setEnd}
 					data-testid="end-date"
-				></DatePicker>
+					className={className.end.picker}
+				/>
 			</div>
 		</div>
 	)

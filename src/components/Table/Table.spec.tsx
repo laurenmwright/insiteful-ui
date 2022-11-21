@@ -1,5 +1,5 @@
 import React from "react"
-import { render, screen } from "@testing-library/react"
+import { act, render, screen } from "@testing-library/react"
 import { Column } from "react-table"
 import { Table } from "./Table"
 import "regenerator-runtime"
@@ -60,10 +60,12 @@ test("global filter value updates & correctly filters a table", async () => {
 
 	userEvent.type(globalFilter, "j")
 
-	await waitFor(() => expect(screen.getByTestId("table")).not.toHaveTextContent("Othni"))
-	await waitFor(() => expect(screen.getByTestId("table")).not.toHaveTextContent("Lauren"))
-	await waitFor(() => expect(screen.getByTestId("table")).toHaveTextContent("Jenny"))
-	await waitFor(() =>
-		expect(screen.getByTestId("table")).toHaveTextContent("Jane Claire")
-	)
+	const table = screen.getByTestId("table")
+
+	await Promise.all([
+		waitFor(() => expect(table).not.toHaveTextContent("Othni")),
+		waitFor(() => expect(table).not.toHaveTextContent("Lauren")),
+		waitFor(() => expect(table).toHaveTextContent("Jenny")),
+		waitFor(() => expect(table).toHaveTextContent("Jane Claire"))
+	])
 })
