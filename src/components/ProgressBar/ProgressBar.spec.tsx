@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react"
 import { ProgressBar } from "./ProgressBar"
 
 test("renders percentage correctly", () => {
-	render(<ProgressBar percentage={44}></ProgressBar>)
+	render(<ProgressBar percentage={44} />)
 
 	const progressBarElement = screen.getByTestId("progress-bar")
 
@@ -11,7 +11,7 @@ test("renders percentage correctly", () => {
 })
 
 test("if progress bar background is action blue", () => {
-	render(<ProgressBar numerator={2} denominator={5}></ProgressBar>)
+	render(<ProgressBar numerator={2} denominator={5} />)
 
 	const progressBarElement = screen.getByTestId("progress-bar")
 

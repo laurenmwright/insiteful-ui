@@ -33,7 +33,7 @@ test("if menu opens & renders menu items correctly", () => {
 })
 
 test("if menu button background is action blue", () => {
-	render(<Menu title="Options" items={menuData}></Menu>)
+	render(<Menu title="Options" items={menuData} />)
 
 	const options = screen.getByText("Options")
 
@@ -45,7 +45,7 @@ test("position left and right with an anchor", () => {
 	// const options = getByTestId("div");
 	// expect(options).toHaveClass('text-right z-50');
 
-	render(<Menu title="Examples" anchor="Title" items={menuData} left></Menu>)
+	render(<Menu title="Examples" anchor="Title" items={menuData} left />)
 
 	const examples = screen.getByTestId("div")
 	const menuButton = screen.getByText("Title")

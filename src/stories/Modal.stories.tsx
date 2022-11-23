@@ -30,13 +30,13 @@ export const Default = (args) => {
 			>
 				<form onSubmit={handleSubmit}>
 					<FormElement label="First Name">
-						<Input type="text" onChange={() => {}}></Input>
+						<Input type="text" onChange={() => {}} />
 					</FormElement>
 					<FormElement label="Last Name">
-						<Input type="text" onChange={() => {}}></Input>
+						<Input type="text" onChange={() => {}} />
 					</FormElement>
 					<FormElement label="Email">
-						<Input type="text" onChange={() => {}}></Input>
+						<Input type="text" onChange={() => {}} />
 					</FormElement>
 					<Button primary type="submit">
 						Submit

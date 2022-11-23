@@ -13,7 +13,7 @@ const myTest = () => {
 }
 
 test("renders tab titles correctly", () => {
-	render(<Tabs tabs={tabData}></Tabs>)
+	render(<Tabs tabs={tabData} />)
 
 	const tabElement = screen.getByText("Popular")
 
@@ -21,7 +21,7 @@ test("renders tab titles correctly", () => {
 })
 
 test("clicks on third tab to see if content is rendered correctly", () => {
-	render(<Tabs tabs={tabData}></Tabs>)
+	render(<Tabs tabs={tabData} />)
 
 	const title3 = screen.getByText("Trending")
 
@@ -46,7 +46,7 @@ test("content accepts any child", () => {
 		{ title: "Title 3", content: <Title>Title</Title> }
 	]
 
-	render(<Tabs tabs={newTabData}></Tabs>)
+	render(<Tabs tabs={newTabData} />)
 
 	const tabElement = screen.getByText(23)
 

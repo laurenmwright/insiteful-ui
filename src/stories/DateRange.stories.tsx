@@ -26,7 +26,7 @@ export const Default = (args) => {
 				end={endDate}
 				setStart={setStartDate}
 				setEnd={setEndDate}
-			></DateRange>{" "}
+			/>{" "}
 		</div>
 	)
 }

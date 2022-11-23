@@ -1,23 +1,10 @@
 import React from "react"
 import { fireEvent, render, screen } from "@testing-library/react"
-import { DateTimePicker } from "../components"
 
-test("correctly renders styles", () => {
-	const hello = jest.fn()
-
-	render(<DateTimePicker onChange={hello} />)
-
-	const DateTimeElement = screen.getByTestId("date-time-picker")
-
-	expect(DateTimeElement).toHaveStyle({ width: "15rem;" })
-})
+import { DateTimePicker } from "./DateTimePicker"
 
 test("renders date time picker", () => {
-	const hello = jest.fn()
-
-	render(
-		<DateTimePicker onChange={hello} value="2016-01-04T10:34:23.000"></DateTimePicker>
-	)
+	render(<DateTimePicker value="2016-01-04T10:34:23.000" />)
 
 	const DateRangeElement = screen.getByTestId("date-time-picker")
 

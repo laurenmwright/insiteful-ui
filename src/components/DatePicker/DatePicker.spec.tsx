@@ -5,7 +5,7 @@ import { DatePicker } from "./DatePicker"
 test("renders date picker", () => {
 	const hello = jest.fn()
 
-	render(<DatePicker value="1999-01-30" onChange={hello}></DatePicker>)
+	render(<DatePicker value="1999-01-30" onChange={hello} />)
 
 	const DateRangeElement = screen.getByTestId("date-picker")
 

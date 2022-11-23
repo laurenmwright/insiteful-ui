@@ -124,6 +124,11 @@
 					"import/no-anonymous-default-export": "off"
 				}
 			}
-		]
+		],
+		"rules": {
+			"react/self-closing-comp": [
+				"error"
+			]
+		}
 	}
 }

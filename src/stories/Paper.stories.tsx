@@ -18,13 +18,13 @@ export const Default = (args) => {
 			<Paper>
 				<Title className="text-gray-darker pb-3">Create new user</Title>
 				<FormElement label="Name">
-					<Input type="text" onChange={() => {}}></Input>
+					<Input type="text" onChange={() => {}} />
 				</FormElement>
 				<FormElement label="Username">
-					<Input type="text" onChange={() => {}}></Input>
+					<Input type="text" onChange={() => {}} />
 				</FormElement>
 				<FormElement label="Email">
-					<Input type="text" onChange={() => {}}></Input>
+					<Input type="text" onChange={() => {}} />
 				</FormElement>
 				<Button primary>Submit</Button>
 			</Paper>

@@ -13,7 +13,7 @@ const myTest = () => {
 }
 
 test("renders accordion ids correctly", () => {
-	render(<Accordion rows={accordionData}></Accordion>)
+	render(<Accordion rows={accordionData} />)
 
 	const accordionElement = screen.getByText("Title 3")
 
@@ -21,7 +21,7 @@ test("renders accordion ids correctly", () => {
 })
 
 test("if accordion expands & renders values correctly", () => {
-	render(<Accordion rows={accordionData}></Accordion>)
+	render(<Accordion rows={accordionData} />)
 
 	const title1 = screen.getByText("Title 1")
 
@@ -46,7 +46,7 @@ test("value accepts any child", () => {
 		{ title: "Title 3", content: <Title>Title</Title> }
 	]
 
-	render(<Accordion rows={newAccordionData}></Accordion>)
+	render(<Accordion rows={newAccordionData} />)
 
 	const title1 = screen.getByText("Title 1")
 	const title2 = screen.getByText("Title 2")

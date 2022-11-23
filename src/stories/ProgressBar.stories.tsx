@@ -14,7 +14,7 @@ export const Default = (args) => (
 			percentage={args.percentage}
 			numerator={args.numerator}
 			denominator={args.denominator}
-		></ProgressBar>
+		/>
 	</div>
 )
 
